@@ -1,3 +1,11 @@
 path.test {
   fill: blue;
 }
+
+g {
+  pointer-events: bounding-box;
+  opacity: 0.4;
+}
+g:hover {
+  opacity: 1;
+}
