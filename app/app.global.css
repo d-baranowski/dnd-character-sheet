@@ -2,10 +2,6 @@ path.test {
   fill: blue;
 }
 
-g {
-  pointer-events: bounding-box;
-  opacity: 0.4;
-}
-g:hover {
-  opacity: 1;
+.shadow {
+  box-shadow: 0px 0px 20px rgba(255, 0, 0, 1);
 }

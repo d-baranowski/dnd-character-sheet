@@ -40,6 +40,7 @@ const Gold = () => (
         GP
       </tspan>
     </text>
+    <rect fill="transparent" x="282" y="900" width="73" height="31" />
   </g>
 );
 

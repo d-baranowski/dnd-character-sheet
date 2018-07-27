@@ -49,6 +49,7 @@ const Platinum = () => (
         PP
       </tspan>
     </text>
+    <rect fill="transparent" x="282" y="932" width="73" height="31" />
   </g>
 );
 

@@ -200,6 +200,7 @@
     "webpack-merge": "^4.1.2"
   },
   "dependencies": {
+    "@material-ui/core": "^1.4.1",
     "@svgr/cli": "^2.1.1",
     "devtron": "^1.4.0",
     "electron-debug": "^1.5.0",
@@ -207,6 +208,7 @@
     "history": "^4.7.2",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
+    "react-draggable": "^3.0.5",
     "react-hot-loader": "^4.2.0",
     "react-redux": "^5.0.7",
     "react-router": "^4.2.0",
@@ -214,8 +216,10 @@
     "react-router-redux": "^5.0.0-alpha.6",
     "react-svg-pan-zoom": "^2.17.0",
     "redux": "^4.0.0",
+    "redux-form": "^7.4.2",
     "redux-thunk": "^2.2.0",
-    "source-map-support": "^0.5.6"
+    "source-map-support": "^0.5.6",
+    "typeface-roboto": "0.0.54"
   },
   "devEngines": {
     "node": ">=7.x",

@@ -49,6 +49,7 @@ const Electrum = () => (
         EP
       </tspan>
     </text>
+    <rect fill="transparent" x="282" y="865" width="73" height="31" />
   </g>
 );
 

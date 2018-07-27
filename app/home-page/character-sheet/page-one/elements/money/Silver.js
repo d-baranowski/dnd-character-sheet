@@ -43,6 +43,7 @@ const Silver = () => (
         SP
       </tspan>
     </text>
+    <rect fill="transparent" x="282" y="830" width="73" height="31" />
   </g>
 );
 
