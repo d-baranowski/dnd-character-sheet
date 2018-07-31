@@ -3,7 +3,7 @@ import electron from 'electron';
 import {ReactSVGPanZoom} from 'react-svg-pan-zoom';
 import CurrentHitPoints from './elements/CurrentHitPoints';
 import GrayBackground from './elements/GrayBackground';
-import CharacterName from './elements/character-info/CharacterName';
+import CharacterName from './elements/character-info/character-name/CharacterName';
 import PersonalityTraits from './elements/personality-section/PersonalityTraits';
 import Ideals from './elements/personality-section/Ideals';
 import Bonds from './elements/personality-section/Bonds';

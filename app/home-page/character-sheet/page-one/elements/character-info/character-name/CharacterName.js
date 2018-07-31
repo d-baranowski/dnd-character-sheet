@@ -1,4 +1,11 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import './CharacterNameDrawer';
+import {CharacterNameDrawerRoute} from './CharacterNameDrawer';
+import {setDrawerRoute} from '../../../../../menu-drawer/state/menuDrawerActions';
+import getValue from '../../../../../../form/getValue';
+
+
 
 class CharacterName extends React.Component {
   state = {
@@ -14,18 +21,17 @@ class CharacterName extends React.Component {
   };
 
   onClick = () => {
-
+    this.props.showNameEditor();
   };
 
   render() {
     return (
       <g>
-        <Presentation isHovered={this.state.isHovered} />
+        <Presentation isHovered={this.state.isHovered} characterName={this.props.characterName} />
         <rect
           onMouseLeave={this.onMouseLeave}
           onMouseOver={this.onMouseOver}
           onClick={this.onClick}
-
           fill="transparent" x="40" y="70" width="310" height="50" />
       </g>
     );
@@ -33,7 +39,7 @@ class CharacterName extends React.Component {
 }
 
 
-const Presentation = ({isHovered}) => (
+const Presentation = ({isHovered, characterName}) => (
   <g>
     <g  filter={ isHovered && "url(#sofGlow)" }>
       <path id="top-banner-nav-start-piece"
@@ -112,7 +118,29 @@ const Presentation = ({isHovered}) => (
         CHARACTER NAME
       </tspan>
     </text>
+    <text
+      fontWeight={400}
+      fontSize={18}
+      fontFamily="Scala Sans Offc"
+    >
+      <tspan
+        y={100}
+        x={70}
+      >
+        {characterName}
+      </tspan>
+    </text>
   </g>
 );
 
-export default CharacterName;
+const mapStateToProps = (state) => {
+  return {
+    characterName: getValue(state, 'characterName', 'characterName')
+  }
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  showNameEditor: () => dispatch(setDrawerRoute(CharacterNameDrawerRoute))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(CharacterName);

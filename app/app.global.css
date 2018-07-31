@@ -5,3 +5,11 @@ path.test {
 .shadow {
   box-shadow: 0px 0px 20px rgba(255, 0, 0, 1);
 }
+
+.padded {
+  padding: 10px;
+}
+
+.container {
+  position: relative;
+}
