@@ -42,14 +42,15 @@ class AttributesContainer extends React.PureComponent {
       <g>
         {attributes.map((element, index) => (
           <AttributeBox
-            transformX={index * 96}
+            transformY={index * 96}
             textTransform={element.transform}
             name={element.name}
             onMouseEnter={() => this.updateHover(element.name, true)}
             onMouseLeave={() => this.updateHover(element.name, false)}
             onClick={() => this.props.showAttributeEditor(element.name)}
             isHovered={this.state.isHovered[element.name]}
-            value={this.props.values[element.name]}
+            value={this.props.values[element.name].value}
+            modifier={this.props.values[element.name].modifier}
           />
         ))}
       </g>
@@ -60,7 +61,9 @@ class AttributesContainer extends React.PureComponent {
 const mapStateToProps = (state) =>
   attributes.reduce((result, val) => {
     const copy = {...result};
-    copy.values[val.name] = getValue(state, 'attributes', val.name);
+    copy.values[val.name] = {};
+    copy.values[val.name].value = getValue(state, 'attributes', val.name);
+    copy.values[val.name].modifier = getValue(state, 'attributes', `${val.name}Modifier`);
     return copy;
   }, {values: {}});
 

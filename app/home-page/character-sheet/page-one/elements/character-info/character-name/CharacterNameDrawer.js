@@ -16,7 +16,6 @@ class CharacterNameDrawer extends React.PureComponent {
 
   componentDidMount() {
     if (this.characterNameTextBox.current) {
-      console.log(this.characterNameTextBox.current.getRenderedComponent())
     }
   }
 

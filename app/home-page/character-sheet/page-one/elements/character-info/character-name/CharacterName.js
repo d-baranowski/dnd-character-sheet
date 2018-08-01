@@ -41,7 +41,7 @@ class CharacterName extends React.Component {
 
 const Presentation = ({isHovered, characterName}) => (
   <g>
-    <g  filter={ isHovered && "url(#sofGlow)" }>
+    <g filter={ isHovered && "url(#sofGlow)" }>
       <path id="top-banner-nav-start-piece"
             d="M40.543 82.094v50l47.334-6.186v-50z"
             fill="none"

@@ -2,7 +2,8 @@ import React from 'react';
 import {Field, reduxForm} from 'redux-form';
 import FormTextField from '../../../../../form/FormTextField';
 import drawerRoute from '../../../../menu-drawer/drawerRoute';
-import {limit} from '../../../../../form/format';
+import {limit, onlyNumbers} from '../../../../../form/format';
+import compose from 'redux/src/compose';
 
 export const AttributeDrawerRoute = 'Attribute';
 
@@ -15,7 +16,7 @@ class AttributeDrawer extends React.PureComponent {
             <Field name={this.props.name}
                    component={FormTextField}
                    label={this.props.name}
-                   parse={limit(2)}
+                   parse={compose(limit(2), onlyNumbers)}
             />
           </div>
         </form>

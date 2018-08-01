@@ -1,17 +1,20 @@
 import React from 'react';
 
+const modifierWithSign = (modifier) => modifier && (modifier > 0 ? '+' : '') + modifier || '0';
+
 const AttributeBox =
   ({
      name,
-     transformX,
+     transformY,
      textTransform,
      onMouseEnter,
      onMouseLeave,
      onClick,
      isHovered,
-     value
+     value,
+     modifier
    }) => (
-  <g transform={`translate(0 ${transformX})`}>
+  <g transform={`translate(0 ${transformY})`}>
     <g  filter={ isHovered && "url(#sofGlow)" }>
       <g transform="matrix(1.33333 0 0 -1.33333 0 1056)">
         <path id="Fill"
@@ -45,7 +48,12 @@ const AttributeBox =
     </text>
     <foreignObject x="46" y="187">
       <div>
-        <p style={{height: '30px', width: '60px', border: 'none', fontFamily: 'Scala Sans Offc', fontSize: 'x-large', textAlign: 'center' }}>{value}</p>
+        <p style={{height: '30px', width: '60px', border: 'none', fontFamily: 'Scala Sans Offc', fontSize: 'x-large', textAlign: 'center' }}>{modifierWithSign(modifier)}</p>
+      </div>
+    </foreignObject>
+    <foreignObject x="46" y="233">
+      <div>
+        <p style={{height: '30px', width: '60px', border: 'none', fontFamily: 'Scala Sans Offc', fontSize: 'medium', textAlign: 'center' }}>{value}</p>
       </div>
     </foreignObject>
     <rect
