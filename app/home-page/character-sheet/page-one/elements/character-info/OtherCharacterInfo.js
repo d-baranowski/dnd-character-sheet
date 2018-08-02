@@ -1,7 +1,7 @@
 import React from 'react';
 import Alignment from './Alignment';
 import Background from './Background';
-import ClassAndLevel from './ClassAndLevel';
+import ClassAndLevelContainer from './classes/ClassAndLevelContainer';
 import ExperiencePoints from './ExperiencePoints';
 import PlayerName from './PlayerName';
 import Race from './Race';
@@ -84,7 +84,7 @@ const OtherCharacterInfo = () => (
     </g>
     <Alignment />
     <Background />
-    <ClassAndLevel />
+    <ClassAndLevelContainer />
     <ExperiencePoints />
     <PlayerName />
     <Race />

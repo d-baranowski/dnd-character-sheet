@@ -20,7 +20,7 @@ import AttributesContainer from './elements/attributes/AttributesContainer';
 import HitDice from './elements/HitDice';
 import MoneyContainer from './elements/money/MoneyContainer';
 import Skills from './elements/skills/Skills';
-import SavingThrows from './elements/saving-throws/SavingThrows';
+import SavingThrowsContainer from './elements/saving-throws/SavingThrowsContainer';
 import Legal from './elements/Legal';
 import Inspiration from './elements/Inspiration';
 import OtherCharacterInfo from './elements/character-info/OtherCharacterInfo';
@@ -91,7 +91,7 @@ class PageOne extends React.PureComponent {
           <HitDice />
           <AttributesContainer />
           <Skills />
-          <SavingThrows />
+          <SavingThrowsContainer />
           <Inspiration />
           <OtherCharacterInfo />
           <Attacks />

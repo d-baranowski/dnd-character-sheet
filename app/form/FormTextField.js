@@ -22,7 +22,6 @@ class FormTextField extends React.PureComponent {
       classes,
       input,
       label,
-      meta: {touched, error},
       ...custom
     } = this.props;
     return (
@@ -32,9 +31,6 @@ class FormTextField extends React.PureComponent {
           <Input
             id={id}
             autoFocus
-            hintText={label}
-            floatingLabelText={label}
-            errorText={touched && error}
             {...input}
             {...custom}
           />

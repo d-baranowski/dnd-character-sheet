@@ -29,7 +29,7 @@ const SvgFilters = () => (
       <feGaussianBlur in="thicken" stdDeviation="10" result="blurred" />
 
       {/*Change the colour*/}
-      <feFlood flood-opacity="0.5" flood-color="rgb(0,186,255)" result="glowColor" />
+      <feFlood flood-opacity="0.7" flood-color="rgb(0,186,255)" result="glowColor" />
 
       {/*Color in the glows*/}
       <feComposite in="glowColor" in2="blurred" operator="in" result="softGlow_colored" />

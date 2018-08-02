@@ -16,6 +16,7 @@ class AttributeDrawer extends React.PureComponent {
             <Field name={this.props.name}
                    component={FormTextField}
                    label={this.props.name}
+                   type="number"
                    parse={compose(limit(2), onlyNumbers)}
             />
           </div>
