@@ -14,7 +14,7 @@ import ArmorClass from './elements/ArmorClass';
 import DeathSaves from './elements/DeathSaves';
 import Initiative from './elements/Initiative';
 import Speed from './elements/Speed';
-import ProficiencyBonus from './elements/ProficiencyBodnus';
+import ProficiencyBonus from './elements/ProficiencyBodnus.container';
 import PassiveWisdom from './elements/PassiveWisdom';
 import AttributesContainer from './elements/attributes/AttributesContainer';
 import HitDice from './elements/HitDice';
