@@ -1,10 +1,11 @@
 import React from 'react';
 import SavingThrow from './SavingThrow';
-import {attributes} from '../attributes/state/attributesReducerMutator';
+import {attributes} from '../attributes/state/attributesMutator';
 import Border from '../Border';
 import {setDrawerRoute} from '../../../../menu-drawer/state/menuDrawerActions';
 import {SavingThrowsDrawerRoute} from './SavingThrowsDrawer';
 import {connect} from 'react-redux';
+import {formValueSelector} from 'redux-form';
 
 class SavingThrowsContainer extends React.PureComponent {
   state = {
@@ -25,7 +26,15 @@ class SavingThrowsContainer extends React.PureComponent {
       <g>
         <Border isHovered={isHovered} />
 
-        {attributes.map((value, index) => <SavingThrow name={value} transformY={18 * index} />)}
+        {attributes.map((attributeName, index) => (
+            <SavingThrow
+              isProficient={this.props.proficiencies[`${attributeName}ThrowProficient`]}
+              savingThrow={this.props.savingThrows[attributeName]}
+              name={attributeName}
+              transformY={18 * index} />)
+          )
+
+        }
 
         <text
           transform="matrix(1.33333 0 0 1.33333 166.172 395.604)"
@@ -54,8 +63,16 @@ class SavingThrowsContainer extends React.PureComponent {
   }
 }
 
+const formStateSelector = formValueSelector('savingThrows');
+const selectors = attributes.map(attributeName => `${attributeName}ThrowProficient`);
+
+const mapStateToProps = (state) => ({
+  savingThrows: state.savingThrows,
+  proficiencies: formStateSelector(state, ...selectors)
+});
+
 const mapDispatchToProps = (dispatch) => ({
   showEditor: () => dispatch(setDrawerRoute(SavingThrowsDrawerRoute))
 });
 
-export default connect(() => {}, mapDispatchToProps)(SavingThrowsContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(SavingThrowsContainer);

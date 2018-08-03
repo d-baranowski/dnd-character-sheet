@@ -3,7 +3,9 @@ import { combineReducers } from 'redux';
 import { routerReducer as router } from 'react-router-redux';
 import { reducer as formReducer } from 'redux-form';
 import homePageReducer from '../home-page/state/homePageReducer';
-import attributesMutator from '../home-page/character-sheet/page-one/elements/attributes/state/attributesReducerMutator';
+import attributesMutator from '../home-page/character-sheet/page-one/elements/attributes/state/attributesMutator';
+import savingThrowsMutator
+  from '../home-page/character-sheet/page-one/elements/saving-throws/state/savingThrowsMutator';
 
 const rootReducer = combineReducers({
   router,
@@ -11,4 +13,4 @@ const rootReducer = combineReducers({
   homePageReducer,
 });
 
-export default rootReducer;
+export default savingThrowsMutator(rootReducer);

@@ -19,21 +19,22 @@ const initialState = {
   proficiencyBonus: 0,
 };
 
-const calculateTotalLevel = (state) => Object.entries(state.classes)
-  .map(([key, value]) => ({value: value}))
-  .filter((value => value.level))
-  .map(value => value.level)
-  .reduce((accumulator, current) =>
-      current + accumulator
+const calculateTotalLevel = (state) => {
+  const mapped = Object.entries(state.classes)
+    .map(([key, value]) => value.level);
+
+  const filtered = mapped.filter((value => value > 0)).map(value => parseInt(value));
+
+  return filtered.reduce((accumulator, current) =>
+    current + accumulator
     , 0);
+};
 
 const calculateProficiencyBonus = (totalLevel) => Math.floor((7 + totalLevel) / 4);
 
 const calculateState = (newState) => {
   const totalLevel = calculateTotalLevel(newState);
-  console.log(totalLevel, 'totalLevel');
-
-
+  
   return {
     ...newState,
     totalLevel,

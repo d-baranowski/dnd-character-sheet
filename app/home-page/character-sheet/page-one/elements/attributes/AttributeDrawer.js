@@ -26,4 +26,4 @@ class AttributeDrawer extends React.PureComponent {
   }
 }
 
-export default drawerRoute(AttributeDrawerRoute)(reduxForm({form: 'attributes'})(AttributeDrawer));
+export default drawerRoute(AttributeDrawerRoute)(reduxForm({form: 'attributes', destroyOnUnmount: false})(AttributeDrawer));

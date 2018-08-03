@@ -38,5 +38,5 @@ class CharacterNameDrawer extends React.PureComponent {
   }
 }
 
-export default  drawerRoute(CharacterNameDrawerRoute)(reduxForm({ form: 'characterName' })
+export default  drawerRoute(CharacterNameDrawerRoute)(reduxForm({ form: 'characterName', destroyOnUnmount: false })
                 (CharacterNameDrawer));

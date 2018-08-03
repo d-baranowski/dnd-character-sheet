@@ -9,7 +9,7 @@ import FormCheckbox from '../../../../../form/FormCheckbox';
 import drawerRoute from '../../../../menu-drawer/drawerRoute';
 import FormTextField from '../../../../../form/FormTextField';
 import {limit, onlyNumbers} from '../../../../../form/format';
-import {attributes} from '../attributes/state/attributesReducerMutator';
+import {attributes} from '../attributes/state/attributesMutator';
 
 export const SavingThrowsDrawerRoute = 'SavingThrows';
 
@@ -55,4 +55,4 @@ class SavingThrowsDrawer extends React.PureComponent {
   }
 }
 
-export default drawerRoute(SavingThrowsDrawerRoute)(withStyles(styles)((reduxForm({form: 'savingThrows'})(SavingThrowsDrawer))));
+export default drawerRoute(SavingThrowsDrawerRoute)(withStyles(styles)((reduxForm({form: 'savingThrows', destroyOnUnmount: false})(SavingThrowsDrawer))));
