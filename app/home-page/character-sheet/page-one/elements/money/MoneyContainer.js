@@ -6,7 +6,7 @@ import Gold from './Gold';
 import Silver from './Silver';
 
 const MoneyContainer = () => (
-  <g>
+  <g transform="translate(250, 0)">
     <Copper />
     <Silver />
     <Electrum />

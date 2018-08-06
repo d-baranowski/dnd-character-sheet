@@ -1,3 +1,5 @@
+@import '~semantic-ui-css/semantic.css';
+
 path.test {
   fill: blue;
 }
@@ -12,4 +14,10 @@ path.test {
 
 .container {
   position: relative;
+}
+
+.icon {
+  fill: black;
+  fill-opacity: 0.7;
+  cursor: pointer;
 }

@@ -1,10 +1,9 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import 'typeface-roboto';
 import Root from './Root';
 import { configureStore, history } from './state/store/configureStore';
-import './app.global.css';
+import './app.global.scss';
 
 const store = configureStore();
 

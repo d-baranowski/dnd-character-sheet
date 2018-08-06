@@ -25,12 +25,7 @@ const Silver = () => (
     <g clipPath="url(#o)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
       <path  d="M263.296 153.579a8.171 8.171 0 0 0-1.493 4.729c0 1.722.524 3.37 1.518 4.77l.489-.348a7.603 7.603 0 0 1-1.408-4.422c0-1.582.479-3.097 1.384-4.383z" />
     </g>
-    <path
-      d="M360 85.097h397.44M360 119.87h397.44"
-      fill="none"
-      stroke="#b5b6b6"
-      strokeWidth={0.3333325}
-    />
+
     <text
       style={{ InkscapeFontSpecification: "ScalaSansOffc" }}
       transform="matrix(1.33333 0 0 1.33333 285.603 847.3)"

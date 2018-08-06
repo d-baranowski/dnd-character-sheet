@@ -6,17 +6,10 @@ import FormTextField from '../../../../../../form/FormTextField';
 
 export const CharacterNameDrawerRoute = "CharacterName";
 
-
-
 class CharacterNameDrawer extends React.PureComponent {
   constructor() {
     super();
     this.characterNameTextBox = React.createRef();
-  }
-
-  componentDidMount() {
-    if (this.characterNameTextBox.current) {
-    }
   }
 
   render() {
@@ -24,12 +17,13 @@ class CharacterNameDrawer extends React.PureComponent {
       <div>
         <form>
           <div>
-            <Field name="characterName"
-                   component={FormTextField}
-                   label="Character Name"
-                   format={limit(20)}
-                   ref={this.characterNameTextBox}
-                   withRef="true"
+            <Field
+              name="characterName"
+              component={FormTextField}
+              label="Character Name"
+              format={limit(20)}
+              ref={this.characterNameTextBox}
+              withRef="true"
             />
           </div>
         </form>

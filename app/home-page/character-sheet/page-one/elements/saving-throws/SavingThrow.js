@@ -38,7 +38,7 @@ const SavingThrow = (
         {name}
       </tspan>
     </text>
-    <foreignObject transform="matrix(1.33333 0 0 1.33333 174.667 284.85) translate(-18, -15) scale(0.5, 0.5)">
+    <foreignObject transform="matrix(1.33333 0 0 1.33333 174.667 284.85) translate(-18, -8) scale(0.5, 0.5)">
       <div>
         <p style={{height: '15px', width: '27px', border: 'none', fontFamily: 'Scala Sans Offc', textAlign: 'center' }}>{`${savingThrow > 0 ? '+' : ''}${savingThrow}`}</p>
       </div>

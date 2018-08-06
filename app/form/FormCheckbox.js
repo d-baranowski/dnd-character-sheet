@@ -1,43 +1,24 @@
 import React from 'react';
-import withStyles from '@material-ui/core/es/styles/withStyles';
-import FormControlLabel from '@material-ui/core/es/FormControlLabel/FormControlLabel';
-import Checkbox from '@material-ui/core/es/Checkbox/Checkbox';
-
-const styles = theme => ({
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  formControl: {
-    margin: theme.spacing.unit,
-  },
-});
+import {Checkbox, Segment} from 'semantic-ui-react';
 
 class FormCheckbox extends React.PureComponent {
   render() {
     const {
-      value,
-      classes,
       input,
       label,
-      ...custom
+      value
     } = this.props;
     return (
-      <div className={classes.container}>
-        <FormControlLabel
-          control={
-            <Checkbox
-              {...input}
-              {...custom}
-              value={value + ''}
-              color="primary"
-            />
-          }
+      <Segment>
+        <Checkbox
           label={label}
+          checked={value}
+          toggle
+          onClick={(event, data) => input.onChange(data.checked)}
         />
-      </div>
+      </Segment>
     );
   }
 }
 
-export default withStyles(styles)(FormCheckbox);
+export default FormCheckbox;

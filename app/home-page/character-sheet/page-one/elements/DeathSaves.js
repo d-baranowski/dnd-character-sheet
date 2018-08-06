@@ -1,7 +1,7 @@
 import React from 'react';
 
 const DeathSaves = () => (
-  <g>
+  <g transform="translate(0, -75)">
     <path id="DeathSavesFill"
           d="M515.684 426.777v52.091l-5.6 5.6h-91.836l-5.613-5.6v-52.09l5.613-5.614h91.836z"
           fill="#fff"

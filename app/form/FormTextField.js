@@ -1,43 +1,27 @@
 import React from 'react';
-import FormControl from '@material-ui/core/FormControl';
-import InputLabel from '@material-ui/core/es/InputLabel/InputLabel';
+import {Input} from 'semantic-ui-react';
 import uuid from '../uuid';
-import Input from '@material-ui/core/Input';
-import withStyles from '@material-ui/core/es/styles/withStyles';
 
-const styles = theme => ({
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  formControl: {
-    margin: theme.spacing.unit,
-  },
-});
 
 class FormTextField extends React.PureComponent {
   render() {
     const id = uuid();
     const {
-      classes,
       input,
       label,
       ...custom
     } = this.props;
     return (
-      <div className={classes.container}>
-        <FormControl className={classes.formControl}>
-          <InputLabel htmlFor={id}>{label}</InputLabel>
-          <Input
-            id={id}
-            autoFocus
-            {...input}
-            {...custom}
-          />
-        </FormControl>
-      </div>
+      <Input
+        style={{marginBottom: 10}}
+        label={label}
+        placeholder={label} id={id}
+        autoFocus
+        {...input}
+        {...custom}
+      />
     );
   }
 }
 
-export default withStyles(styles)(FormTextField);
+export default FormTextField;

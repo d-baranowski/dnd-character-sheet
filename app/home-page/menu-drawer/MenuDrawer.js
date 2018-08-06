@@ -1,45 +1,50 @@
 import React from 'react';
-import {withStyles} from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import Button from '@material-ui/core/Button';
+import {Menu, Segment, Sidebar} from 'semantic-ui-react'
 import {connect} from 'react-redux';
 import {openDrawer, closeDrawer} from './state/menuDrawerActions'
 import {drawerRoutes} from './drawerRoute';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome/index.es';
 import styles from './MenuDrawer.css';
 
 class TemporaryDrawer extends React.Component {
 
   render() {
     const {setOpen, isOpen, route, childProps} = this.props;
-    const ActiveRoute = drawerRoutes[route] ?  drawerRoutes[route] : () => null;
+    const ActiveRoute = drawerRoutes[route] ? drawerRoutes[route] : () => null;
 
     return (
-      <div>
-        <Button onClick={() => setOpen(true)}>Open Bottom</Button>
-        <Drawer
-          variant='persistent'
-          anchor="bottom"
-          open={isOpen}
+      <Sidebar.Pushable as={Segment}>
+        <Sidebar
+          as={Menu}
+          animation='overlay'
+          icon='labeled'
+          vertical
+          visible={isOpen}
         >
-          <div className="padded container">
-            <FontAwesomeIcon
+          <div>
+            <svg
               onClick={() => setOpen(false)}
-              icon="times-circle"
               className={styles.closeButton}
-            />
-            <ActiveRoute {...childProps} />
+            >
+              <use xlinkHref="#si-glyph-delete"/>
+            </svg>
+            <div className={styles.container}>
+              <ActiveRoute {...childProps} />
+            </div>
           </div>
-        </Drawer>
-      </div>
+        </Sidebar>
+
+        <Sidebar.Pusher>
+          {this.props.children}
+        </Sidebar.Pusher>
+      </Sidebar.Pushable>
     );
   }
 }
 
 const mapStateToProps = state => ({
-    isOpen: state.homePageReducer.menuDrawerReducer.open,
-    route: state.homePageReducer.menuDrawerReducer.route,
-    childProps: state.homePageReducer.menuDrawerReducer.props
+  isOpen: state.homePageReducer.menuDrawerReducer.open,
+  route: state.homePageReducer.menuDrawerReducer.route,
+  childProps: state.homePageReducer.menuDrawerReducer.props
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -52,4 +57,4 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(TemporaryDrawer));
+export default connect(mapStateToProps, mapDispatchToProps)(TemporaryDrawer);

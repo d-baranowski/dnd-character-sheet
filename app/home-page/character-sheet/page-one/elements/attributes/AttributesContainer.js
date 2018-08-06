@@ -1,10 +1,11 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import AttributeBox from './AttributeBox';
 import './AttributeDrawer';
 import {AttributeDrawerRoute} from './AttributeDrawer';
 import {setDrawerRoute} from '../../../../menu-drawer/state/menuDrawerActions';
 import getValue from '../../../../../form/getValue';
-import {connect} from 'react-redux';
+
 
 const attributes = [
   {name: "Strength", transform: "matrix(1.33333 0 0 1.33333 51.554 201.88)"},
@@ -58,12 +59,12 @@ class AttributesContainer extends React.PureComponent {
   }
 }
 
-const mapStateToProps = (state) =>
+export const mapAttributesFromStateToProps = (state) =>
   attributes.reduce((result, val) => {
     const copy = {...result};
     copy.values[val.name] = {};
-    copy.values[val.name].value = getValue(state, 'attributes', val.name);
-    copy.values[val.name].modifier = getValue(state, 'attributes', `${val.name}Modifier`);
+    copy.values[val.name].value = getValue(state, 'attributes', val.name) || 0;
+    copy.values[val.name].modifier = getValue(state, 'attributes', `${val.name}Modifier`) || 0;
     return copy;
   }, {values: {}});
 
@@ -73,4 +74,4 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(AttributesContainer);
+export default connect(mapAttributesFromStateToProps, mapDispatchToProps)(AttributesContainer);

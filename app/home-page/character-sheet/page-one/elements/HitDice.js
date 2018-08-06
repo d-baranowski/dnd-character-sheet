@@ -1,7 +1,7 @@
 import React from 'react';
 
 const HitDice = () => (
-  <g>
+  <g transform="translate(0, -75)">
     <path id="HitDiceFill"
           d="M402.257 426.777v52.091l-5.6 5.6h-91.836l-5.613-5.6v-52.09l5.613-5.614h91.836z"
           fill="#fff"

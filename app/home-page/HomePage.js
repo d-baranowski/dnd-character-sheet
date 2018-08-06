@@ -11,8 +11,9 @@ export default class HomePage extends Component<Props> {
   render() {
     return (
       <React.Fragment>
-        <PageOne />
-        <MenuDrawer />
+        <MenuDrawer>
+          <PageOne />
+        </MenuDrawer>
       </React.Fragment>
     );
   }

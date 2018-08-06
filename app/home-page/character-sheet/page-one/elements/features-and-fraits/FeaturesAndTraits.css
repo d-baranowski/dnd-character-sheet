@@ -1,0 +1,19 @@
+.featsContainer {
+  overflow: hidden;
+  padding: 15px;
+  max-height: 520px;
+}
+
+.featHeader {
+  font-weight: bolder;
+  font-size: 15px;
+  line-height: 21px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.featHeader:hover {
+  color: rgb(0,186,255)
+}

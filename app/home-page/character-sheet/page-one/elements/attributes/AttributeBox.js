@@ -1,6 +1,6 @@
 import React from 'react';
 
-const modifierWithSign = (modifier) => modifier && (modifier > 0 ? '+' : '') + modifier || '0';
+export const modifierWithSign = (modifier) => modifier && (modifier > 0 ? '+' : '') + modifier || '0';
 
 const AttributeBox =
   ({
@@ -46,12 +46,12 @@ const AttributeBox =
         {name.toUpperCase()}
       </tspan>
     </text>
-    <foreignObject x="46" y="187">
+    <foreignObject x="46" y="205">
       <div>
         <p style={{height: '30px', width: '60px', border: 'none', fontFamily: 'Scala Sans Offc', fontSize: 'x-large', textAlign: 'center' }}>{modifierWithSign(modifier)}</p>
       </div>
     </foreignObject>
-    <foreignObject x="46" y="233">
+    <foreignObject x="47" y="247">
       <div>
         <p style={{height: '30px', width: '60px', border: 'none', fontFamily: 'Scala Sans Offc', fontSize: 'medium', textAlign: 'center' }}>{value}</p>
       </div>

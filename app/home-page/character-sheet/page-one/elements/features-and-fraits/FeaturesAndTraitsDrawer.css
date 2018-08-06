@@ -1,0 +1,13 @@
+.displayFeat {
+  cursor: pointer;
+}
+
+.displayFeat:hover {
+  color: rgb(0,186,255)
+}
+
+.addFeat {
+  float: right;
+  margin-left: 15px;
+  cursor: pointer;
+}

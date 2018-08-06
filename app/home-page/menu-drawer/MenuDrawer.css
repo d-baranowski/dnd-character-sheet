@@ -1,13 +1,14 @@
-.menuDrawer {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: white;
-}
-
 .closeButton {
-  position: absolute;
+  width: 15px;
+  height: 15px;
+  position: fixed;
   right: 10px;
   top: 10px;
+}
+
+.container {
+  margin-top: 20px;
+  padding: 15px;
+  max-width: 590px;
+  text-align: left;
 }

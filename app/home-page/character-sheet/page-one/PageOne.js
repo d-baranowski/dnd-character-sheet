@@ -1,7 +1,7 @@
 import React from 'react';
 import electron from 'electron';
 import {ReactSVGPanZoom} from 'react-svg-pan-zoom';
-import CurrentHitPoints from './elements/CurrentHitPoints';
+import HitPoints from './elements/hit-points/HitPoints';
 import GrayBackground from './elements/GrayBackground';
 import CharacterName from './elements/character-info/character-name/CharacterName';
 import PersonalityTraits from './elements/personality-section/PersonalityTraits';
@@ -9,26 +9,26 @@ import Ideals from './elements/personality-section/Ideals';
 import Bonds from './elements/personality-section/Bonds';
 import Flaws from './elements/personality-section/Flaws';
 import Logo from './elements/Logo';
-import TemporaryHitPoints from './elements/TemporaryHitPoints';
-import ArmorClass from './elements/ArmorClass';
+import ArmorClass from './elements/armor-class/ArmorClass';
 import DeathSaves from './elements/DeathSaves';
-import Initiative from './elements/Initiative';
+import Initiative from './elements/initiative/Initiative';
 import Speed from './elements/Speed';
 import ProficiencyBonus from './elements/ProficiencyBodnus.container';
 import PassiveWisdom from './elements/PassiveWisdom';
 import AttributesContainer from './elements/attributes/AttributesContainer';
 import HitDice from './elements/HitDice';
 import MoneyContainer from './elements/money/MoneyContainer';
-import Skills from './elements/skills/Skills';
+import SkillsContainer from './elements/skills/SkillsContainer';
 import SavingThrowsContainer from './elements/saving-throws/SavingThrowsContainer';
 import Legal from './elements/Legal';
-import Inspiration from './elements/Inspiration';
+import InspirationContainer from './elements/inspiration/InspirationContainer';
 import OtherCharacterInfo from './elements/character-info/OtherCharacterInfo';
 import Attacks from './elements/Attacks';
 import Equipment from './elements/Equipment';
-import FeaturesAndTraits from './elements/FeaturesAndTraits';
+import FeaturesAndTraits from './elements/features-and-fraits/FeaturesAndTraits';
 import ProficienciesAndLanguages from './elements/ProficiencesAndLanguages';
 import SvgFilters from '../../../svg-style/SvgFilters';
+import FeaturesAndTraitsModal from './elements/features-and-fraits/FeaturesAndTraitsViewModal';
 
 const {remote} = electron;
 
@@ -51,7 +51,7 @@ class PageOne extends React.PureComponent {
       const bounds = remote.getCurrentWindow().webContents.getOwnerBrowserWindow().getBounds()
       this.setState({
         width: bounds.width - 50,
-        height: bounds.height - 125
+        height: bounds.height - 70
       });
     }, 0)
 
@@ -59,49 +59,53 @@ class PageOne extends React.PureComponent {
 
   render() {
     return (
-      <ReactSVGPanZoom
-        width={this.state.width}
-        height={this.state.height}
-        scaleFactorOnWheel={1.3}
-        tool='auto'
-        miniaturePosition='none'
-        toolbarPosition='none'
-        disableDoubleClickZoomWithToolAuto
-      >
-        <svg height={1056} width={816}>
-          <defs>
-            <SvgFilters />
-          </defs>
+      <React.Fragment>
+        <FeaturesAndTraitsModal />
+        <ReactSVGPanZoom
+          width={this.state.width}
+          height={this.state.height}
+          scaleFactorOnWheel={1.3}
+          tool='auto'
+          miniaturePosition='none'
+          toolbarPosition='none'
+          disableDoubleClickZoomWithToolAuto
+        >
+          <svg height={1056} width={816}>
+            <defs>
+              <SvgFilters />
+            </defs>
 
-          <GrayBackground />
-          <Logo />
-          <CharacterName />
-          <TemporaryHitPoints />
-          <CurrentHitPoints />
-          <ProficiencyBonus />
-          <PersonalityTraits />
-          <Ideals />
-          <Bonds />
-          <Flaws />
-          <Initiative />
-          <Speed />
-          <ArmorClass />
-          <DeathSaves />
-          <PassiveWisdom />
-          <HitDice />
-          <AttributesContainer />
-          <Skills />
-          <SavingThrowsContainer />
-          <Inspiration />
-          <OtherCharacterInfo />
-          <Attacks />
-          <Equipment />
-          <MoneyContainer />
-          <FeaturesAndTraits />
-          <ProficienciesAndLanguages />
-          <Legal />
-        </svg>
-      </ReactSVGPanZoom>
+            <GrayBackground />
+            <Logo />
+            <CharacterName />
+            <HitPoints />
+            <ProficiencyBonus />
+            <PersonalityTraits />
+            <Ideals />
+            <Bonds />
+            <Flaws />
+            <Initiative />
+            <Speed />
+            <ArmorClass />
+            <DeathSaves />
+            <PassiveWisdom />
+            <HitDice />
+            <AttributesContainer />
+            <SkillsContainer />
+            <SavingThrowsContainer />
+            <InspirationContainer />
+            <OtherCharacterInfo />
+            <Attacks />
+            <Equipment />
+            <MoneyContainer />
+            <FeaturesAndTraits />
+            <ProficienciesAndLanguages />
+            <Legal />
+            <path d="M361 83 h 367 Z" stroke="#dedfdf" />
+            <path d="M361 117 h 367 Z" stroke="#dedfdf" />
+          </svg>
+        </ReactSVGPanZoom>
+      </React.Fragment>
     );
   }
 }
