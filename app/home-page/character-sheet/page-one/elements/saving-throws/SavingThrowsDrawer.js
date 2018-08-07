@@ -4,7 +4,7 @@ import compose from 'redux/src/compose';
 import {Divider} from 'semantic-ui-react';
 import FormCheckbox from '../../../../../form/FormCheckbox';
 import drawerRoute from '../../../../menu-drawer/drawerRoute';
-import FormTextField from '../../../../../form/FormTextField';
+import FormInput from '../../../../../form/FormInput';
 import {limit, onlyNumbers} from '../../../../../form/format';
 import {attributes} from '../attributes/state/attributesMutator';
 
@@ -27,7 +27,7 @@ class SavingThrowsDrawer extends React.PureComponent {
               />
               <Field
                 name={`${value}OtherBonus`}
-                component={FormTextField}
+                component={FormInput}
                 label="Other Bonus"
                 type="number"
                 parse={compose(limit(4), onlyNumbers)}

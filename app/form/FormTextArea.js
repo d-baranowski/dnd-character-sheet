@@ -1,9 +1,9 @@
 import React from 'react';
-import {Input} from 'semantic-ui-react';
+import {TextArea} from 'semantic-ui-react';
 import uuid from '../uuid';
 
 
-class FormTextField extends React.PureComponent {
+class FormTextArea extends React.PureComponent {
   render() {
     const id = uuid();
     const {
@@ -12,7 +12,8 @@ class FormTextField extends React.PureComponent {
       ...custom
     } = this.props;
     return (
-      <Input
+      <TextArea
+        autoHeight
         style={{marginBottom: 10}}
         label={label}
         placeholder={label} id={id}
@@ -24,4 +25,4 @@ class FormTextField extends React.PureComponent {
   }
 }
 
-export default FormTextField;
+export default FormTextArea;

@@ -28,7 +28,7 @@ import Equipment from './elements/Equipment';
 import FeaturesAndTraits from './elements/features-and-fraits/FeaturesAndTraits';
 import ProficienciesAndLanguages from './elements/ProficiencesAndLanguages';
 import SvgFilters from '../../../svg-style/SvgFilters';
-import FeaturesAndTraitsModal from './elements/features-and-fraits/FeaturesAndTraitsViewModal';
+import FeaturesAndTraitsModal from './elements/features-and-fraits/FeaturesAndTraitsModal';
 
 const {remote} = electron;
 

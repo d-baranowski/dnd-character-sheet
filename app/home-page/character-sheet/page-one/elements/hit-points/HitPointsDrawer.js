@@ -1,6 +1,6 @@
 import compose from 'redux/src/compose';
 import React from 'react';
-import FormTextField from '../../../../../form/FormTextField';
+import FormInput from '../../../../../form/FormInput';
 import {limit, onlyNumbers} from '../../../../../form/format';
 import {Field, reduxForm} from 'redux-form';
 import drawerRoute from '../../../../menu-drawer/drawerRoute';
@@ -15,7 +15,7 @@ class HitPointsDrawer extends React.PureComponent {
           <div>
             <Field
               name="currentHp"
-              component={FormTextField}
+              component={FormInput}
               label="Current Hp"
               type="number"
               parse={compose(limit(4), onlyNumbers)}
@@ -23,7 +23,7 @@ class HitPointsDrawer extends React.PureComponent {
             <br />
             <Field
               name="maxHp"
-              component={FormTextField}
+              component={FormInput}
               label="Max Hp"
               type="number"
               parse={compose(limit(4), onlyNumbers)}
@@ -31,7 +31,7 @@ class HitPointsDrawer extends React.PureComponent {
             <br />
             <Field
               name="tempMaxHp"
-              component={FormTextField}
+              component={FormInput}
               label="Temporary Max Hp"
               type="number"
               parse={compose(limit(4), onlyNumbers)}

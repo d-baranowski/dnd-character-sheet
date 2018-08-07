@@ -19,7 +19,7 @@ const allPossibleValues = feats.concat(features).concat(traits).sort((a,b) => {
 class FeaturesAndTraitsDrawer extends React.PureComponent {
   state = {
     searchTerm: "",
-    filteredFeats: allPossibleValues
+    filteredFeats: [{name: "Custom Feat", desc: "Edit me using the icon in the top right corner."}, ...allPossibleValues]
   };
 
   handleChange = (event) => {
@@ -43,7 +43,7 @@ class FeaturesAndTraitsDrawer extends React.PureComponent {
         />
         {
           this.state.filteredFeats.map((feat) => (
-            <div>
+            <div style={{marginTop: 15}}>
               <h3
                 style={{display: 'inline-block'}}
                 key={feat.name}

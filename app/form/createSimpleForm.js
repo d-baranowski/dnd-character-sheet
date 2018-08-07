@@ -1,24 +1,35 @@
 import compose from 'redux/src/compose';
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
-import FormTextField from './FormTextField';
+import FormInput from './FormInput';
 import {limit, onlyNumbers} from './format';
 import drawerRoute from '../home-page/menu-drawer/drawerRoute';
+import FormTextArea from './FormTextArea';
 
-const createSimpleForm = (name, label, form, route) => {
+const createSimpleForm = (name, label, form, route, type = "number") => {
   class SimpleDrawer extends React.PureComponent {
     render() {
       return (
         <div>
           <form>
             <div>
-              <Field
-                name={name}
-                component={FormTextField}
-                label={label}
-                type="number"
-                parse={compose(limit(2), onlyNumbers)}
-              />
+              {type === "number" &&
+                <Field
+                  name={name}
+                  component={FormInput}
+                  label={label}
+                  type="number"
+                  parse={compose(limit(2), onlyNumbers)}
+                />
+              }
+              {type === "textarea" &&
+                <Field
+                  name={name}
+                  component={FormTextArea}
+                  label={label}
+                  type="text"
+                />
+              }
             </div>
           </form>
         </div>
