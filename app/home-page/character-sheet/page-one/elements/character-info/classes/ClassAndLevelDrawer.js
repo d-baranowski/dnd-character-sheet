@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import FormTextField from '../../../../../../form/FormTextField';
+import FormInput from '../../../../../../form/FormInput';
 import drawerRoute from '../../../../../menu-drawer/drawerRoute';
 import {setClassLevel} from './state/classesActions';
 
@@ -14,7 +14,7 @@ class ClassAndLevelDrawer extends React.PureComponent {
         <form>
           <div>
             {Object.entries(dndClasses).map(([className, classProperties]) => (
-              <FormTextField
+              <FormInput
                 label={`${className} Level`}
                 type="number"
                 onChange={(event) => {

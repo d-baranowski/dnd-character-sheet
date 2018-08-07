@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import drawerRoute from '../../../../../menu-drawer/drawerRoute';
 import {limit} from '../../../../../../form/format';
-import FormTextField from '../../../../../../form/FormTextField';
+import FormInput from '../../../../../../form/FormInput';
 
 export const CharacterNameDrawerRoute = "CharacterName";
 
@@ -19,7 +19,7 @@ class CharacterNameDrawer extends React.PureComponent {
           <div>
             <Field
               name="characterName"
-              component={FormTextField}
+              component={FormInput}
               label="Character Name"
               format={limit(20)}
               ref={this.characterNameTextBox}

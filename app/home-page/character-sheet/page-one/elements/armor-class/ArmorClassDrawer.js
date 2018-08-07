@@ -1,7 +1,7 @@
 import compose from 'redux/src/compose';
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
-import FormTextField from '../../../../../form/FormTextField';
+import FormInput from '../../../../../form/FormInput';
 
 import {limit, onlyNumbers} from '../../../../../form/format';
 import drawerRoute from '../../../../menu-drawer/drawerRoute';
@@ -18,7 +18,7 @@ class ArmorClassDrawer extends React.PureComponent {
           <div>
             <Field
               name="ArmorClass"
-              component={FormTextField}
+              component={FormInput}
               label="Armor Class"
               type="number"
               parse={compose(limit(2), onlyNumbers)}

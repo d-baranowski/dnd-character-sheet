@@ -4,7 +4,7 @@ import {Field, reduxForm} from 'redux-form';
 import compose from 'redux/src/compose';
 import {skills} from './SkillsContainer';
 import FormCheckbox from '../../../../../form/FormCheckbox';
-import FormTextField from '../../../../../form/FormTextField';
+import FormInput from '../../../../../form/FormInput';
 import {limit, onlyNumbers} from '../../../../../form/format';
 import drawerRoute from '../../../../menu-drawer/drawerRoute';
 
@@ -27,7 +27,7 @@ class SkillsDrawer extends React.PureComponent {
                 />
                 <Field
                   name={`${value.name}OtherBonus`}
-                  component={FormTextField}
+                  component={FormInput}
                   label="Other Bonus"
                   type="number"
                   parse={compose(limit(4), onlyNumbers)}
