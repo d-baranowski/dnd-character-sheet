@@ -1,5 +1,6 @@
 # D&D Character Sheet Manager
-Built using Electron & React 
+Built using Electron & React.
+
 This project is under construction.
 
 ## Run
