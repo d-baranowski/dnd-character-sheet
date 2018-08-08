@@ -1,4 +1,5 @@
-# Electron & React D&D Character Sheet
+# D&D Character Sheet
+## Using Electron & React 
 This project is under construction.
 
 ## Run
