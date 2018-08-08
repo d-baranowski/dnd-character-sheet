@@ -1,5 +1,5 @@
-# D&D Character Sheet
-## Using Electron & React 
+# D&D Character Sheet Manager
+Built using Electron & React 
 This project is under construction.
 
 ## Run
