@@ -88,8 +88,8 @@ class SkillsContainer extends React.PureComponent {
 }
 
 const getSkillValue = (skill, {attributes, skillModifiers, proficiencyBonus}) =>
-  attributes[skill.attribute].modifier + skillModifiers[skill.name].bonus +
-  (skillModifiers[skill.name].proficient ? proficiencyBonus : 0);
+  parseInt(attributes[skill.attribute].modifier) + parseInt(skillModifiers[skill.name].bonus) +
+  (skillModifiers[skill.name].proficient ? parseInt(proficiencyBonus) : 0);
 
 const mapStateToProps = (state) => {
   const attributes = mapAttributesFromStateToProps(state);

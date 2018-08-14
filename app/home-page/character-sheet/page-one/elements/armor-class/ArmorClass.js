@@ -1,84 +1,44 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {setDrawerRoute} from '../../../../menu-drawer/state/menuDrawerActions';
-import {ArmorClassDrawerRoute} from './ArmorClassDrawer';
-import getValue from '../../../../../form/getValue';
 
-class ArmorClass extends React.PureComponent {
-  state = {
-    isHovered: false
-  };
+import InteractiveElement from '../../../InteractiveElement';
+import withSimpleForm from '../../../../../form/withSimpleForm';
 
-  onMouseOver = () => {
-    this.setState({isHovered: true})
-  };
+const ArmorClass = ({armorClass, showEditor}) => (
+  <InteractiveElement
+    fillPath="M352.29645259 184.66484501C352.29645259 184.66484501 330.04317489 177.85952869 330.04317489 177.85952869C330.04317489 177.85952869 307.78323054 184.66484501 307.78323054 184.66484501C307.78323054 184.66484501 306.88189946 196.23148276 299.01525246 197.82614544C299.01525246 197.82614544 299.01525246 213.62343928 299.01525246 213.62343928C299.01525246 213.62343928 306.37923405 242.90336608 330.04184156 249.2153503C353.70178241 242.90203275 361.06443067 213.62343928 361.06443067 213.62343928C361.06443067 213.62343928 361.06443067 197.82614544 361.06443067 197.82614544C353.19778367 196.23148276 352.29645259 184.66617834 352.29645259 184.66617834"
+    borderPah="M361.25376353 196.84881455C354.21111447 195.42215145 353.2791168 184.69817826 353.27111682 184.59017853C353.27111682 184.59017853 353.21511696 183.90618024 353.21511696 183.90618024C353.21511696 183.90618024 330.04184156 176.81953129 330.04184156 176.81953129C330.04184156 176.81953129 306.8658995 183.90618024 306.8658995 183.90618024C306.8658995 183.90618024 306.80989964 184.59017853 306.80989964 184.59017853C306.80189966 184.69684493 305.86856866 195.42215145 298.82725293 196.84881455C298.82725293 196.84881455 298.0392549 197.00748082 298.0392549 197.00748082C298.0392549 197.00748082 298.0392549 213.6287726 298.0392549 213.6287726C298.0392549 213.6287726 298.06858816 213.87943864 298.06858816 213.87943864C298.14458797 214.17810456 305.85390203 243.80336383 329.79517551 250.19134786C329.79517551 250.19134786 330.04184156 250.25801436 330.04184156 250.25801436C330.04184156 250.25801436 330.28584095 250.19134786 330.28584095 250.19134786C354.22711443 243.80336383 361.93642849 214.17810456 362.01109497 213.87943864C362.01109497 213.87943864 362.04176156 197.00748082 362.04176156 197.00748082C362.04176156 197.00748082 361.25376353 196.84881455 361.25376353 196.84881455M360.08843311 213.49410627C359.5457678 215.50076792 351.92178686 242.16070127 330.04184156 248.18468621C308.1592296 242.1620346 300.53524866 215.50076792 299.99258335 213.49410627C299.99258335 213.49410627 299.99258335 198.62214345 299.99258335 198.62214345C306.74723313 196.64881505 308.35256245 187.9888367 308.68322829 185.4421764C308.68322829 185.4421764 330.04184156 178.91152606 330.04184156 178.91152606C330.04184156 178.91152606 351.39645484 185.4421764 351.39645484 185.4421764C351.72578735 187.9888367 353.33245 196.65014838 360.08843311 198.62214345C360.08843311 198.62214345 360.08843311 213.49410627 360.08843311 213.49410627M349.38045988 187.61683763"
+    rectX="300"
+    rectY="180"
+    rectWidth="60"
+    rectHeigth="70"
+    onClick={showEditor}
+  >
+    <text
+      transform="matrix(1.33333 0 0 1.33333 315.612 229.175)"
+      fontWeight={700}
+      fontSize={6.5}
+      fontFamily="Scala Sans Offc"
+    >
+      <tspan y={0} x="0 3.8675001 7.6634998 13.3705 18.33">
+        ARMOR
+      </tspan>
+    </text>
+    <text
+      transform="matrix(1.33333 0 0 1.33333 318.39 237.175)"
+      fontWeight={700}
+      fontSize={6.5}
+      fontFamily="Scala Sans Offc"
+    >
+      <tspan y={0} x="0 3.9324999 7.1500001 11.0175 14.4885">
+        CLASS
+      </tspan>
+    </text>
+    <foreignObject x="300" y="190">
+      <div>
+        <p style={{height: '30px', width: '60px', border: 'none', fontFamily: 'Scala Sans Offc', fontSize: 'x-large', textAlign: 'center' }}>{armorClass || 0}</p>
+      </div>
+    </foreignObject>
+  </InteractiveElement>
+);
 
-  onMouseLeave = () => {
-    this.setState({isHovered: false})
-  };
-
-  render() {
-    const {isHovered} = this.state;
-    const {armorClass} = this.props;
-
-    return (
-      <g>
-        <g filter={ isHovered && "url(#sofGlow)" }>
-          <g transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-            <path id="ArmorClassFill"
-                  d="M264.223 653.503l-16.69 5.104-16.695-5.104s-.676-8.675-6.576-9.871v-11.848s5.523-21.96 23.27-26.694c17.745 4.735 23.267 26.694 23.267 26.694v11.848c-5.9 1.196-6.576 9.87-6.576 9.87"
-                  fill="#fff"
-            />
-            <path id="ArmorClassBorder" d="M270.941 644.365c-5.282 1.07-5.981 9.113-5.987 9.194l-.042.513-17.38 5.315-17.382-5.315-.042-.513c-.006-.08-.706-8.124-5.987-9.194l-.591-.119V631.78l.022-.188c .057-.224 5.839-22.443 23.795-27.234l.185-.05.183.05c17.956 4.791 23.738 27.01 23.794 27.234l.023 12.654zm-.874-12.484c -.407-1.505-6.125-21.5-22.535-26.018-16.412 4.517-22.13 24.513-22.537 26.018v11.154c5.066 1.48 6.27 7.975 6.518 9.885l16.019 4.898 16.016-4.898c .247-1.91 1.452-8.406 6.519-9.885zm-8.031 19.408l-.048.24-13.365c" />
-          </g>
-        </g>
-        <text
-          style={{ InkscapeFontSpecification: "ScalaSansOffc-Bold" }}
-          transform="matrix(1.33333 0 0 1.33333 315.612 229.175)"
-          fontWeight={700}
-          fontSize={6.5}
-          fontFamily="Scala Sans Offc"
-        >
-          <tspan y={0} x="0 3.8675001 7.6634998 13.3705 18.33">
-            ARMOR
-          </tspan>
-        </text>
-        <text
-          style={{ InkscapeFontSpecification: "ScalaSansOffc-Bold" }}
-          transform="matrix(1.33333 0 0 1.33333 318.39 237.175)"
-          fontWeight={700}
-          fontSize={6.5}
-          fontFamily="Scala Sans Offc"
-        >
-          <tspan y={0} x="0 3.9324999 7.1500001 11.0175 14.4885">
-            CLASS
-          </tspan>
-        </text>
-        <foreignObject x="300" y="190">
-          <div>
-            <p style={{height: '30px', width: '60px', border: 'none', fontFamily: 'Scala Sans Offc', fontSize: 'x-large', textAlign: 'center' }}>{armorClass || 0}</p>
-          </div>
-        </foreignObject>
-        <rect
-          fill="transparent"
-          x="300"
-          y="180"
-          width="60"
-          height="70"
-          onMouseLeave={this.onMouseLeave}
-          onMouseOver={this.onMouseOver}
-          onClick={this.props.showEditor}
-        />
-      </g>
-    );
-  }
-}
-
-const mapStateToProps = (state) => ({
-  armorClass: getValue(state, "armorClass", "ArmorClass")
-});
-const mapDispatchToProps = (dispatch) => ({
-  showEditor: () => dispatch(setDrawerRoute(ArmorClassDrawerRoute))
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(ArmorClass);
+export default withSimpleForm({formName: 'armorClass', label: 'Armor Class'})(ArmorClass);

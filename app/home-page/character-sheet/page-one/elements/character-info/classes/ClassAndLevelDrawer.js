@@ -14,14 +14,17 @@ class ClassAndLevelDrawer extends React.PureComponent {
         <form>
           <div>
             {Object.entries(dndClasses).map(([className, classProperties]) => (
-              <FormInput
-                label={`${className} Level`}
-                type="number"
-                onChange={(event) => {
-                  this.props.setClassLevel(className, event.target.value)
-                }}
-                value={classProperties.level}
-              />
+              <div>
+                <FormInput
+                  label={`${className} Level`}
+                  type="number"
+                  onChange={(event) => {
+                    this.props.setClassLevel(className, event.target.value)
+                  }}
+                  value={classProperties.level}
+                />
+                <br/>
+              </div>
             ))}
           </div>
         </form>

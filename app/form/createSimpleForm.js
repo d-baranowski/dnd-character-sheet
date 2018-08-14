@@ -6,7 +6,7 @@ import {limit, onlyNumbers} from './format';
 import drawerRoute from '../home-page/menu-drawer/drawerRoute';
 import FormTextArea from './FormTextArea';
 
-const createSimpleForm = (name, label, form, route, type = "number") => {
+const createSimpleForm = (name, label, form, route, type = "number", limitValue = 2) => {
   class SimpleDrawer extends React.PureComponent {
     render() {
       return (
@@ -19,7 +19,7 @@ const createSimpleForm = (name, label, form, route, type = "number") => {
                   component={FormInput}
                   label={label}
                   type="number"
-                  parse={compose(limit(2), onlyNumbers)}
+                  parse={compose(limit(limitValue), onlyNumbers)}
                 />
               }
               {type === "textarea" &&

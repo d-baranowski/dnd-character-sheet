@@ -1,0 +1,9 @@
+.alignmentElement {
+  transform-origin: 50% 50%;
+  transition: all .3s ease-in;
+}
+
+.alignmentElement:hover {
+  transform: scale(1.16);
+  z-index: 1000;
+}

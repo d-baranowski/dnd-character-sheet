@@ -2,18 +2,18 @@ import {addClass, removeClass, setClassLevel} from './classesActions';
 
 const initialState = {
   classes: {
-    Barbarian: { abbreviation: "Bbn", level: 0 },
-    Bard: { abbreviation: "Brd", level: 0 },
-    Cleric: { abbreviation: "Clr", level: 0 },
-    Druid: { abbreviation: "Drd", level: 0 },
-    Fighter: { abbreviation: "Ftr", level: 0 },
-    Monk: { abbreviation: "Mnk", level: 0 },
-    Paladin: { abbreviation: "Pal", level: 0 },
-    Ranger: { abbreviation: "Rgr", level: 0 },
-    Rogue: { abbreviation: "Rog", level: 0 },
-    Sorcerer: { abbreviation: "Sor", level: 0 },
-    Wizard: { abbreviation: "Wiz", level: 0 },
-    Warlock: { abbreviation: "Wrk", level: 0 },
+    Barbarian: { abbreviation: "Bbn", level: 0, hitDie: "d12" },
+    Bard: { abbreviation: "Brd", level: 0, hitDie: "d6" },
+    Cleric: { abbreviation: "Clr", level: 0, hitDie: "d8" },
+    Druid: { abbreviation: "Drd", level: 0, hitDie: "d8" },
+    Fighter: { abbreviation: "Ftr", level: 0, hitDie: "d10" },
+    Monk: { abbreviation: "Mnk", level: 0, hitDie: "d8" },
+    Paladin: { abbreviation: "Pal", level: 0, hitDie: "d10" },
+    Ranger: { abbreviation: "Rgr", level: 0, hitDie: "d8" },
+    Rogue: { abbreviation: "Rog", level: 0, hitDie: "d6" },
+    Sorcerer: { abbreviation: "Sor", level: 0, hitDie: "d4" },
+    Wizard: { abbreviation: "Wiz", level: 0, hitDie: "d4" },
+    Warlock: { abbreviation: "Wrk", level: 0, hitDie: "d6" },
   },
   totalLevel: 0,
   proficiencyBonus: 0,
@@ -34,7 +34,7 @@ const calculateProficiencyBonus = (totalLevel) => Math.floor((7 + totalLevel) / 
 
 const calculateState = (newState) => {
   const totalLevel = calculateTotalLevel(newState);
-  
+
   return {
     ...newState,
     totalLevel,

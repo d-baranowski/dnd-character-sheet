@@ -1,5 +1,5 @@
 import React from 'react';
-import Alignment from './Alignment';
+import Alignment from './alignment/Alignment';
 import Background from './Background';
 import ClassAndLevelContainer from './classes/ClassAndLevelContainer';
 import ExperiencePoints from './ExperiencePoints';

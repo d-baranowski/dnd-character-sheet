@@ -1,4 +1,4 @@
-import {openModal, closeModal, pickFeat, setPage, editChosenFeat} from './featuresAndTraitsActions';
+import {openModal, closeModal, pickFeat, setPage, editChosenFeat, deleteChosenFeat} from './featuresAndTraitsActions';
 import uuid from '../../../../../../uuid';
 
 const initialState = {
@@ -60,6 +60,15 @@ export default (state = initialState, action) => {
     const newChosen = [...state.chosenFeats];
     const editIndex = newChosen.findIndex((feat) => feat.id === action.id);
     newChosen[editIndex] = {...action.newValue};
+    return {
+      ...state,
+      chosenFeats: newChosen,
+      pagedFeats: paginate(newChosen, state.pageSize, state.currentPage)
+    }
+  }
+
+  if (action.type === deleteChosenFeat.type) {
+    const newChosen = state.chosenFeats.filter(value => value.id !== action.id);
     return {
       ...state,
       chosenFeats: newChosen,

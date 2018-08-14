@@ -1,7 +1,7 @@
 import React from 'react';
 import {Input, Modal, TextArea} from 'semantic-ui-react';
 import {connect} from 'react-redux';
-import {closeModal, editChosenFeat} from './state/featuresAndTraitsActions';
+import {closeModal, deleteChosenFeat, editChosenFeat} from './state/featuresAndTraitsActions';
 
 const ViewMode = ({feat}) => (
   <React.Fragment>
@@ -75,6 +75,12 @@ class FeaturesAndTraitsModal extends React.PureComponent {
     edit: false
   };
 
+  deleteFeat = (feat) =>
+  {
+    this.props.deleteFeat(feat);
+    this.props.closeModal();
+  };
+
   enterEditMode = () => {
     if (this.props.feat.id) {
       this.setState({
@@ -111,6 +117,18 @@ class FeaturesAndTraitsModal extends React.PureComponent {
         >
           <use xlinkHref="#icon-edit" />
         </svg>}
+        {canEdit && <svg
+          onClick={() => {this.deleteFeat(feat)}}
+          width="1.28571429em"
+          height="1.28571429em"
+          style={{
+            position: "absolute",
+            top: 21,
+            right: 46
+          }}
+        >
+          <use xlinkHref="#icon-delete" />
+        </svg>}
         {!edit && <ViewMode feat={feat} /> || <EditMode handleChange={this.props.onChange} feat={feat} />}
       </Modal>
     )
@@ -124,7 +142,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   closeModal: () => dispatch(closeModal()),
-  onChange: (feat) => dispatch(editChosenFeat(feat.id, feat))
+  onChange: (feat) => dispatch(editChosenFeat(feat.id, feat)),
+  deleteFeat: (feat) => dispatch(deleteChosenFeat(feat.id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FeaturesAndTraitsModal);

@@ -28,3 +28,9 @@ export const editChosenFeat = (id, newValue) => ({
   newValue
 });
 editChosenFeat.type = "EDIT_CHOSEN_FEAT";
+
+export const deleteChosenFeat = (id) => ({
+  type: "DELETE_CHOSEN_FEAT",
+  id
+});
+deleteChosenFeat.type = "DELETE_CHOSEN_FEAT";

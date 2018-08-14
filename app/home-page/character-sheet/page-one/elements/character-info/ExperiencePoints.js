@@ -1,11 +1,12 @@
 import React from 'react';
+import Hoverable from '../../../../../form/Hoverable';
+import withSimpleForm from '../../../../../form/withSimpleForm';
 
-const ExperiencePoints = () => (
+const ExperiencePoints = ({isHovered, experience}) => (
   <g>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc" }}
       transform="matrix(1.33333 0 0 1.33333 640.32 128.697)"
-      fontWeight={400}
+      fontWeight={isHovered ? 700 : 400}
       fontSize={7}
       fontFamily="Scala Sans Offc"
     >
@@ -16,7 +17,34 @@ const ExperiencePoints = () => (
         EXPERIENCE POINTS
       </tspan>
     </text>
+    <text
+      transform="matrix(1.33333 0 0 1.33333 640.32 128.697) translate(0, -11)"
+      fontWeight={500}
+      fontSize={12}
+      fontFamily="Scala Sans Offc"
+    >
+      <tspan
+        y={0}
+        x="0"
+      >
+        {experience}
+      </tspan>
+    </text>
   </g>
 );
 
-export default ExperiencePoints;
+const HoverableExperiencePoints = ({showEditor, experience}) => (
+  <Hoverable
+    x={630}
+    y={95}
+    width={120}
+    height={35}
+    onClick={showEditor}
+  >
+    <ExperiencePoints
+      experience={experience}
+    />
+  </Hoverable>
+);
+
+export default withSimpleForm({formName: 'experience', label: 'Experience Points', limitValue: 10})(HoverableExperiencePoints);
