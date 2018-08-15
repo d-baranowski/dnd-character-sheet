@@ -78,6 +78,8 @@ app.on('ready', async () => {
     mainWindow.focus();
   });
 
+
+
   mainWindow.on('closed', () => {
     mainWindow = null;
   });

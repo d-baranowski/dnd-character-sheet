@@ -10,6 +10,11 @@ type Props = {
 };
 
 export default class Root extends Component<Props> {
+  componentDidMount() {
+    window.store = this.props.store;
+    document.store = this.props.store;
+  }
+
   render() {
     return (
         <Provider store={this.props.store}>
