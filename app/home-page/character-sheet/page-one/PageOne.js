@@ -31,6 +31,7 @@ import SvgFilters from '../../../svg-style/SvgFilters';
 import FeaturesAndTraitsModal from './elements/features-and-fraits/FeaturesAndTraitsModal';
 import AlignmentPicker from './elements/character-info/alignment/AlignmentPicker';
 import AttacksModal from './elements/attacks/AttacksModal';
+import MenuDrawer from '../../menu-drawer/MenuDrawer';
 
 const {remote} = electron;
 
@@ -61,7 +62,7 @@ class PageOne extends React.PureComponent {
 
   render() {
     return (
-      <React.Fragment>
+      <MenuDrawer>
         <AttacksModal />
         <FeaturesAndTraitsModal />
         <ReactSVGPanZoom
@@ -109,7 +110,7 @@ class PageOne extends React.PureComponent {
             <path d="M361 117 h 367 Z" stroke="#dedfdf" />
           </svg>
         </ReactSVGPanZoom>
-      </React.Fragment>
+      </MenuDrawer>
     );
   }
 }

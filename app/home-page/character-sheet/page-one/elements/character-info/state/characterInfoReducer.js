@@ -6,8 +6,6 @@ const initialState = {
 };
 
 export default (state = initialState, action) => {
-  console.log(state);
-  console.log(action);
   if (action.type === selectAlignment.type) {
     return {
       ...state,

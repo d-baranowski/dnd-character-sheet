@@ -1,0 +1,80 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+@import url(https://fonts.googleapis.com/css?family=Cabin);
+
+a {
+  text-decoration: none;
+}
+
+.main-navigation {
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  height: 60px;
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  li {
+    float: left;
+    width: 12rem;
+    height: 5rem;
+    margin: 0 0 0 -1rem;
+    position: relative;
+    &.active {
+      z-index: 6;
+    }
+  }
+  a {
+    position: relative;
+    display: inline-block;
+    color: white;
+    width: 100%;
+    height: 100%;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+  }
+  svg {
+    width: 120%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+  span {
+    position: relative;
+    padding: 1rem 0 0 3.3rem;
+    z-index: 2;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
+  .tab-1 {
+    z-index: 4;
+    svg {
+      fill: url(#tab-1-bg);
+    }
+  }
+  .tab-2 {
+    z-index: 3;
+    svg {
+      fill: url(#tab-2-bg);
+    }
+  }
+  .tab-3 {
+    z-index: 2;
+    svg {
+      fill: url(#tab-3-bg);
+    }
+  }
+  .tab-4 {
+    z-index: 1;
+    svg {
+      fill: url(#tab-4-bg);
+    }
+  }
+}
