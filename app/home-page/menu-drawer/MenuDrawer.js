@@ -22,7 +22,7 @@ class TemporaryDrawer extends React.Component {
     const ActiveRoute = drawerRoutes[route] ? drawerRoutes[route] : () => null;
 
     return (
-      <Sidebar.Pushable as={Segment}>
+      <Sidebar.Pushable as={Segment} className={styles.noMargin}>
         <Sidebar
           as={Menu}
           animation='overlay'
@@ -53,7 +53,7 @@ class TemporaryDrawer extends React.Component {
           </div>
         </Sidebar>
         <Sidebar.Pusher>
-          {this.props.children}
+            {this.props.children}
         </Sidebar.Pusher>
       </Sidebar.Pushable>
     );

@@ -1,6 +1,4 @@
 import React from 'react';
-import electron from 'electron';
-import {ReactSVGPanZoom} from 'react-svg-pan-zoom';
 import HitPoints from './elements/hit-points/HitPoints';
 import GrayBackground from './elements/GrayBackground';
 import CharacterName from './elements/character-info/character-name/CharacterName';
@@ -27,89 +25,53 @@ import Attacks from './elements/attacks/Attacks';
 import Wealth from './elements/Wealth';
 import FeaturesAndTraits from './elements/features-and-fraits/FeaturesAndTraits';
 import ProficienciesAndLanguages from './elements/Languages';
-import SvgFilters from '../../../svg-style/SvgFilters';
 import FeaturesAndTraitsModal from './elements/features-and-fraits/FeaturesAndTraitsModal';
 import AlignmentPicker from './elements/character-info/alignment/AlignmentPicker';
 import AttacksModal from './elements/attacks/AttacksModal';
 import MenuDrawer from '../../menu-drawer/MenuDrawer';
+import PanZoom from '../PanZoom';
 
-const {remote} = electron;
+
 
 class PageOne extends React.PureComponent {
-  constructor() {
-    super();
-    this.resizeToBounds();
-    remote.getCurrentWindow().on('resize', () => {
-      this.resizeToBounds();
-    });
-  }
 
-  state = {
-    width: 0,
-    height: 0
-  };
-
-  resizeToBounds() {
-    setTimeout(() => {
-      const bounds = remote.getCurrentWindow().webContents.getOwnerBrowserWindow().getBounds()
-      this.setState({
-        width: bounds.width - 50,
-        height: bounds.height - 70
-      });
-    }, 0)
-
-  };
 
   render() {
     return (
       <MenuDrawer>
         <AttacksModal />
         <FeaturesAndTraitsModal />
-        <ReactSVGPanZoom
-          width={this.state.width}
-          height={this.state.height}
-          scaleFactorOnWheel={1.3}
-          tool='auto'
-          miniaturePosition='none'
-          toolbarPosition='none'
-          disableDoubleClickZoomWithToolAuto
-        >
-          <svg height={1056} width={816}>
-            <defs>
-              <SvgFilters />
-            </defs>
-
-            <GrayBackground />
-            <Logo />
-            <CharacterName />
-            <HitPoints />
-            <ProficiencyBonus />
-            <PersonalityTraits />
-            <Ideals />
-            <Bonds />
-            <Flaws />
-            <Initiative />
-            <Speed />
-            <ArmorClass />
-            <DeathSaves />
-            <PassiveWisdom />
-            <HitDice />
-            <AttributesContainer />
-            <SkillsContainer />
-            <SavingThrowsContainer />
-            <InspirationContainer />
-            <OtherCharacterInfo />
-            <Attacks />
-            <Wealth />
-            <MoneyContainer />
-            <FeaturesAndTraits />
-            <ProficienciesAndLanguages />
-            <Legal />
-            <AlignmentPicker />
-            <path d="M361 83 h 367 Z" stroke="#dedfdf" />
-            <path d="M361 117 h 367 Z" stroke="#dedfdf" />
-          </svg>
-        </ReactSVGPanZoom>
+        <PanZoom>
+          <GrayBackground />
+          <Logo />
+          <CharacterName />
+          <HitPoints />
+          <ProficiencyBonus />
+          <PersonalityTraits />
+          <Ideals />
+          <Bonds />
+          <Flaws />
+          <Initiative />
+          <Speed />
+          <ArmorClass />
+          <DeathSaves />
+          <PassiveWisdom />
+          <HitDice />
+          <AttributesContainer />
+          <SkillsContainer />
+          <SavingThrowsContainer />
+          <InspirationContainer />
+          <OtherCharacterInfo />
+          <Attacks />
+          <Wealth />
+          <MoneyContainer />
+          <FeaturesAndTraits />
+          <ProficienciesAndLanguages />
+          <Legal />
+          <AlignmentPicker />
+          <path d="M361 83 h 367 Z" stroke="#dedfdf" />
+          <path d="M361 117 h 367 Z" stroke="#dedfdf" />
+        </PanZoom>
       </MenuDrawer>
     );
   }

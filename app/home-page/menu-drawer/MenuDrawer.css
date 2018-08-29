@@ -12,3 +12,9 @@
   min-width: 386px;
   text-align: left;
 }
+
+.noMargin {
+  margin: 0 !important;
+  position: absolute !important;
+  top: 0;
+}

@@ -9,7 +9,7 @@ a {
   overflow: hidden;
   position: absolute;
   bottom: 0;
-  height: 60px;
+  height: 40px;
 
   ul {
     list-style: none;
@@ -17,8 +17,8 @@ a {
   }
   li {
     float: left;
-    width: 12rem;
-    height: 5rem;
+    width: 110px;
+    height: 40px;
     margin: 0 0 0 -1rem;
     position: relative;
     &.active {
@@ -31,9 +31,8 @@ a {
     color: white;
     width: 100%;
     height: 100%;
-    font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
-    font-size: 1.4rem;
+    font-size: 0.8rem;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
   }
   svg {
@@ -47,7 +46,8 @@ a {
   }
   span {
     position: relative;
-    padding: 1rem 0 0 3.3rem;
+    padding: 5px 0 0 0;
+    text-align: center;
     z-index: 2;
     display: inline-block;
     width: 100%;

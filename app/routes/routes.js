@@ -4,13 +4,14 @@ import { Switch, Route } from 'react-router';
 import App from '../App';
 import Navigation from './navigation';
 import PageOne from '../home-page/character-sheet/page-one/PageOne';
+import Inventory from '../home-page/character-sheet/inventory/inventory';
 
 export default () => (
   <App>
     <Navigation />
     <Switch>
       <Route exact path="/" component={PageOne} />
-      <Route exact path="/equipment" component={() => "eq"} />
+      <Route exact path="/equipment" component={Inventory} />
       <Route exact path="/test" component={() => "test"} />
     </Switch>
 
