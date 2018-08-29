@@ -84,7 +84,7 @@ const mapStateToProps = (state) => ({
   maxPage: state.homePageReducer.featsAndTraitsReducer.maxPage
 });
 const mapDispatchToProps = (dispatch) => ({
-  showEditor: () => dispatch(setDrawerRoute(FeaturesAndTraitsDrawerRoute)),
+  showEditor: () => dispatch(setDrawerRoute(FeaturesAndTraitsDrawerRoute, { hasSearchBar: true })),
   setPage: (page) => dispatch(setPage(page)),
   openModal: (feat) => dispatch(openModal(feat)),
 });

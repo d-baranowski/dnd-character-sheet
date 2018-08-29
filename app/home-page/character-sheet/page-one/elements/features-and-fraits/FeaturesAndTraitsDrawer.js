@@ -1,6 +1,5 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Input} from 'semantic-ui-react';
 import feats from './5e-SRD-Feats.json';
 import features from './5e-SRD-Features.json';
 import traits from './5e-SRD-Traits.json';
@@ -17,33 +16,14 @@ const allPossibleValues = feats.concat(features).concat(traits).sort((a,b) => {
 });
 
 class FeaturesAndTraitsDrawer extends React.PureComponent {
-  state = {
-    searchTerm: "",
-    filteredFeats: [{name: "Custom Feat", desc: "Edit me using the icon in the top right corner."}, ...allPossibleValues]
-  };
-
-  handleChange = (event) => {
-    const matchingFeats = allPossibleValues.filter((feat) => feat.name.toUpperCase().includes(event.target.value.toUpperCase()));
-    console.log(matchingFeats);
-    this.setState({
-      searchTerm: event.target.value,
-      filteredFeats: matchingFeats
-    });
-  };
-
   render() {
+    const matchingFeats = allPossibleValues.filter((feat) => feat.name.toUpperCase().includes(this.props.searchTerm.toUpperCase()));
+
     return (
       <div>
-        <Input
-          autoFocus
-          icon='search'
-          placeholder='Search...'
-          value={this.state.searchTerm}
-          onChange={this.handleChange}
-        />
         {
-          this.state.filteredFeats.map((feat) => (
-            <div style={{marginTop: 15}}>
+          matchingFeats.map((feat) => (
+            <div style={{marginTop: 10}}>
               <h3
                 style={{display: 'inline-block'}}
                 key={feat.name}

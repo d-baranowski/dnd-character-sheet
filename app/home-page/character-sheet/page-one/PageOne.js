@@ -23,13 +23,14 @@ import SavingThrowsContainer from './elements/saving-throws/SavingThrowsContaine
 import Legal from './elements/Legal';
 import InspirationContainer from './elements/inspiration/InspirationContainer';
 import OtherCharacterInfo from './elements/character-info/OtherCharacterInfo';
-import Attacks from './elements/Attacks';
+import Attacks from './elements/attacks/Attacks';
 import Wealth from './elements/Wealth';
 import FeaturesAndTraits from './elements/features-and-fraits/FeaturesAndTraits';
 import ProficienciesAndLanguages from './elements/Languages';
 import SvgFilters from '../../../svg-style/SvgFilters';
 import FeaturesAndTraitsModal from './elements/features-and-fraits/FeaturesAndTraitsModal';
 import AlignmentPicker from './elements/character-info/alignment/AlignmentPicker';
+import AttacksModal from './elements/attacks/AttacksModal';
 
 const {remote} = electron;
 
@@ -61,6 +62,7 @@ class PageOne extends React.PureComponent {
   render() {
     return (
       <React.Fragment>
+        <AttacksModal />
         <FeaturesAndTraitsModal />
         <ReactSVGPanZoom
           width={this.state.width}

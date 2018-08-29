@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import AttributeBox from './AttributeBox';
-import './AttributeDrawer';
 import {AttributeDrawerRoute} from './AttributeDrawer';
 import {setDrawerRoute} from '../../../../menu-drawer/state/menuDrawerActions';
 import getValue from '../../../../../form/getValue';

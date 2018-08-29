@@ -1,8 +1,8 @@
 {
-  "name": "electron-react-boilerplate",
-  "productName": "ElectronReact",
-  "version": "0.13.3",
-  "description": "Electron application boilerplate based on React, React Router, Webpack, React Hot Loader for rapid application development",
+  "name": "dnd-character-sheet",
+  "productName": "D&D Character Sheet",
+  "version": "0.0.1",
+  "description": "5e Dungeons and dragons character sheet aiming to look like the paper version.",
   "scripts": {
     "build": "concurrently \"npm run build-main\" \"npm run build-renderer\"",
     "build-dll": "cross-env NODE_ENV=development node --trace-warnings -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.renderer.dev.dll.js --colors",
@@ -41,8 +41,8 @@
     ]
   },
   "build": {
-    "productName": "ElectronReact",
-    "appId": "org.develar.ElectronReact",
+    "productName": "CharacterSheet",
+    "appId": "net.devtales.CharacterSheet",
     "files": [
       "dist/",
       "node_modules/",
@@ -84,17 +84,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chentsulin/electron-react-boilerplate.git"
+    "url": "git+https://github.com/d-baranowski/dnd-character-sheet.git"
   },
   "author": {
-    "name": "C. T. Lin",
-    "email": "chentsulin@gmail.com",
-    "url": "https://github.com/chentsulin"
+    "name": "Daniel Baranowski",
+    "email": "daniel.m.baranowski@gmail.com",
+    "url": "https://github.com/d-baranowski/dnd-character-sheet"
   },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/chentsulin/electron-react-boilerplate/issues"
-  },
   "keywords": [
     "electron",
     "boilerplate",

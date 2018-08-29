@@ -47,18 +47,8 @@ export default class MenuBuilder {
     const subMenuAbout = {
       label: 'Electron',
       submenu: [
-        {
-          label: 'About ElectronReact',
-          selector: 'orderFrontStandardAboutPanel:'
-        },
-        { type: 'separator' },
         { label: 'Services', submenu: [] },
         { type: 'separator' },
-        {
-          label: 'Hide ElectronReact',
-          accelerator: 'Command+H',
-          selector: 'hide:'
-        },
         {
           label: 'Hide Others',
           accelerator: 'Command+Shift+H',
@@ -149,6 +139,20 @@ export default class MenuBuilder {
     return [subMenuAbout, subMenuEdit, subMenuView, subMenuWindow];
   }
 
+  savePath = undefined;
+
+  autosave = (() => {
+    setInterval(() => {
+      if (this.savePath) {
+        this.mainWindow.webContents.executeJavaScript(`JSON.stringify(document.store.getState())`, (state) => {
+          fs.writeFile(this.savePath, state, (err) => {
+            // ToDo handle error
+          });
+        });
+      }
+    }, 15 * 1000)
+  })();
+
   buildDefaultTemplate() {
     const templateDefault = [
       {
@@ -159,7 +163,7 @@ export default class MenuBuilder {
             accelerator: 'Ctrl+O',
             click: () => {
               const path = dialog.showOpenDialog({properties: ['openFile'], filters: [{name: "Character", extensions: ["dnd"]}]});
-
+              this.savePath = path[0];
               fs.readFile(path[0], 'utf8', (err, data) => {
                 if (err) throw err;
 
@@ -171,17 +175,36 @@ export default class MenuBuilder {
             label: '&Save',
             accelerator: 'Ctrl+S',
             click: () => {
-              this.mainWindow.webContents.executeJavaScript(`JSON.stringify(document.store.getState())`, function (state) {
-                dialog.showSaveDialog((fileName) => {
-                  if (fileName === undefined) return;
-                  fs.writeFile(fileName, state, (err) => {
+              this.mainWindow.webContents.executeJavaScript(`JSON.stringify(document.store.getState())`, (state) => {
+
+                if (this.savePath) {
+                  fs.writeFile(this.savePath, state, (err) => {
                     // ToDo handle error
                   });
-                });
+                } else {
+                  dialog.showSaveDialog({filters: [{name: "Character", extensions: ["dnd"]}]}, (fileName) => {
+                    if (fileName === undefined) return;
+                    this.savePath = fileName;
+                    fs.writeFile(fileName, state, (err) => {
+                      // ToDo handle error
+                    });
+                  });
+                }
               });
-
-
-
+            }
+          },
+          {
+            label: '&Save As',
+            click: () => {
+              this.mainWindow.webContents.executeJavaScript(`JSON.stringify(document.store.getState())`, (state) => {
+                  dialog.showSaveDialog({filters: [{name: "Character", extensions: ["dnd"]}]}, (fileName) => {
+                    if (fileName === undefined) return;
+                    this.savePath = fileName;
+                    fs.writeFile(fileName, state, (err) => {
+                      // ToDo handle error
+                    });
+                  });
+              });
             }
           },
           {

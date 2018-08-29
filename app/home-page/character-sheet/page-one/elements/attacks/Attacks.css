@@ -1,0 +1,8 @@
+.textElement {
+  cursor: pointer;
+}
+
+.textElement:hover {
+  font-weight: 700;
+  fill: rgb(0,186,255)
+}
