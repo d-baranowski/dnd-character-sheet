@@ -32,6 +32,11 @@ class PanZoom extends React.PureComponent {
   render() {
     return (
       <ReactSVGPanZoom
+        toolbarProps={{
+          SVGAlignX: 'center',
+          SVGAlignY: 'center'
+        }}
+        detectAutoPan={false}
         width={this.state.width}
         height={this.state.height}
         scaleFactorOnWheel={1.3}

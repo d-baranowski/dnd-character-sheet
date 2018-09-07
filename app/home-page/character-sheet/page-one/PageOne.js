@@ -1,6 +1,6 @@
 import React from 'react';
 import HitPoints from './elements/hit-points/HitPoints';
-import GrayBackground from './elements/GrayBackground';
+import GrayDecorations from '../../GrayDecorations';
 import CharacterName from './elements/character-info/character-name/CharacterName';
 import PersonalityTraits from './elements/personality-section/PersonalityTraits';
 import Ideals from './elements/personality-section/Ideals';
@@ -42,7 +42,7 @@ class PageOne extends React.PureComponent {
         <AttacksModal />
         <FeaturesAndTraitsModal />
         <PanZoom>
-          <GrayBackground />
+          <GrayDecorations />
           <Logo />
           <CharacterName />
           <HitPoints />
