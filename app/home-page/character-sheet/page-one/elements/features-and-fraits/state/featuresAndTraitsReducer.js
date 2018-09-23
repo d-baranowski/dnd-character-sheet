@@ -11,7 +11,7 @@ const initialState = {
   maxPage: 1
 };
 
-const paginate = (array, pageSize, pageNumber) => {
+export const paginate = (array, pageSize, pageNumber) => {
   const actualPageNumber = pageNumber - 1;
   return array.slice(actualPageNumber * pageSize, (actualPageNumber + 1) * pageSize);
 };

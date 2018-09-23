@@ -1,9 +1,7 @@
 import React from 'react';
-import AddButton from '../../../../form/AddButton';
-import {connect} from 'react-redux';
-import {addItem} from '../state/equipmentActions';
+import Basket from "./Basket";
 
-const EquipmentTable = ({addItem, basketOne}) => (
+const EquipmentTable = () => (
   <g id="table">
     <g>
       <path fill="#dedfdf" d="M771.62 1000.87a17.8 17.8 0 0 0-.4-8.2l1.78-6.63v12.83c-.37.6-.83 1.27-1.38 2M773 710.36v-12.83c-.37-.6-.83-1.27-1.38-2a17.8 17.8 0 0 1-.4 8.19zM43 697.53v12.83l1.79-6.64a17.81 17.81 0 0 1-.41-8.19c-.55.73-1 1.4-1.38 2m714.75 312.08H448.76a1.04 1.04 0 0 1-1.95-.5 1.04 1.04 0 1 1 1.96-.5h308.98c5.95 0 10.23-3.42 12.93-6.58.34-1.32 1.13-5.2-.13-9.25l-.03-.1.03-.08 2.45-9.13V712.92l-2.48-9.21.03-.1c1.26-4.02.48-7.9.14-9.24-2.7-3.15-6.99-6.58-12.94-6.58H448.76a1.04 1.04 0 0 1-1.95-.5 1.04 1.04 0 1 1 1.96-.5h308.98c7.64 0 12.67 5.28 15.25 8.94v-2.52c-2.44-2.64-8.16-7.93-16.33-9.94H59.32c-8.17 2.02-13.89 7.3-16.32 9.94v2.52c2.58-3.66 7.61-8.94 15.25-8.94h308.99c.18-.32.47-.55.87-.55.57 0 .87.47.87 1.05 0 .58-.08 1.05-.66 1.05-.4 0-.47-.23-.65-.55H58.25c-5.95 0-10.24 3.43-12.94 6.58a17.66 17.66 0 0 0 .14 9.24l.03.1-.03.09-2.45 9.12v270.55l2.48 9.22-.03.1a17.67 17.67 0 0 0-.14 9.23c2.7 3.16 7 6.59 12.94 6.59h309.2c.18-.33.7-.56 1.1-.56.57 0 .64.47.64 1.06 0 .57.15 1.04-.43 1.04-.4 0-.7-.22-.87-.54H58.25c-7.64 0-12.67-5.28-15.25-8.94v2.52c2.44 2.64 8.16 7.92 16.34 9.94h697.33c8.17-2.02 13.9-7.3 16.33-9.94v-2.52c-2.58 3.66-7.61 8.94-15.25 8.94M43 986.04v12.83c.37.59.83 1.27 1.38 2-.34-1.88-.58-4.95.4-8.2zm0 18.12v3.44s4.86 2.89 6.1 5.53h7.83a35.57 35.57 0 0 1-13.93-8.97m730-311.92v-3.44s-4.86-2.9-6.1-5.53h-7.83a35.58 35.58 0 0 1 13.93 8.97m-13.93 320.88h7.83c1.24-2.63 6.1-5.52 6.1-5.52v-3.44a35.56 35.56 0 0 1-13.93 8.96M56.93 683.27H49.1c-1.24 2.64-6.1 5.53-6.1 5.53v3.44a35.57 35.57 0 0 1 13.93-8.97"/>
@@ -49,58 +47,11 @@ const EquipmentTable = ({addItem, basketOne}) => (
       <path fill="#fff" d="M752.3 695.81a1.25 1.25 0 0 1-.09-.05l.06.02c.12.05.19.06.33.06h.23l-.28-.16a12.43 12.43 0 0 0-2.94-1.12l-.3-.08h-7.08v-.02h7l.1.02a10.87 10.87 0 0 1 3.57 1.38h-.52l-.08-.05zM759.57 700.14a31.05 31.05 0 0 0-1.6-1.86 20.88 20.88 0 0 0-2.54-2.33l-.1-.08h1.79l.01.02a7.79 7.79 0 0 0 1.12 1.23c.66.58 1.45 1.1 2.47 1.62l.16.08v1.34h-1.3z"/>
       <path fill="#fff" d="M759.53 700.1a27.95 27.95 0 0 0-2.6-2.87 20.94 20.94 0 0 0-1.6-1.36h1.79l.04.07c.3.42.75.9 1.26 1.33a11.68 11.68 0 0 0 2.45 1.54v1.35h-1.29zM755.27 695.82a17.28 17.28 0 0 0-2.1-1.35h3.32l.02.07a4.13 4.13 0 0 0 .59 1.3l.02.02h-1.8zm1.78-.04a4.96 4.96 0 0 1-.52-1.1l-.06-.2h-.95a54.58 54.58 0 0 0-2.19.05l.24.14a15.64 15.64 0 0 1 1.54 1.01l.24.17h1.75zM681.87 694.79a22037.34 22037.34 0 0 0-17.26-.02h-.03v-.31H675l10.43.01-2.2.01h-2.2V694.77h.49a368.05 368.05 0 0 0 3.59.02h.32-3.56zM605.04 694.74h-17.8v-.28h41.71V694.75h-3.06l-20.85-.01zM654.68 694.76h-5.87v-.3h15.77v.31h-2.01l-7.89-.01z"/>
       <path fill="#fff" d="M578.57 694.73h-6.18v-.27h14.86v.28H586l-7.43-.01zM545.85 694.6v-.14h26.54v.26h-26.54zM507.64 694.6v-.14h38.2v.26h-38.2zM362.7 694.59v-.13h14.75v.26H362.7zM304.61 694.59v-.13h14.74v.25h-14.74zM240.95 694.59v-.13h14.74v.25h-14.74zM191.08 694.58v-.12h14.74v.25h-14.74zM125.34 694.59v-.13h8.59v.25h-8.59z"/>
-      <g fill="none" stroke="#000">
-        <path
-          strokeWidth="1.1599971"
-          d="m 428,715 h 311.5 z m 0,20 h 311.5 z m 0,20 h 311.5 z m 0,20 h 311.5 z m 0,20 h 311.5 z m 0,20 h 311.5 z m 0,20 h 311.5 z m 0,20 h 311.5 z m 0,20 h 311.5 z m 0,20 h 311.5 z m 0,20 h 311.5 z m 0,20 h 311.5 z"
-        />
-        <path
-          strokeWidth=".9599975999999999"
-          d="M 676.2,714.7 V 935 Z m 63.3,0.3 V 935 Z M 612,714.95 V 933.87 Z M 428,715 v 220.42 z"
-        />
-      </g>
-      <g fill="none" stroke="#000">
-        <path
-          strokeWidth="1.1599971"
-          d="M 76.5,715 H 388 Z m 0,20 H 388 Z m 0,20 H 388 Z m 0,20 H 388 Z m 0,20 H 388 Z m 0,20 H 388 Z m 0,20 H 388 Z m 0,20 H 388 Z m 0,20 H 388 Z m 0,20 H 388 Z m 0,20 H 388 Z m 0,20 H 388 Z"
-        />
-        <path
-          strokeWidth=".9599975999999999"
-          d="M 324.7,714.7 V 935 Z M 388,715 V 935 Z M 260.5,714.95 V 933.87 Z M 76.5,715 v 220.42 z"
-        />
-      </g>
     </g>
-    <text  x="80.73" y="711.2" strokeWidth="1.33" fontFamily="Scala Sans Offc" fontSize="9.33" fontWeight="400">
-      <tspan x="80.73" y="711.2">NAME</tspan>
-    </text>
-    <text  x="262.44" y="711.2" strokeWidth="1.33" fontFamily="Scala Sans Offc" fontSize="9.33" fontWeight="400">
-      <tspan x="262.44" y="711.2">QUANTITY</tspan>
-    </text>
-    <text  x="327.92" y="711.2" strokeWidth="1.33" fontFamily="Scala Sans Offc" fontSize="9.33" fontWeight="400">
-      <tspan x="327.92" y="711.2">WEIGHT</tspan>
-    </text>
-    <text  x="432.28" y="711.67" strokeWidth="1.33" fontFamily="Scala Sans Offc" fontSize="9.33" fontWeight="400">
-      <tspan x="432.28" y="711.67">NAME</tspan>
-    </text>
-    <text x="613.99" y="711.67" strokeWidth="1.33" fontFamily="Scala Sans Offc" fontSize="9.33" fontWeight="400">
-      <tspan x="613.99" y="711.67">QUANTITY</tspan>
-    </text>
-    <text  x="679.47" y="711.67" strokeWidth="1.33" fontFamily="Scala Sans Offc" fontSize="9.33" fontWeight="400">
-      <tspan x="679.47" y="711.67">WEIGHT</tspan>
-    </text>
 
-    <AddButton onClick={() => addItem("basketOne")} x={219} y={950} />
-    <AddButton onClick={() => addItem("basketTwo")} x={571} y={950} />
+    <Basket basketName="basketOne" />
+    <Basket basketName="basketTwo" transform="translate(353, 0)" />
   </g>
 );
 
-const mapStateToProps = (state) => ({
-  basketOne: state.equipmentReducer.inventory.basketOne,
-  basketTwo: state.equipmentReducer.inventory.basketTwo
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  addItem: (basket) => dispatch(addItem(basket))
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(EquipmentTable);
+export default EquipmentTable;

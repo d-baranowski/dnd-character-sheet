@@ -1,22 +1,13 @@
-import {addItem, incrementItem, decrementItem, updateItem, removeItem, closeModal} from './equipmentActions';
+import {addItem, incrementItem, decrementItem, updateItem, removeItem, closeModal, openModal, incrementPage, decrementPage} from './equipmentActions';
 
 const initialState = {
   modalOpen: false,
   modalEditId: undefined,
-  inventory: {},
-  equipped: {
-    slotOne: undefined,
-    slotTwo: undefined,
-    slotThree: undefined,
-    slotFour: undefined,
-    slotFive: undefined,
-    slotSix: undefined,
-    slotSeven: undefined,
-    slotEight: undefined,
-    slotNine: undefined,
-    slotTen: undefined,
-    slotEleven: undefined,
-    slotTwelve: undefined,
+  pages: {
+    basketOne: {number: 1},
+    basketTwo: {number: 1}
+  },
+  inventory: {
   }
 };
 
@@ -42,47 +33,96 @@ export const findBasket = (state, itemId) => {
 export default (state = initialState, action) => {
   if (action.type === addItem.type) {
     const newState = {...state};
-    newState.inventory[action.basket] = {};
-    newState.inventory[action.basket][action.item.id] = action.item;
+    if (!newState.inventory[action.basket]) {
+      newState.inventory[action.basket] = {};
+    }
+    newState.inventory[action.basket] = {...newState.inventory[action.basket], [action.item.id]: action.item};
     newState.modalOpen = true;
     newState.modalEditId = action.item.id;
 
-    return newState;
+    const maxPage = Math.ceil(Object.entries(newState.inventory[action.basket]).length / 11);
+    return {
+      ...newState,
+      pages: {
+        ...newState.pages,
+        [action.basket]: {
+          ...newState.pages[action.basket],
+          number: maxPage,
+          maxPage
+        }
+      }
+    }
   }
 
   if (action.type === incrementItem.type) {
     const newState = {...state};
-    const oldQuantity = newState.inventory[action.id].quantity;
-    newState.inventory[action.id] = {...newState.inventory[action.id], quantity: oldQuantity + 1};
+    const basketName = findBasket(state, action.id);
+
+    const oldQuantity = newState.inventory[basketName][action.id].quantity;
+    newState.inventory[basketName] =
+      {...newState.inventory[basketName], [action.id]: {...newState.inventory[basketName][action.id], quantity: oldQuantity + 1}};
     return newState;
   }
 
   if (action.type === decrementItem.type) {
     const newState = {...state};
-    const oldQuantity = newState.inventory[action.id].quantity;
-    newState.inventory[action.id] = {...newState.inventory[action.id], quantity: oldQuantity - 1};
+    const basketName = findBasket(state, action.id);
+
+    const oldQuantity = newState.inventory[basketName][action.id].quantity;
+    newState.inventory[basketName] =
+      {...newState.inventory[basketName], [action.id]: {...newState.inventory[basketName][action.id], quantity: oldQuantity > 1 ? oldQuantity - 1: oldQuantity}};
     return newState;
   }
 
   if (action.type === updateItem.type) {
     const newState = {...state};
     const basketName = findBasket(state, action.item.id);
-    console.log(newState);
-    console.log(basketName);
-    console.log(action);
-    newState.inventory[basketName][action.item.id] = {...action.item};
+    newState.inventory[basketName] = {...newState.inventory[basketName], [action.item.id]: action.item};
     return newState;
   }
 
   if (action.type === removeItem.type) {
-    const newState = {...state};
+    const newState = {...state, modalOpen: false};
+
     const basketName = findBasket(state, action.id);
     delete newState.inventory[basketName][action.id];
+    newState.inventory[basketName] = {...newState.inventory[basketName]};
     return newState;
   }
 
   if (action.type === closeModal.type) {
     return {...state, modalOpen: false}
+  }
+
+  if (action.type === openModal.type) {
+    return {...state, modalOpen: true, modalEditId: action.modalEditId}
+  }
+
+  if (action.type === incrementPage.type) {
+    const maxPage = Math.ceil(Object.entries(state.inventory[action.basketName]).length / 11);
+    return {
+      ...state,
+      pages: {
+        ...state.pages,
+        [action.basketName]: {
+          number: Math.min(state.pages[action.basketName].number + 1, maxPage),
+          maxPage
+        }
+      }
+    }
+  }
+
+  if (action.type === decrementPage.type) {
+    return {
+      ...state,
+      pages: {
+        ...state.pages,
+        [action.basketName]: {
+          ...state.pages[action.basketName],
+          number: Math.max(state.pages[action.basketName].number - 1, 1)
+        }
+      }
+    }
   }
 
   return state;

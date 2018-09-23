@@ -3,14 +3,14 @@ import uuidv4 from '../../../../../../uuid';
 
 const initialState = {
   modalOpen: false,
-  modalEditId: undefined,
+  modalEditSlot: undefined,
   attacks: {}
 };
 
 export default (state = initialState, action) => {
   if (action.type === addAttack.type) {
     const attackId = uuidv4();
-    const newState = {...state, attacks: {...state.attacks}, modalOpen: true, modalEditId: attackId};
+    const newState = {...state, attacks: {...state.attacks}, modalOpen: true, modalEditSlot: attackId};
     newState.attacks[attackId] = {
       id: attackId,
       name: '',
@@ -26,7 +26,7 @@ export default (state = initialState, action) => {
   }
 
   if (action.type === removeAttack.type) {
-    const newState = {...state, attacks: {...state.attacks}, modalOpen: false, modalEditId: undefined};
+    const newState = {...state, attacks: {...state.attacks}, modalOpen: false, modalEditSlot: undefined};
     delete newState.attacks[action.id];
     return newState;
   }
@@ -41,7 +41,7 @@ export default (state = initialState, action) => {
     return {
       ...state,
       modalOpen: true,
-      modalEditId: action.id
+      modalEditSlot: action.id
     }
   }
 

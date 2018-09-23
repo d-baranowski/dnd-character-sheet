@@ -42,7 +42,7 @@ const EquipmentModal = ({updateItem, removeItem, modalOpen, item, closeModal}) =
           style={{marginBottom: 10}}
           placeholder='Quantity'
           value={item.quantity}
-          onChange={(event) => updateItem({...item, quantity: event.target.value})}
+          onChange={(event) => updateItem({...item, quantity: !isNaN(parseInt(event.target.value)) ? parseInt(event.target.value) : 0 })}
         />
       </div>
       <div>
@@ -51,7 +51,7 @@ const EquipmentModal = ({updateItem, removeItem, modalOpen, item, closeModal}) =
           style={{marginBottom: 10}}
           placeholder='Weight'
           value={item.weight}
-          onChange={(event) => updateItem({...item, weight: event.target.value})}/>
+          onChange={(event) => updateItem({...item, weight: event.target.value.match("([0-9]|\.)+") ? event.target.value.match(new RegExp("([0-9.])+"))[0] : 0 })}/>
       </div>
       <div>
         <h3>Notes</h3>

@@ -35,3 +35,21 @@ export const closeModal = () => ({
   type: "CLOSE_MODAL"
 });
 closeModal.type = "CLOSE_MODAL";
+
+export const openModal = (modalEditId) => ({
+  type: "OPEN_MODAL",
+  modalEditId
+});
+openModal.type = "OPEN_MODAL";
+
+export const incrementPage = (basketName) => ({
+  type: "INCREMENT_PAGE",
+  basketName
+});
+incrementPage.type = "INCREMENT_PAGE";
+
+export const decrementPage = (basketName) => ({
+  type: "DECREMENT_PAGE",
+  basketName
+});
+decrementPage.type = "DECREMENT_PAGE";
