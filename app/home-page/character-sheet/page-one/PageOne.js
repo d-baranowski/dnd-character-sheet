@@ -35,7 +35,6 @@ import PanZoom from '../PanZoom';
 
 class PageOne extends React.PureComponent {
 
-
   render() {
     return (
       <MenuDrawer>

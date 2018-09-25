@@ -21,7 +21,7 @@ class PanZoom extends React.PureComponent {
 
   resizeToBounds() {
     setTimeout(() => {
-      const bounds = remote.getCurrentWindow().webContents.getOwnerBrowserWindow().getBounds()
+      const bounds = remote.getCurrentWindow().webContents.getOwnerBrowserWindow().getContentBounds();
       this.setState({
         width: bounds.width,
         height: bounds.height

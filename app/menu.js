@@ -1,6 +1,6 @@
 // @flow
 import fs from 'fs';
-import { app, Menu, shell, BrowserWindow, dialog } from 'electron';
+import { app, Menu, BrowserWindow, dialog } from 'electron';
 
 export default class MenuBuilder {
   mainWindow: BrowserWindow;
@@ -141,18 +141,6 @@ export default class MenuBuilder {
 
   savePath = undefined;
 
-  autosave = (() => {
-    setInterval(() => {
-      if (this.savePath) {
-        this.mainWindow.webContents.executeJavaScript(`JSON.stringify(document.store.getState())`, (state) => {
-          fs.writeFile(this.savePath, state, (err) => {
-            // ToDo handle error
-          });
-        });
-      }
-    }, 15 * 1000)
-  })();
-
   buildDefaultTemplate() {
     const templateDefault = [
       {
@@ -163,12 +151,14 @@ export default class MenuBuilder {
             accelerator: 'Ctrl+O',
             click: () => {
               const path = dialog.showOpenDialog({properties: ['openFile'], filters: [{name: "Character", extensions: ["dnd"]}]});
-              this.savePath = path[0];
-              fs.readFile(path[0], 'utf8', (err, data) => {
-                if (err) throw err;
+              if (path && path[0]) {
+                this.savePath = path[0];
+                fs.readFile(path[0], 'utf8', (err, data) => {
+                  if (err) throw err;
 
-                this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "LOAD_CHARACTER", payload: '${data}'})`);
-              });
+                  this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "LOAD_CHARACTER", payload: '${data}'})`);
+                });
+              }
             }
           },
           {
