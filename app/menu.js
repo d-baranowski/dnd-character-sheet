@@ -1,12 +1,15 @@
 // @flow
 import fs from 'fs';
 import { app, Menu, BrowserWindow, dialog } from 'electron';
+const path = require('path');
 
 export default class MenuBuilder {
   mainWindow: BrowserWindow;
+  fileManager;
 
-  constructor(mainWindow: BrowserWindow) {
+  constructor(mainWindow: BrowserWindow, fileManager) {
     this.mainWindow = mainWindow;
+    this.fileManager = fileManager;
   }
 
   buildMenu() {
@@ -139,8 +142,6 @@ export default class MenuBuilder {
     return [subMenuAbout, subMenuEdit, subMenuView, subMenuWindow];
   }
 
-  savePath = undefined;
-
   buildDefaultTemplate() {
     const templateDefault = [
       {
@@ -151,50 +152,20 @@ export default class MenuBuilder {
             accelerator: 'Ctrl+O',
             click: () => {
               const path = dialog.showOpenDialog({properties: ['openFile'], filters: [{name: "Character", extensions: ["dnd"]}]});
-              if (path && path[0]) {
-                this.savePath = path[0];
-                fs.readFile(path[0], 'utf8', (err, data) => {
-                  if (err) throw err;
-
-                  this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "LOAD_CHARACTER", payload: '${data}'})`);
-                });
-              }
+              this.fileManager.openFile(path);
             }
           },
           {
             label: '&Save',
             accelerator: 'Ctrl+S',
             click: () => {
-              this.mainWindow.webContents.executeJavaScript(`JSON.stringify(document.store.getState())`, (state) => {
-
-                if (this.savePath) {
-                  fs.writeFile(this.savePath, state, (err) => {
-                    // ToDo handle error
-                  });
-                } else {
-                  dialog.showSaveDialog({filters: [{name: "Character", extensions: ["dnd"]}]}, (fileName) => {
-                    if (fileName === undefined) return;
-                    this.savePath = fileName;
-                    fs.writeFile(fileName, state, (err) => {
-                      // ToDo handle error
-                    });
-                  });
-                }
-              });
+              this.fileManager.saveFile();
             }
           },
           {
             label: '&Save As',
             click: () => {
-              this.mainWindow.webContents.executeJavaScript(`JSON.stringify(document.store.getState())`, (state) => {
-                  dialog.showSaveDialog({filters: [{name: "Character", extensions: ["dnd"]}]}, (fileName) => {
-                    if (fileName === undefined) return;
-                    this.savePath = fileName;
-                    fs.writeFile(fileName, state, (err) => {
-                      // ToDo handle error
-                    });
-                  });
-              });
+              this.fileManager.saveAs();
             }
           },
           {
@@ -203,7 +174,7 @@ export default class MenuBuilder {
             click: () => {
               this.mainWindow.close();
             }
-          }
+          },
         ]
       },
       {

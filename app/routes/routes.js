@@ -12,7 +12,7 @@ export default () => (
     <Switch>
       <Route exact path="/" component={PageOne} />
       <Route exact path="/equipment" component={Inventory} />
-      <Route exact path="/test" component={() => "test"} />
+      <Route exact path="/test" component={() => process.argv[2].toString()} />
     </Switch>
 
   </App>

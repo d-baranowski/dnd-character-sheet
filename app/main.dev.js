@@ -12,6 +12,9 @@
  */
 import { app, BrowserWindow } from 'electron';
 import MenuBuilder from './menu';
+import FileManager from './FileManager';
+import appEventsHandler from './appEventsHandler';
+const path = require('path');
 
 let mainWindow = null;
 
@@ -84,6 +87,13 @@ app.on('ready', async () => {
     mainWindow = null;
   });
 
-  const menuBuilder = new MenuBuilder(mainWindow);
+  const fileManager = new FileManager(mainWindow);
+  const menuBuilder = new MenuBuilder(mainWindow, fileManager);
+
+  if (path.parse(process.argv[1])) {
+    const filePath = path.parse(process.argv[1]);
+    fileManager.openFile([path.join(filePath.dir, filePath.base)]);
+  }
+
   menuBuilder.buildMenu();
 });
