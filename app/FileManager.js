@@ -13,7 +13,9 @@ class FileManager {
     if (path && path[0]) {
       this.savePath = path[0];
       fs.readFile(path[0], 'utf8', (err, data) => {
-        if (err) throw err;
+        if (err) {
+          return;
+        }
 
         this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "LOAD_CHARACTER", payload: '${data}'})`);
       });

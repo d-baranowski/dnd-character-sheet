@@ -9,15 +9,15 @@ import Status from "./top-bar/Status";
 const TopBar = () => (
   <g>
     <g id="top-bar">
-      <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth="2.5866602" d="M41.72 86.67v50l47.33-6.19v-50l-47.33 6.19"/>
-      <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth="1.4133297999999999" d="M42.75 132.96l46.3-6.57m-46.3-36.37l46.3-5.9"/>
-      <path fill="#c3c4c6" d="M89.05 80.49l-32.3-4.78v50l32.3 4.78v-50"/>
-      <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth="2.5866602" d="M89.05 80.49l-32.3-4.78v50l32.3 4.78v-50"/>
-      <path fill="#fff" d="M261.6 697.72c-61.75-11.25-157.28 11.25-219.03 0v37.5c61.75 11.25 157.28-11.25 219.04 0v-37.5" transform="matrix(1.33333 0 0 -1.33333 0 1056)"/>
-      <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth="1.06" d="M262.49 701.34s-20.5-8.66-114.67-.33c-66.51 5.89-99.72.73-104.86-.17m218.65 31.46s-19.87-8.04-114.04.3c-66.51 5.88-99.72.72-104.86-.18" transform="matrix(1.33333 0 0 -1.33333 0 1056)"/>
-      <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth="1.94" d="M261.6 697.72c-61.75-11.25-157.28 11.25-219.03 0v37.5c61.75 11.25 157.28-11.25 219.04 0v-37.5" transform="matrix(1.33333 0 0 -1.33333 0 1056)"/>
-      <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth="1.94" d="M575.13 733.71v-38.14c14.56.08 16.46 0 18.94 3.23v37.5c-4.66-2.48-9.47-2.55-18.94-2.59" transform="matrix(1.33333 0 0 -1.33333 0 1056)"/>
-      <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth="1.06" d="M574.52 730.88c16.24.05 17.69 1.17 19.16 2.3m-18.55-34.5c19.6-2.23 17.93 3.58 18.8 3.76" transform="matrix(1.33333 0 0 -1.33333 0 1056)"/>
+      <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth="2.5866602" d="M41.72 86.67v50l47.33-6.19v-50l-47.33 6.19" />
+      <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth="1.4133297999999999" d="M42.75 132.96l46.3-6.57m-46.3-36.37l46.3-5.9" />
+      <path fill="#c3c4c6" d="M89.05 80.49l-32.3-4.78v50l32.3 4.78v-50" />
+      <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth="2.5866602" d="M89.05 80.49l-32.3-4.78v50l32.3 4.78v-50" />
+      <path fill="#fff" d="M261.6 697.72c-61.75-11.25-157.28 11.25-219.03 0v37.5c61.75 11.25 157.28-11.25 219.04 0v-37.5" transform="matrix(1.33333 0 0 -1.33333 0 1056)" />
+      <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth="1.06" d="M262.49 701.34s-20.5-8.66-114.67-.33c-66.51 5.89-99.72.73-104.86-.17m218.65 31.46s-19.87-8.04-114.04.3c-66.51 5.88-99.72.72-104.86-.18" transform="matrix(1.33333 0 0 -1.33333 0 1056)" />
+      <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth="1.94" d="M261.6 697.72c-61.75-11.25-157.28 11.25-219.03 0v37.5c61.75 11.25 157.28-11.25 219.04 0v-37.5" transform="matrix(1.33333 0 0 -1.33333 0 1056)" />
+      <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth="1.94" d="M575.13 733.71v-38.14c14.56.08 16.46 0 18.94 3.23v37.5c-4.66-2.48-9.47-2.55-18.94-2.59" transform="matrix(1.33333 0 0 -1.33333 0 1056)" />
+      <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth="1.06" d="M574.52 730.88c16.24.05 17.69 1.17 19.16 2.3m-18.55-34.5c19.6-2.23 17.93 3.58 18.8 3.76" transform="matrix(1.33333 0 0 -1.33333 0 1056)" />
       <path fill="#fff" d="M767.21 141.19H348.69V60.33H767.2v80.86"/>
       <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth="2.3599940999999998" d="M767.21 141.19H348.69V60.33H767.2v80.86"/>
       <path fill="#fff" d="M259.42 753.06V679.8c1.04 2.52 2.1 3.57 2.1 3.57v66.13s-1.06 1.04-2.1 3.56" transform="matrix(1.33333 0 0 -1.33333 0 1056)"/>

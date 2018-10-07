@@ -62,8 +62,8 @@ const Navigation = ({location}) => (
           </Link>
         </li>
         <li className={classNames({[styles['tab-3']]: true, [styles.active]: location === "/test"})} data-bg-color="rgba(43, 130, 197, 1.0)">
-          <Link to="/test">
-            <span>Test</span>
+          <Link to="/background">
+            <span>Background</span>
             <svg viewBox="0 0 122 40">
               <use xlinkHref="#tab-shape" />
             </svg>
