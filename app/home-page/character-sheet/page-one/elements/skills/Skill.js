@@ -24,7 +24,7 @@ const Skill = ({name, attribute, transformY, value, isProficient}) => (
       transform="matrix(1.33333 0 0 1.33333 174.67 438.529)"
       fontWeight={400}
       fontSize={7}
-      fontFamily="Scala Sans Offc"
+      fontFamily="Zelda"
     >
       <tspan
         y={0}
@@ -35,7 +35,7 @@ const Skill = ({name, attribute, transformY, value, isProficient}) => (
     </text>
     <foreignObject transform="matrix(1.33333 0 0 1.33333 174.667 284.85) translate(-18, 108) scale(0.5, 0.5)">
       <div>
-        <p style={{height: '15px', width: '27px', border: 'none', fontFamily: 'Scala Sans Offc', textAlign: 'center' }}>{modifierWithSign(value)}</p>
+        <p style={{height: '15px', width: '27px', border: 'none', fontFamily: 'Zelda', textAlign: 'center' }}>{modifierWithSign(value)}</p>
       </div>
     </foreignObject>
   </g>

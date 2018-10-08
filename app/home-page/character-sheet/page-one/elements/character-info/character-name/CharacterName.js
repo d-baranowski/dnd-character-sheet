@@ -109,7 +109,7 @@ const Presentation = ({isHovered, characterName}) => (
       transform="matrix(1.33333 0 0 1.33333 92.091 128.697)"
       fontWeight={400}
       fontSize={7}
-      fontFamily="Scala Sans Offc"
+      fontFamily="Zelda"
     >
       <tspan
         y={0}
@@ -121,7 +121,7 @@ const Presentation = ({isHovered, characterName}) => (
     <text
       fontWeight={400}
       fontSize={18}
-      fontFamily="Scala Sans Offc"
+      fontFamily="Zelda"
     >
       <tspan
         y={100}

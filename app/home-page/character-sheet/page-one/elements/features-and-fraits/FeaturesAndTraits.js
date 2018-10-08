@@ -22,7 +22,7 @@ const FeaturesAndTraits = (
       transform="matrix(1.33333 0 0 1.33333 621.98 1018.052)"
       fontWeight={700}
       fontSize={6.5}
-      fontFamily="Scala Sans Offc"
+      fontFamily="Zelda"
     >
       <tspan
         y={0}

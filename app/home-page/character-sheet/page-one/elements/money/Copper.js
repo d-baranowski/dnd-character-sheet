@@ -16,7 +16,7 @@ const Copper = ({copper, showEditor}) => (
       transform="matrix(1.33333 0 0 1.33333 285.33 813.015)"
       fontWeight={400}
       fontSize={5.75}
-      fontFamily="Scala Sans Offc"
+      fontFamily="Zelda"
       fill="#969797"
     >
       <tspan y={0} x="0 3.47875">
@@ -31,7 +31,7 @@ const Copper = ({copper, showEditor}) => (
             height: '31px',
             width: '60px',
             border: 'none',
-            fontFamily: 'Scala Sans Offc',
+            fontFamily: 'Zelda',
             fontSize: 'x-small',
             textAlign: 'center'
           }}

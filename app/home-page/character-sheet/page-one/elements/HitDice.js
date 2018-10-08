@@ -17,7 +17,7 @@ const HitDice = ({hitDiceTotal, showEditor, hitDice = hitDiceTotal}) => (
         transform="matrix(1.33333 0 0 1.33333 306.347 436.932)"
         fontWeight={400}
         fontSize={7}
-        fontFamily="Scala Sans Offc"
+        fontFamily="Zelda"
         fill="#969797"
       >
         <tspan y={0} x="0 3.073 6.8039999 8.967 12.299">
@@ -28,7 +28,7 @@ const HitDice = ({hitDiceTotal, showEditor, hitDice = hitDiceTotal}) => (
         transform="matrix(1.33333 0 0 1.33333 306.347 436.932) translate(17, 0)"
         fontWeight={400}
         fontSize={7}
-        fontFamily="Scala Sans Offc"
+        fontFamily="Zelda"
         fill="#969797"
       >
         <tspan y={0} x="0">
@@ -39,7 +39,7 @@ const HitDice = ({hitDiceTotal, showEditor, hitDice = hitDiceTotal}) => (
         transform="matrix(1.33333 0 0 1.33333 335.342 479.016)"
         fontWeight={400}
         fontSize={5.75}
-        fontFamily="Scala Sans Offc"
+        fontFamily="Zelda"
       >
         <tspan
           y={0}
@@ -53,7 +53,7 @@ const HitDice = ({hitDiceTotal, showEditor, hitDice = hitDiceTotal}) => (
           <p style={{
             height: '30px',
             width: '94px',
-            fontFamily: 'Scala Sans Offc',
+            fontFamily: 'Zelda',
             overflow: 'hidden',
             fontSize: 'medium',
             textAlign: 'center' }}>

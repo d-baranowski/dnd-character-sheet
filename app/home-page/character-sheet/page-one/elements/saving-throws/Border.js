@@ -79,7 +79,7 @@ class Border extends React.PureComponent {
             transform="matrix(1.33333 0 0 1.33333 166.172 395.604)"
             fontWeight={700}
             fontSize={6.5}
-            fontFamily="Scala Sans Offc"
+            fontFamily="Zelda"
           >
             <tspan
               y={0}

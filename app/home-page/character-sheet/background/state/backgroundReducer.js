@@ -4,7 +4,7 @@ const initialState = {
   modalOpen: false,
   characterAvatar: "",
   pickerX: undefined,
-  pixkerY: undefined,
+  pickerY: undefined,
   width: undefined,
   height: undefined
 };

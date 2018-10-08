@@ -21,7 +21,7 @@ const Initiative = ({initiativeBonus, dexterity, showEditor}) => {
         transform="matrix(1.33333 0 0 1.33333 384.599 240.768)"
         fontWeight={700}
         fontSize={6.5}
-        fontFamily="Scala Sans Offc"
+        fontFamily="Zelda"
       >
         <tspan
           y={0}
@@ -36,7 +36,7 @@ const Initiative = ({initiativeBonus, dexterity, showEditor}) => {
             height: '30px',
             width: '60px',
             border: 'none',
-            fontFamily: 'Scala Sans Offc',
+            fontFamily: 'Zelda',
             fontSize: 'x-large',
             textAlign: 'center'
           }}>

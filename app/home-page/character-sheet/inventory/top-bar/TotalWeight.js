@@ -4,7 +4,7 @@ import connect from "react-redux/es/connect/connect";
 
 const TotalWeight = ({totalWeight}) => (
   <g>
-    <text x="354.29" y="133.55" strokeWidth="1.33" fontFamily="Scala Sans Offc" fontSize="9.33" fontWeight="400" >
+    <text x="354.29" y="133.55" strokeWidth="1.33" fontFamily="Zelda" fontSize="9.33" fontWeight="400" >
       <tspan x="354.29" y="133.55">TOTAL WEIGHT</tspan>
     </text>
     <foreignObject  x="354" y={108}>
@@ -13,7 +13,7 @@ const TotalWeight = ({totalWeight}) => (
         lineHeight: "18px",
         width: '75px',
         border: 'none',
-        fontFamily: 'Scala Sans Offc',
+        fontFamily: 'Zelda',
         fontSize: 'small',
         textAlign: 'left' }}>
         {totalWeight}

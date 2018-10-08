@@ -17,7 +17,7 @@ const Flaws = ({showEditor, flaws}) => (
       transform="matrix(1.33333 0 0 1.33333 648.759 480.31)"
       fontWeight={400}
       fontSize={5.75}
-      fontFamily="Scala Sans Offc"
+      fontFamily="Zelda"
     >
       <tspan y={0} x="0 3.0014999 5.8477502 9.0965004 14.0645">
         FLAWS

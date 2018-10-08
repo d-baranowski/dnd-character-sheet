@@ -17,7 +17,7 @@ const PersonalityTraits = ({showEditor, personalityTraits}) => (
       transform="matrix(1.33333 0 0 1.33333 623.632 259.518)"
       fontWeight={400}
       fontSize={5.75}
-      fontFamily="Scala Sans Offc"
+      fontFamily="Zelda"
     >
       <tspan
         y={0}

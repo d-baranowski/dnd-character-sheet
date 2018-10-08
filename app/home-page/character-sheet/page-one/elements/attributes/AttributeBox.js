@@ -37,7 +37,7 @@ const AttributeBox =
       transform={textTransform}
       fontWeight={700}
       fontSize={6.5}
-      fontFamily="Scala Sans Offc"
+      fontFamily="Zelda"
     >
       <tspan
         y={0}
@@ -48,12 +48,12 @@ const AttributeBox =
     </text>
     <foreignObject x="46" y="205">
       <div>
-        <p style={{height: '30px', width: '60px', border: 'none', fontFamily: 'Scala Sans Offc', fontSize: 'x-large', textAlign: 'center' }}>{modifierWithSign(modifier)}</p>
+        <p style={{height: '30px', width: '60px', border: 'none', fontFamily: 'Zelda', fontSize: 'x-large', textAlign: 'center' }}>{modifierWithSign(modifier)}</p>
       </div>
     </foreignObject>
     <foreignObject x="47" y="247">
       <div>
-        <p style={{height: '30px', width: '60px', border: 'none', fontFamily: 'Scala Sans Offc', fontSize: 'medium', textAlign: 'center' }}>{value}</p>
+        <p style={{height: '30px', width: '60px', border: 'none', fontFamily: 'Zelda', fontSize: 'medium', textAlign: 'center' }}>{value}</p>
       </div>
     </foreignObject>
     <rect

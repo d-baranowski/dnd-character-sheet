@@ -14,7 +14,7 @@ const Parts = ({isHovered, item}) => (
         lineHeight: "30px",
         width: '171px',
         border: 'none',
-        fontFamily: 'Scala Sans Offc',
+        fontFamily: 'Zelda',
         fontSize: 'medium',
         textAlign: 'center' }}>
         {item && item.name}

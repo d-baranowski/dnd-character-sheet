@@ -18,7 +18,7 @@ const Languages = ({showEditor, languages}) => (
       transform="matrix(1.33333 0 0 1.33333 82.243 1017.817)"
       fontWeight={700}
       fontSize={6.5}
-      fontFamily="Scala Sans Offc"
+      fontFamily="Zelda"
     >
       <tspan
         y={0}

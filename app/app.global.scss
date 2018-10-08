@@ -1,5 +1,10 @@
 @import '~semantic-ui-css/semantic.css';
 
+@font-face {
+  font-family: "Zelda";
+  src: url("/resources/fonts/Zelda.otf");
+}
+
 .padded {
   padding: 10px;
 }

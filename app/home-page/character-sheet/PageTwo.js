@@ -215,7 +215,7 @@ const CharacterSheet3PgsComplete02 = props => (
       transform="matrix(1.33333 0 0 1.33333 93.493 132.184)"
       fontWeight={400}
       fontSize={7}
-      fontFamily="Scala Sans Offc"
+      fontFamily="Zelda"
     >
       <tspan
         y={0}
@@ -229,7 +229,7 @@ const CharacterSheet3PgsComplete02 = props => (
       transform="matrix(1.33333 0 0 1.33333 354.293 132.44)"
       fontWeight={400}
       fontSize={7}
-      fontFamily="Scala Sans Offc"
+      fontFamily="Zelda"
     >
       <tspan y={0} x="0 3.773 7.6230001 11.396">
         EYES
@@ -252,7 +252,7 @@ const CharacterSheet3PgsComplete02 = props => (
       transform="matrix(1.33333 0 0 1.33333 562.8 200.852)"
       fontWeight={400}
       fontSize={5.75}
-      fontFamily="Scala Sans Offc"
+      fontFamily="Zelda"
       fill="#969797"
     >
       <tspan y={0} x="0 4.3642502 7.7855 12.834">
@@ -264,7 +264,7 @@ const CharacterSheet3PgsComplete02 = props => (
       transform="matrix(1.33333 0 0 1.33333 514.158 1017.817)"
       fontWeight={700}
       fontSize={6.5}
-      fontFamily="Scala Sans Offc"
+      fontFamily="Zelda"
       fill="#fff"
     >
       <tspan y={0} x="0 3.471 7.2344999 10.7055 14.5405 17.979 22.4965 26.26">

@@ -44,7 +44,7 @@ class ScrollableTextField extends React.PureComponent {
               width: `${this.props.width}px`,
               border: 'none',
               fontSize: this.props.fontSize || 'x-small',
-              fontFamily: 'Scala Sans Offc',
+              fontFamily: 'Zelda',
               overflowWrap: 'break-word',
               overflow: 'hidden',
               whiteSpace: 'pre-line'

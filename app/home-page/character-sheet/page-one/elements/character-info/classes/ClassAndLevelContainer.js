@@ -31,7 +31,7 @@ class ClassAndLevelContainer extends React.PureComponent {
           transform="matrix(1.33333 0 0 1.33333 360.96 93.667)"
           fontWeight={isHovered ? 800 : 400}
           fontSize={7}
-          fontFamily="Scala Sans Offc"
+          fontFamily="Zelda"
         >
           <tspan
             y={0}
@@ -44,7 +44,7 @@ class ClassAndLevelContainer extends React.PureComponent {
           transform="matrix(1.33333 0 0 1.33333 360.96 93.667) translate(0, -10)"
           fontWeight={500}
           fontSize={12}
-          fontFamily="Scala Sans Offc"
+          fontFamily="Zelda"
         >
           <tspan
             y={0}

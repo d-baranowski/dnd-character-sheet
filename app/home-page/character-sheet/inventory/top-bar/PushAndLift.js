@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 
 const PushAndLift = ({strength}) => (
   <g>
-    <text  x="517.23" y="99.2" strokeWidth="1.33" fontFamily="Scala Sans Offc" fontSize="9.33" fontWeight="400">
+    <text  x="517.23" y="99.2" strokeWidth="1.33" fontFamily="Zelda" fontSize="9.33" fontWeight="400">
       <tspan x="517.23" y="99.2">PUSH &amp; LIFT</tspan>
     </text>
     <foreignObject  x="517" y={74}>
@@ -14,7 +14,7 @@ const PushAndLift = ({strength}) => (
         lineHeight: "18px",
         width: '75px',
         border: 'none',
-        fontFamily: 'Scala Sans Offc',
+        fontFamily: 'Zelda',
         fontSize: 'small',
         textAlign: 'left' }}>
         {strength * 30}
