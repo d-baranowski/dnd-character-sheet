@@ -1,11 +1,11 @@
 import React from 'react';
 
-const AddButton = ({onClick, x, y}) => (
+const AddButton = ({onClick, x, y, width=25}) => (
   <svg
     x={x}
     y={y}
-    width={25}
-    height={25}
+    width={width}
+    height={width}
     onClick={onClick}
   >
     <use xlinkHref="#icon-add" />
