@@ -4,7 +4,7 @@ import feats from './5e-SRD-Feats.json';
 import features from './5e-SRD-Features.json';
 import traits from './5e-SRD-Traits.json';
 import drawerRoute from '../../../../menu-drawer/drawerRoute';
-import styles from './FeaturesAndTraitsDrawer.css';
+import styles from '../../../../../form/ListPickerDrawer.css';
 import {openModal, pickFeat} from './state/featuresAndTraitsActions';
 
 
@@ -27,14 +27,14 @@ class FeaturesAndTraitsDrawer extends React.PureComponent {
               <h3
                 style={{display: 'inline-block'}}
                 key={feat.name}
-                className={styles.displayFeat}
+                className={styles.itemName}
                 onClick={() => this.props.openModal(feat)}
               >
                 {feat.name}
               </h3>
               <svg
-                onClick={() => this.props.pickFeat(feat)}
-                className={styles.addFeat}
+                onClick={() => this.props.pickSpell(feat)}
+                className={styles.addItem}
                 width={20}
                 height={20}
               >
@@ -51,7 +51,7 @@ class FeaturesAndTraitsDrawer extends React.PureComponent {
 const mapStateToProps = (state) => ({});
 const mapDispatchToProps = (dispatch) => ({
   openModal: (feat) => dispatch(openModal(feat)),
-  pickFeat: (feat) => dispatch(pickFeat(feat))
+  pickSpell: (feat) => dispatch(pickFeat(feat))
 });
 
 export default drawerRoute(FeaturesAndTraitsDrawerRoute)(connect(mapStateToProps, mapDispatchToProps)(FeaturesAndTraitsDrawer));

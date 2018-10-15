@@ -8,13 +8,15 @@ import savingThrowsMutator
   from '../home-page/character-sheet/page-one/elements/saving-throws/state/savingThrowsMutator';
 import equipmentReducer from '../home-page/character-sheet/inventory/state/equipmentReducer';
 import equipedReducer from "../home-page/character-sheet/inventory/state/equipedReducer";
+import spellsReducer from "../home-page/character-sheet/spells/spellsReducer";
 
 const combinedReducers = combineReducers({
   router,
   form: attributesMutator(formReducer),
   homePageReducer,
   equipmentReducer,
-  equipedReducer
+  equipedReducer,
+  spellsReducer
 });
 
 const rootReducer = (state, action) => {

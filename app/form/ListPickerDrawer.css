@@ -1,12 +1,12 @@
-.displayFeat {
+.itemName {
   cursor: pointer;
 }
 
-.displayFeat:hover {
+.itemName:hover {
   color: rgb(0,186,255)
 }
 
-.addFeat {
+.addItem {
   float: right;
   margin-right: 2px;
   cursor: pointer;

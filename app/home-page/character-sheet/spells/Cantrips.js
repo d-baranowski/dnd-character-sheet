@@ -1,14 +1,21 @@
 import React from 'react';
-import AddButton from '../../../form/AddButton';
-import LeftArrow from '../../../form/LeftArrow';
-import RightArrow from '../../../form/RightArrow';
+import SpellsBucket from "./SpellsBucket";
 
-const Cantrips = () => (
-  <g>
-    <AddButton width={22} x={149} y={350} />
-    <LeftArrow x={39} y={345} />
-    <RightArrow x={240} y={345} />
-  </g>
-);
+class Cantrips extends React.PureComponent {
+  render() {
+    return (
+      <SpellsBucket
+        spellLevel={0}
+        bucketSize={6}
+        castingClass={this.props.spellCastingClass}
+        arrowsY={345}
+        arrowsX={39}
+        spellsX={43}
+        spellsY={227 + 670}
+      />
+    )
+  }
+};
+
 
 export default Cantrips;

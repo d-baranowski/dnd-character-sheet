@@ -2,9 +2,12 @@ import React from 'react';
 import MenuDrawer from '../../menu-drawer/MenuDrawer';
 import PanZoom from '../PanZoom';
 import Cantrips from './Cantrips';
+import SpellsModal from "./SpellsModal";
+import SpellsLevelOne from "./SpellsLevelOne";
 
 const Spells = (spellCastingClass) => () => (
   <React.Fragment>
+    <SpellsModal />
     <MenuDrawer>
       <PanZoom>
         <defs>
@@ -210,16 +213,9 @@ const Spells = (spellCastingClass) => () => (
           <path d="M35.35 296.26a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
         </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M53.91 660.82h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M35.35 282.62a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M35.35 282.26a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
-        <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M53.91 679.48h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M35.35 268.62a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M35.35 268.26a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
-        <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M53.91 698.15h217.36"/>
+
+
+
         <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
           <path fill="#fff" d="M35.35 210.05a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
           <path d="M35.35 209.7a3.33 3.33 0 1 0 .01 6.66 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
@@ -987,7 +983,8 @@ const Spells = (spellCastingClass) => () => (
         <path fill="#fff" d="M680.51 130.38v-1.24l.95.01c.9.01.97.02 1.14.07.25.08.41.16.54.3.27.3.36.82.23 1.3-.11.39-.35.6-.78.73-.19.05-.27.05-1.14.06l-.94.01z"/>
         <path fill="#fff" d="M708.7 121.17l.61-1.65c.3-.83.56-1.49.57-1.48l.62 1.63.6 1.64c.01 0-.54.02-1.22.02h-1.24z"/>
 
-        <Cantrips />
+        <Cantrips spellCastingClass={spellCastingClass} />
+        <SpellsLevelOne spellCastingClass={spellCastingClass} />
         <g>
           <text
             transform="rotate(1.9)"
