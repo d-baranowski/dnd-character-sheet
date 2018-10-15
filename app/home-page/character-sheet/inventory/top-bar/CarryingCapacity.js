@@ -23,7 +23,7 @@ const CarryingCapacity = ({strength}) => (
   </g>
 );
 
-CarryingCapacity.propTypes = {}
+CarryingCapacity.propTypes = {};
 
 const mapStateToProps = (state) => ({
   strength: getValue(state, 'attributes', "Strength") || 0

@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 
-type Props = {
+type; Props = {
   children: React.Node
 };
 

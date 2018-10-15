@@ -7,7 +7,7 @@ import rootReducer from '../RootReducer';
 
 const history = createHashHistory();
 
-const configureStore = (initialState?: counterStateType) => {
+const configureStore = (initialState;?: counterStateType;) => {
   // Redux Configuration
   const middleware = [];
   const enhancers = [];
@@ -59,6 +59,5 @@ const configureStore = (initialState?: counterStateType) => {
   }
 
   return store;
-};
-
+}
 export default { configureStore, history };

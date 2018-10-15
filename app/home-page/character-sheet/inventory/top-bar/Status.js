@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import connect from "react-redux/es/connect/connect";
 import getValue from "../../../../form/getValue";
+import {mapStateToTotalWeight} from "./TotalWeight";
 
 const Status = ({status}) => (
   <g>
@@ -27,11 +28,7 @@ Status.propTypes = {};
 
 const mapStateToProps = (state) => {
   const strength = getValue(state, 'attributes', "Strength") || 0;
-  const totalWeight = Object.values(state.equipmentReducer.inventory).reduce((accumulator, value) => {
-    return Object.values(value).reduce((total, item) => {
-      return accumulator + parseFloat(item.weight) * parseInt(item.quantity);
-    }, 0);
-  }, 0);
+  const totalWeight = mapStateToTotalWeight(state);
 
   if (totalWeight > strength * 15) {
     return {status: "Immobile"}

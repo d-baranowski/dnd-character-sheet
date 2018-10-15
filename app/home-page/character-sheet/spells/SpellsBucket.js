@@ -58,8 +58,7 @@ class SpellsBucket extends React.PureComponent {
       </g>
     )
   }
-};
-
+}
 
 const mapStateToProps = (state, ownProps) => ({
   spells: state.spellsReducer.chosenSpells[ownProps.spellLevel] || {},

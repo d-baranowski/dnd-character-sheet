@@ -24,15 +24,17 @@ const TotalWeight = ({totalWeight}) => (
 
 TotalWeight.propTypes = {};
 
-const mapStateToProps = (state) => {
-  const totalWeight = Object.values(state.equipmentReducer.inventory).reduce((accumulator, value) => {
-    return Object.values(value).reduce((total, item) => {
-      return accumulator + parseFloat(item.weight) * parseInt(item.quantity);
-    }, 0);
+export const mapStateToTotalWeight = (state) => Object.values(state.equipmentReducer.inventory).reduce((accumulator, value) => {
+  return Object.values(value).reduce((total, item) => {
+    return accumulator + parseFloat(item.weight) * parseInt(item.quantity);
   }, 0);
+}, 0);
+
+const mapStateToProps = (state) => {
+
 
   return {
-    totalWeight
+    totalWeight: mapStateToTotalWeight(state)
   }
 };
 

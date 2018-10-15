@@ -15,7 +15,6 @@ class Cantrips extends React.PureComponent {
       />
     )
   }
-};
-
+}
 
 export default Cantrips;

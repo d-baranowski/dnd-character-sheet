@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
 import Routes from './routes/routes';
 
-type Props = {
+type; Props = {
   store: {},
   history: {}
 };
