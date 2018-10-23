@@ -5,7 +5,7 @@ import RightArrow from '../../../form/RightArrow';
 import {setDrawerRoute} from '../../menu-drawer/state/menuDrawerActions';
 import {SpellsDrawerRoute} from './SpellPickerDrawer';
 import connect from "react-redux/es/connect/connect";
-import styles from "../inventory/equipment-table/EquipmentTable.scss";
+import styles from "./SpellsBucket.scss";
 import {paginate} from "../page-one/elements/features-and-fraits/state/featuresAndTraitsReducer";
 import {setPage, editSpell} from "./spellsActions";
 
@@ -19,33 +19,30 @@ class SpellsBucket extends React.PureComponent {
   };
 
   render() {
-    const {showEditor, spells, editSpell} = this.props;
+    const {showEditor, spells, editSpell, prepared: Prepared = () => null} = this.props;
+    const visibleSpells = paginate(Object.values(spells), this.props.bucketSize, this.props.page);
     return (
       <g>
         {
-          paginate(Object.values(spells), this.props.bucketSize, this.props.page).map((val, index) => {
+          visibleSpells.map((val, index) => {
             return (
               <React.Fragment>
-                <foreignObject x={this.props.spellsX} y={this.props.spellsY + index * 19}>
-                  <div
-                    style={{
-                      height: '18px',
-                      width: '227px',
-                      border: 'none',
-                      fontFamily: 'Zelda',
-                      fontSize: 'small',
-                      textAlign: 'center'
-                    }}
-                    onClick={() => editSpell(val.id)}
-                    className={styles.presable}
-                  >
-                    {val.name}
-                  </div>
-                </foreignObject>
+                <text
+                  fontSize="small"
+                  fontFamily="Scala Sans Offc"
+                  onClick={() => editSpell(val.id)}
+                  className={styles.presable}
+                  textAnchor="middle"
+                  x={this.props.spellsX + 113.5}
+                  y={this.props.spellsY + index * 19}
+                >
+                  {val.name}
+                </text>
               </React.Fragment>
             )
           })
         }
+        <Prepared prepared={visibleSpells.map((val) => ({preprared: val.prepared, spellId: val.id }))} />
         <AddButton
           onClick={() => showEditor(this.props.castingClass, this.props.spellLevel)}
           width={22}

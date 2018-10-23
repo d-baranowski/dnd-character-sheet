@@ -4,11 +4,6 @@ import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
 import Routes from './routes/routes';
 
-type; Props = {
-  store: {},
-  history: {}
-};
-
 export default class Root extends Component<Props> {
   componentDidMount() {
     window.store = this.props.store;

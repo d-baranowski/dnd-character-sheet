@@ -40,3 +40,10 @@ export const changeSpell = (spell) => ({
   spell
 });
 changeSpell.type = "SPELLS_CHANGE_SPELL";
+
+export const prepareSpell = (spellId, prepared) => ({
+  type: "SPELLS_PREPARE_SPELL",
+  spellId,
+  prepared
+});
+prepareSpell.type = "SPELLS_PREPARE_SPELL";

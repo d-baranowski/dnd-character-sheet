@@ -2,16 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SpellsBucket from "./SpellsBucket";
 
-const SpellsLevelOne = ({spellCastingClass}) => (
-  <SpellsBucket
-    spellLevel={1}
-    bucketSize={6}
-    castingClass={spellCastingClass}
-    arrowsY={670}
-    arrowsX={39}
-    spellsX={43}
-    spellsY={227}
-  />
+const SpellsLevelOne = ({spellCastingClass, prepared}) => (
+    <SpellsBucket
+      spellLevel={1}
+      bucketSize={9}
+      castingClass={spellCastingClass}
+      arrowsY={630}
+      arrowsX={39}
+      spellsX={43}
+      spellsY={470}
+      prepared={prepared}
+    />
 );
 
 SpellsLevelOne.propTypes = {};

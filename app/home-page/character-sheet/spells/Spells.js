@@ -4,8 +4,15 @@ import PanZoom from '../PanZoom';
 import Cantrips from './Cantrips';
 import SpellsModal from "./SpellsModal";
 import SpellsLevelOne from "./SpellsLevelOne";
+import {prepareSpell} from './spellsActions';
+import {connect} from 'react-redux';
 
-const Spells = (spellCastingClass) => () => (
+const mapStateToProps = () => ({});
+const mapDispatchToProps = (dispatch) => ({
+  prepare: (spellId, prepared) => dispatch(prepareSpell(spellId, prepared))
+});
+
+const Spells = (spellCastingClass) => connect(mapStateToProps, mapDispatchToProps)(({prepare}) => (
   <React.Fragment>
     <SpellsModal />
     <MenuDrawer>
@@ -158,61 +165,16 @@ const Spells = (spellCastingClass) => () => (
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M271.2 320.74H42.7"/>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M271.2 339.4H42.7"/>
 
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M35.35 436.62a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M35.35 436.26a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
+
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M53.91 474.15h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M35.35 422.62a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M35.35 422.26a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M53.91 492.82h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M35.35 408.62a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M35.35 408.26a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M53.91 511.48h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M35.35 394.62a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M35.35 394.26a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M53.91 530.15h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M35.35 380.62a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M35.35 380.26a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M53.91 548.82h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M35.35 366.62a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M35.35 366.26a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M53.91 567.48h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M35.35 352.62a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M35.35 352.26a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M53.91 586.15h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M35.35 338.62a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M35.35 338.26a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M53.91 604.82h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M35.35 324.62a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M35.35 324.26a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M53.91 623.48h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M35.35 310.62a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M35.35 310.26a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
-        <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M53.91 642.15h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M35.35 296.62a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M35.35 296.26a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
-        <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M53.91 660.82h217.36"/>
 
 
 
@@ -984,7 +946,76 @@ const Spells = (spellCastingClass) => () => (
         <path fill="#fff" d="M708.7 121.17l.61-1.65c.3-.83.56-1.49.57-1.48l.62 1.63.6 1.64c.01 0-.54.02-1.22.02h-1.24z"/>
 
         <Cantrips spellCastingClass={spellCastingClass} />
-        <SpellsLevelOne spellCastingClass={spellCastingClass} />
+        <SpellsLevelOne
+          prepared={({prepared = []}) => (
+            <React.Fragment>
+              <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
+                <path
+                  fill={prepared[0] && prepared[0].prepared ? "black" : "#fff"}
+                  d="M35.35 436.62a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"
+                />
+                <path d="M35.35 436.26a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
+              </g>
+              <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
+                <path
+                  fill={prepared[1] && prepared[1].prepared ? "black" : "#fff"}
+                  d="M35.35 422.62a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"
+                />
+                <path d="M35.35 422.26a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
+              </g>
+              <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
+                <path
+                  fill={prepared[2] && prepared[2].prepared ? "black" : "#fff"}
+                  d="M35.35 408.62a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"
+                />
+                <path d="M35.35 408.26a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
+              </g>
+              <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
+                <path
+                  fill={prepared[3] && prepared[3].prepared ? "black" : "#fff"}
+                  d="M35.35 394.62a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"
+                />
+                <path d="M35.35 394.26a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
+              </g>
+              <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
+                <path
+                  fill={prepared[4] && prepared[4].prepared ? "black" : "#fff"}
+                  d="M35.35 380.62a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"
+                />
+                <path d="M35.35 380.26a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
+              </g>
+              <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
+                <path
+                  fill={prepared[5] && prepared[5].prepared ? "black" : "#fff"}
+                  d="M35.35 366.62a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"
+                />
+                <path d="M35.35 366.26a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
+              </g>
+              <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
+                <path
+                  fill={prepared[6] && prepared[6].prepared ? "black" : "#fff"}
+                  d="M35.35 352.62a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"
+                />
+                <path d="M35.35 352.26a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
+              </g>
+              <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
+                <path
+                  fill={prepared[7] && prepared[7].prepared ? "black" : "#fff"}
+                  d="M35.35 338.62a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"
+                />
+                <path d="M35.35 338.26a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
+              </g>
+              <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
+                <path
+                  fill={prepared[8] && prepared[8].prepared ? "black" : "#fff"}
+                  d="M35.35 324.62a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"
+                />
+                <path d="M35.35 324.26a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
+              </g>
+            </React.Fragment>
+          )}
+          spellCastingClass={spellCastingClass}
+        />
         <g>
           <text
             transform="rotate(1.9)"
@@ -1003,6 +1034,6 @@ const Spells = (spellCastingClass) => () => (
       </PanZoom>
     </MenuDrawer>
   </React.Fragment>
-);
+));
 
 export default Spells;

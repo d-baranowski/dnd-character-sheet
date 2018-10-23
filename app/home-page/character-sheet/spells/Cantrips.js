@@ -11,7 +11,7 @@ class Cantrips extends React.PureComponent {
         arrowsY={345}
         arrowsX={39}
         spellsX={43}
-        spellsY={227 + 670}
+        spellsY={241}
       />
     )
   }
