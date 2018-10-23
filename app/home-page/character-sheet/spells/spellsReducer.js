@@ -4,7 +4,8 @@ import uuidv4 from "../../../uuid";
 
 const pageSize = {
   0: 6,
-  1: 8,
+  1: 9,
+  2: 11
 };
 
 const initialState = {
@@ -49,7 +50,7 @@ export default (state = initialState, action) => {
     const { spellName, level } = action;
     const modalSpell = spells.descriptions[spellName];
     const id = uuidv4();
-    const newSpells = {...state.chosenSpells[level], [id]: {...modalSpell, name: spellName, id: id, prepared: false}};
+    const newSpells = {...state.chosenSpells[level], [id]: {...modalSpell, name: spellName, id, prepared: false}};
     const maxPage = Math.ceil(Object.values(newSpells).length / pageSize[level]);
 
 
@@ -124,14 +125,14 @@ export default (state = initialState, action) => {
 
   if (action.type === prepareSpell.type) {
     const level = Object.entries(state.chosenSpells).find(([level, spells]) => {
-      return Object.keys(spells).find((spellId) => spellId === action.spell.id)
+      return Object.keys(spells).find((spellId) => spellId === action.spellId)
     })[0];
 
     const newChosen = {
       ...state.chosenSpells,
       [level]: {
         ...state.chosenSpells[level],
-        [action.spellId]: {...state.chosenSpells[level][action.spellId], prepared: action.preprared}
+        [action.spellId]: {...state.chosenSpells[level][action.spellId], prepared: action.prepared}
       }
     };
 

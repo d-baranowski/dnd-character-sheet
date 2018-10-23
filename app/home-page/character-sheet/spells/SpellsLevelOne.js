@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import SpellsBucket from "./SpellsBucket";
 
 const SpellsLevelOne = ({spellCastingClass, prepared}) => (

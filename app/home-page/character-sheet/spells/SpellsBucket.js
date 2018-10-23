@@ -42,7 +42,7 @@ class SpellsBucket extends React.PureComponent {
             )
           })
         }
-        <Prepared prepared={visibleSpells.map((val) => ({preprared: val.prepared, spellId: val.id }))} />
+        <Prepared prepared={visibleSpells.map((val) => ({prepared: val.prepared, spellId: val.id }))} />
         <AddButton
           onClick={() => showEditor(this.props.castingClass, this.props.spellLevel)}
           width={22}
