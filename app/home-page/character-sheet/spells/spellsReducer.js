@@ -5,7 +5,8 @@ import uuidv4 from "../../../uuid";
 const pageSize = {
   0: 6,
   1: 9,
-  2: 11
+  2: 11,
+  3: 11
 };
 
 const initialState = {

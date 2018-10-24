@@ -9,6 +9,7 @@ import {connect} from 'react-redux';
 import preparedLevelOne from './preparedLevelOne';
 import SpellsLevelTwo from './SpellsLevelTwo';
 import preparedLevelTwo from './preparedLevelTwo';
+import SpellsLevelThree from './SpellsLevelThree';
 
 const mapStateToProps = () => ({});
 const mapDispatchToProps = (dispatch) => ({
@@ -247,16 +248,7 @@ const Spells = (spellCastingClass) => connect(mapStateToProps, mapDispatchToProp
           <path d="M224.35 466a3.33 3.33 0 1 0 .01 6.66 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
         </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 434.5h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 452.35a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M224.35 452a3.33 3.33 0 1 0 .01 6.66 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
-        <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 453.17h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 438.35a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M224.35 438a3.33 3.33 0 1 0 .01 6.66 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
-        <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 471.84h217.36"/>
+
         <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
           <path fill="#fff" d="M411.48 606.35a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
           <path d="M411.48 606a3.33 3.33 0 1 0 0 6.66 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
@@ -902,6 +894,10 @@ const Spells = (spellCastingClass) => connect(mapStateToProps, mapDispatchToProp
 
         <SpellsLevelTwo
           prepared={preparedLevelTwo(prepare)}
+          spellCastingClass={spellCastingClass}
+        />
+
+        <SpellsLevelThree
           spellCastingClass={spellCastingClass}
         />
         <g>
