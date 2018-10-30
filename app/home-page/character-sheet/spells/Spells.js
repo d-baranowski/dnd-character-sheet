@@ -10,6 +10,19 @@ import preparedLevelOne from './preparedLevelOne';
 import SpellsLevelTwo from './SpellsLevelTwo';
 import preparedLevelTwo from './preparedLevelTwo';
 import SpellsLevelThree from './SpellsLevelThree';
+import preparedLevelThree from "./preparedLevelThree";
+import SpellsLevelFour from "./SpellsLevelFour";
+import preparedLevelFour from "./preparedLevelFour";
+import SpellsLevelFive from "./SpellsLevelFive";
+import preparedLevelFive from "./preparedLevelFive";
+import SpellsLevelSix from "./SpellsLevelSix";
+import preparedLevelSix from "./prepearedLevelSix";
+import SpellsLevelSeven from "./SpellsLevelSeven";
+import preparedLevelSeven from "./preparedLevelSeven";
+import SpellsLevelEight from "./SpellsLevelEight";
+import preparedLevelEight from "./preparedLevelEight";
+import SpellsLevelNine from "./SpellsLevelNine";
+import preparedLevelNine from "./preparedLevelNine";
 
 const mapStateToProps = () => ({});
 const mapDispatchToProps = (dispatch) => ({
@@ -192,333 +205,66 @@ const Spells = (spellCastingClass) => connect(mapStateToProps, mapDispatchToProp
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M53.91 944.24h217.36"/>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M53.91 962.9h217.36"/>
 
-
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 606.35a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M224.35 606a3.33 3.33 0 1 0 .01 6.66 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 247.84h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 592.35a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M224.35 592a3.33 3.33 0 1 0 .01 6.66 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 266.5h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 578.35a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M224.35 578a3.33 3.33 0 1 0 .01 6.66 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 285.17h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 564.35a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M224.35 564a3.33 3.33 0 1 0 .01 6.66 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 303.84h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 550.35a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M224.35 550a3.33 3.33 0 1 0 .01 6.66 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 322.5h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 536.35a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M224.35 536a3.33 3.33 0 1 0 .01 6.66 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 341.17h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 522.35a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M224.35 522a3.33 3.33 0 1 0 .01 6.66 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 359.84h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 508.35a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M224.35 508a3.33 3.33 0 1 0 .01 6.66 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 378.5h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 494.35a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M224.35 494a3.33 3.33 0 1 0 .01 6.66 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
-        <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 397.17h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 480.35a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M224.35 480a3.33 3.33 0 1 0 .01 6.66 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 415.84h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 466.35a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M224.35 466a3.33 3.33 0 1 0 .01 6.66 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
+        <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 397.17h217.36"/>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 434.5h217.36"/>
 
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 606.35a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M411.48 606a3.33 3.33 0 1 0 0 6.66 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 247.84h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 592.35a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M411.48 592a3.33 3.33 0 1 0 0 6.66 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
+
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 266.5h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 578.35a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M411.48 578a3.33 3.33 0 1 0 0 6.66 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 285.17h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 564.35a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M411.48 564a3.33 3.33 0 1 0 0 6.66 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 303.84h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 550.35a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M411.48 550a3.33 3.33 0 1 0 0 6.66 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 322.5h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 536.35a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M411.48 536a3.33 3.33 0 1 0 0 6.66 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 341.17h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 522.35a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M411.48 522a3.33 3.33 0 1 0 0 6.66 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
-        <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 359.84h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 508.35a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M411.48 508a3.33 3.33 0 1 0 0 6.66 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
-        <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 378.5h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 494.35a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M411.48 494a3.33 3.33 0 1 0 0 6.66 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
-        <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 397.17h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 436.6a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M411.48 436.24a3.33 3.33 0 1 0 0 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
-        <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 474.18h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 422.6a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M411.48 422.24a3.33 3.33 0 1 0 0 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
+
+        <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 474.84h217.36"/>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 492.84h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 408.6a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M411.48 408.24a3.33 3.33 0 1 0 0 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 511.51h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 394.6a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M411.48 394.24a3.33 3.33 0 1 0 0 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 530.18h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 380.6a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M411.48 380.24a3.33 3.33 0 1 0 0 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 548.84h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 366.6a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M411.48 366.24a3.33 3.33 0 1 0 0 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 567.51h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 352.6a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M411.48 352.24a3.33 3.33 0 1 0 0 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 586.18h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 338.6a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M411.48 338.24a3.33 3.33 0 1 0 0 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
-        <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 604.84h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 324.6a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M411.48 324.24a3.33 3.33 0 1 0 0 6.67 3.33 3.33 0 0 0 0-6.67m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
-        <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 623.51h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 266.8a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M411.48 266.44a3.33 3.33 0 1 0 0 6.66 3.33 3.33 0 0 0 0-6.66m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
+
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 700.58h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 252.8a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M411.48 252.44a3.33 3.33 0 1 0 0 6.66 3.33 3.33 0 0 0 0-6.66m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 719.25h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 238.8a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M411.48 238.44a3.33 3.33 0 1 0 0 6.66 3.33 3.33 0 0 0 0-6.66m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 737.92h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 224.8a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M411.48 224.44a3.33 3.33 0 1 0 0 6.66 3.33 3.33 0 0 0 0-6.66m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 756.58h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 210.8a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M411.48 210.44a3.33 3.33 0 1 0 0 6.66 3.33 3.33 0 0 0 0-6.66m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 775.25h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 196.8a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M411.48 196.44a3.33 3.33 0 1 0 0 6.66 3.33 3.33 0 0 0 0-6.66m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
-        <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 793.92h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 182.8a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M411.48 182.44a3.33 3.33 0 1 0 0 6.66 3.33 3.33 0 0 0 0-6.66m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
-        <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 812.58h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 126.07a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M411.48 125.71a3.33 3.33 0 1 0 0 6.67 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
+
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 888.21h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 112.07a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M411.48 111.71a3.33 3.33 0 1 0 0 6.67 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 906.88h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 98.07a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M411.48 97.71a3.33 3.33 0 1 0 0 6.67 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 925.55h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 84.07a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M411.48 83.71a3.33 3.33 0 1 0 0 6.67 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 944.21h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 70.07a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M411.48 69.71a3.33 3.33 0 1 0 0 6.67 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 962.88h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 56.07a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M411.48 55.71a3.33 3.33 0 1 0 0 6.67 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
-        <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 981.55h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M411.48 42.07a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M411.48 41.71a3.33 3.33 0 1 0 0 6.67 3.33 3.33 0 0 0 0-6.67m0 5.95a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
-        <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M555.41 1000.21h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 380.77a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M224.35 380.4a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.66m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
+
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 548.62h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 366.77a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M224.35 366.4a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.66m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 567.29h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 352.77a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M224.35 352.4a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.66m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 585.95h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 338.77a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M224.35 338.4a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.66m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 604.62h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 324.77a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M224.35 324.4a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.66m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 623.29h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 310.77a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M224.35 310.4a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.66m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 641.95h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 296.77a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M224.35 296.4a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.66m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 660.62h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 282.77a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M224.35 282.4a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.66m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 679.29h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 268.77a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M224.35 268.4a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.66m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 697.95h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 254.77a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M224.35 254.4a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.66m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 716.62h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 240.77a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M224.35 240.4a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.66m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 735.29h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 226.77a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M224.35 226.4a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.66m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
-        <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 753.95h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 212.77a2.97 2.97 0 1 1 0 5.94 2.97 2.97 0 0 1 0-5.94"/>
-          <path d="M224.35 212.4a3.33 3.33 0 1 0 .01 6.67 3.33 3.33 0 0 0 0-6.66m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
-        <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 772.62h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 154.2a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M224.35 153.85a3.33 3.33 0 1 0 .01 6.66 3.33 3.33 0 0 0 0-6.66m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
+
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 850.7h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 140.2a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M224.35 139.85a3.33 3.33 0 1 0 .01 6.66 3.33 3.33 0 0 0 0-6.66m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 869.37h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 126.2a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M224.35 125.85a3.33 3.33 0 1 0 .01 6.66 3.33 3.33 0 0 0 0-6.66m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 888.04h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 112.2a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M224.35 111.85a3.33 3.33 0 1 0 .01 6.66 3.33 3.33 0 0 0 0-6.66m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 906.7h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 98.2a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M224.35 97.85a3.33 3.33 0 1 0 .01 6.66 3.33 3.33 0 0 0 0-6.66m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 925.37h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 84.2a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M224.35 83.85a3.33 3.33 0 1 0 .01 6.66 3.33 3.33 0 0 0 0-6.66m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
         <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 944.04h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 70.2a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M224.35 69.85a3.33 3.33 0 1 0 .01 6.66 3.33 3.33 0 0 0 0-6.66m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
-        <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 962.7h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 56.2a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M224.35 55.85a3.33 3.33 0 1 0 .01 6.66 3.33 3.33 0 0 0 0-6.66m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
-        <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 981.37h217.36"/>
-        <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-          <path fill="#fff" d="M224.35 42.2a2.97 2.97 0 1 1 0 5.95 2.97 2.97 0 0 1 0-5.95"/>
-          <path d="M224.35 41.85a3.33 3.33 0 1 0 .01 6.66 3.33 3.33 0 0 0 0-6.66m0 5.94a2.62 2.62 0 1 1 0-5.23 2.62 2.62 0 0 1 0 5.23"/>
-        </g>
-        <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 1000.23h217.36"/>
+        <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth=".3333325" d="M305.91 962.37h217.36"/>
+
         <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
           <path d="M205.19 628.1v15.05l-6.23 6.23H39.89l1.59-1.37h6.94l7.04-8.58c-.24-.79-.41-1.67-.49-2.65a1.19 1.19 0 0 1-.96-1.16c0-.57.42-1.03.96-1.15.08-.98.25-1.86.49-2.65l-7.04-8.58h-6.94l-1.59-1.37h159.07zm-152.63-4.86l1.63 2.04H196.1a21.15 21.15 0 0 0-6.06-2.04zm5.9 15.13v-5.5l-1.88-2.36a11.16 11.16 0 0 0-1.01 3.98c.49.16.85.6.85 1.13 0 .54-.36.98-.85 1.13.12 1.6.5 2.91 1.01 3.99zm-3.8 7h5.56a9.91 9.91 0 0 1-3.27-2.88zm2.29-16.61a9.87 9.87 0 0 1 3.27-2.88h-5.56zm-1.27 2.4c.16-.41.32-.8.5-1.15l-5.37-6.77h-1.62zM50.8 648l5.39-6.78c-.19-.35-.35-.73-.5-1.13l-6.5 7.9zm138.66 0c1.68-.26 4.05-.82 6.46-2.05H54.18l-1.62 2.05zm14.36-8.83c-2.7 5.27-7.28 7.7-10.97 8.83h5.54l5.43-5.43zm0-5.36a16.06 16.06 0 0 0-6.72-7.98v.04H61.68c-.3.09-2.64.86-4.36 3.35l2.52 3.17v6.45l-2.52 3.17a8.76 8.76 0 0 0 4.36 3.34H197a16.08 16.08 0 0 0 6.82-8.04zm0-5.15l-5.43-5.43h-5.23c3.64 1.17 8.04 3.6 10.66 8.72z"/>
         </g>
@@ -891,15 +637,39 @@ const Spells = (spellCastingClass) => connect(mapStateToProps, mapDispatchToProp
           prepared={preparedLevelOne(prepare)}
           spellCastingClass={spellCastingClass}
         />
-
         <SpellsLevelTwo
           prepared={preparedLevelTwo(prepare)}
           spellCastingClass={spellCastingClass}
         />
-
         <SpellsLevelThree
+          prepared={preparedLevelThree(prepare)}
           spellCastingClass={spellCastingClass}
         />
+        <SpellsLevelFour
+          prepared={preparedLevelFour(prepare)}
+          spellCastingClass={spellCastingClass}
+        />
+        <SpellsLevelFive
+          prepared={preparedLevelFive(prepare)}
+          spellCastingClass={spellCastingClass}
+        />
+        <SpellsLevelSix
+          prepared={preparedLevelSix(prepare)}
+          spellCastingClass={spellCastingClass}
+        />
+        <SpellsLevelSeven
+          prepared={preparedLevelSeven(prepare)}
+          spellCastingClass={spellCastingClass}
+        />
+        <SpellsLevelEight
+          prepared={preparedLevelEight(prepare)}
+          spellCastingClass={spellCastingClass}
+        />
+        <SpellsLevelNine
+          prepared={preparedLevelNine(prepare)}
+          spellCastingClass={spellCastingClass}
+        />
+
         <g>
           <text
             transform="rotate(1.9)"
