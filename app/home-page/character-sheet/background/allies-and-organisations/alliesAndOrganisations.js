@@ -22,7 +22,7 @@ const AlliesAndOrganisations = ({showEditor, allies}) => (
         transform="matrix(1.33333 0 0 1.33333 306.347 276.153)"
         fontWeight={400}
         fontSize={7}
-        fontFamily="Zelda"
+        fontFamily="Scala Sans Offc"
         fill="#969797"
       >
         <tspan

@@ -18,13 +18,13 @@ import connect from "react-redux/es/connect/connect";
 
 const Basket = ({basket, transform, basketPage, incrementItem, decrementItem, incrementPage, decrementPage, basketMax, openModal, addItem, basketName}) => (
   <g transform={transform}>
-    <text  x="80.73" y="711.2" strokeWidth="1.33" fontFamily="Zelda" fontSize="9.33" fontWeight="400">
+    <text  x="80.73" y="711.2" strokeWidth="1.33" fontFamily="Scala Sans Offc" fontSize="9.33" fontWeight="400">
       <tspan x="80.73" y="711.2">NAME</tspan>
     </text>
-    <text  x="262.44" y="711.2" strokeWidth="1.33" fontFamily="Zelda" fontSize="9.33" fontWeight="400">
+    <text  x="262.44" y="711.2" strokeWidth="1.33" fontFamily="Scala Sans Offc" fontSize="9.33" fontWeight="400">
       <tspan x="262.44" y="711.2">QUANTITY</tspan>
     </text>
-    <text  x="327.92" y="711.2" strokeWidth="1.33" fontFamily="Zelda" fontSize="9.33" fontWeight="400">
+    <text  x="327.92" y="711.2" strokeWidth="1.33" fontFamily="Scala Sans Offc" fontSize="9.33" fontWeight="400">
       <tspan x="327.92" y="711.2">WEIGHT</tspan>
     </text>
 
@@ -49,7 +49,7 @@ const Basket = ({basket, transform, basketPage, incrementItem, decrementItem, in
                   height: '20px',
                   width: '184px',
                   border: 'none',
-                  fontFamily: 'Zelda',
+                  fontFamily: 'Scala Sans Offc',
                   fontSize: 'medium',
                   textAlign: 'center'
                 }}
@@ -64,7 +64,7 @@ const Basket = ({basket, transform, basketPage, incrementItem, decrementItem, in
                 height: '20px',
                 width: '65px',
                 border: 'none',
-                fontFamily: 'Zelda',
+                fontFamily: 'Scala Sans Offc',
                 fontSize: 'medium',
                 textAlign: 'center' }}
                    className={styles.presable}
@@ -79,7 +79,7 @@ const Basket = ({basket, transform, basketPage, incrementItem, decrementItem, in
                 height: '20px',
                 width: '63px',
                 border: 'none',
-                fontFamily: 'Zelda',
+                fontFamily: 'Scala Sans Offc',
                 fontSize: 'medium',
                 textAlign: 'center' }}>
                 {val.weight}

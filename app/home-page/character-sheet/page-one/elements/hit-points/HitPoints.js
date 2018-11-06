@@ -42,7 +42,7 @@ class HitPoints extends React.PureComponent {
             transform="matrix(1.33333 0 0 1.33333 306.347 276.153)"
             fontWeight={400}
             fontSize={7}
-            fontFamily="Zelda"
+            fontFamily="Scala Sans Offc"
             fill="#969797"
           >
             <tspan
@@ -56,7 +56,7 @@ class HitPoints extends React.PureComponent {
             transform="matrix(1.33333 0 0 1.33333 365.226 333.84)"
             fontWeight={700}
             fontSize={6.5}
-            fontFamily="Zelda"
+            fontFamily="Scala Sans Offc"
           >
             <tspan
               y={0}
@@ -71,7 +71,7 @@ class HitPoints extends React.PureComponent {
             <p style={{
               height: '30px',
               width: '218px',
-              fontFamily: 'Zelda',
+              fontFamily: 'Scala Sans Offc',
               fontSize: 'x-large',
               textAlign: 'center' }}>
               {currentHp}

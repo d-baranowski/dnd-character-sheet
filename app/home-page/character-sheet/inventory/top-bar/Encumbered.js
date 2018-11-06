@@ -5,7 +5,7 @@ import getValue from "../../../../form/getValue";
 
 const Encumbered = ({strength}) => (
   <g>
-    <text  x="516.8" y="133.55" strokeWidth="1.33" fontFamily="Zelda" fontSize="9.33" fontWeight="400">
+    <text  x="516.8" y="133.55" strokeWidth="1.33" fontFamily="Scala Sans Offc" fontSize="9.33" fontWeight="400">
       <tspan x="516.8" y="133.55">ENCUMBERED</tspan>
     </text>
     <foreignObject  x="516" y={108}>
@@ -14,7 +14,7 @@ const Encumbered = ({strength}) => (
         lineHeight: "18px",
         width: '75px',
         border: 'none',
-        fontFamily: 'Zelda',
+        fontFamily: 'Scala Sans Offc',
         fontSize: 'small',
         textAlign: 'left' }}>
         {strength * 5}

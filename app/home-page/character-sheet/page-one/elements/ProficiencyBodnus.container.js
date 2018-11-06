@@ -10,7 +10,7 @@ const ProficiencyBonus = ({proficiencyBonus}) => (
       transform="matrix(1.33333 0 0 1.33333 180.802 239.272)"
       fontWeight={700}
       fontSize={5.75}
-      fontFamily="Zelda"
+      fontFamily="Scala Sans Offc"
     >
       <tspan
         y={0}
@@ -23,7 +23,7 @@ const ProficiencyBonus = ({proficiencyBonus}) => (
       transform="matrix(1.33333 0 0 1.33333 180.802 239.272)"
       fontWeight={700}
       fontSize={10}
-      fontFamily="Zelda"
+      fontFamily="Scala Sans Offc"
     >
       <tspan
         y={1}

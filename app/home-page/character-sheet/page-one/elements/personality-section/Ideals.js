@@ -17,7 +17,7 @@ const Ideals = ({showEditor, ideals}) => (
       transform="matrix(1.33333 0 0 1.33333 648.015 332.886)"
       fontWeight={400}
       fontSize={5.75}
-      fontFamily="Zelda"
+      fontFamily="Scala Sans Offc"
     >
       <tspan y={0} x="0 1.725 5.8132501 8.9125004 12.33375 15.18">
         IDEALS

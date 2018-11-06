@@ -17,7 +17,7 @@ const Bonds = ({showEditor, bonds}) => (
       transform="matrix(1.33333 0 0 1.33333 647.31 407.339)"
       fontWeight={400}
       fontSize={5.75}
-      fontFamily="Zelda"
+      fontFamily="Scala Sans Offc"
     >
       <tspan y={0} x="0 3.3982501 7.7855 12.14975 16.238001">
         BONDS

@@ -48,7 +48,7 @@ class PassiveWisdom extends React.PureComponent {
           transform="matrix(1.33333 0 0 1.33333 117.964 802.028)"
           fontWeight={400}
           fontSize={5.75}
-          fontFamily="Zelda"
+          fontFamily="Scala Sans Offc"
         >
           <tspan
             y={0}
@@ -59,7 +59,7 @@ class PassiveWisdom extends React.PureComponent {
         </text>
         <foreignObject x="41" y="788">
           <div>
-            <p style={{height: '32px', width: '32px', border: 'none', fontFamily: 'Zelda', fontSize: 'medium', textAlign: 'center' }}>{(10 + wisdomModifier || 0) + otherBonus}</p>
+            <p style={{height: '32px', width: '32px', border: 'none', fontFamily: 'Scala Sans Offc', fontSize: 'medium', textAlign: 'center' }}>{(10 + wisdomModifier || 0) + otherBonus}</p>
           </div>
         </foreignObject>
         <rect

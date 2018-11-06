@@ -67,7 +67,7 @@ class SkillsContainer extends React.PureComponent {
           transform="matrix(1.33333 0 0 1.33333 186.711 768.121)"
           fontWeight={700}
           fontSize={6.5}
-          fontFamily="Zelda"
+          fontFamily="Scala Sans Offc"
         >
           <tspan y={0} x="0 3.471 7.1824999 9.1324997 12.35 15.5675">
             SKILLS

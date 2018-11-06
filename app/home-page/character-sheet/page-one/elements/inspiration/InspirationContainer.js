@@ -56,7 +56,7 @@ class InspirationContainer extends React.PureComponent {
           transform="matrix(1.33333 0 0 1.33333 195.142 188.997)"
           fontWeight={700}
           fontSize={5.75}
-          fontFamily="Zelda"
+          fontFamily="Scala Sans Offc"
         >
           <tspan
             y={0}

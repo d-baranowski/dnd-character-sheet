@@ -5,7 +5,7 @@ import Hoverable from '../../../../form/Hoverable';
 const moveDown = 35;
 const Eyes = ({eyes, isHovered}) => (
   <g>
-    <text  x="354.29" y={99.2 + moveDown} strokeWidth="1.33" fontFamily="Zelda" fontSize="9.33" fontWeight={isHovered ? 700 : 400}>
+    <text  x="354.29" y={99.2 + moveDown} strokeWidth="1.33" fontFamily="Scala Sans Offc" fontSize="9.33" fontWeight={isHovered ? 700 : 400}>
       <tspan x="354.29" y={99.2 + moveDown}>EYES</tspan>
     </text>
     <foreignObject  x="354" y={74 + moveDown}>
@@ -14,7 +14,7 @@ const Eyes = ({eyes, isHovered}) => (
         lineHeight: "18px",
         width: '75px',
         border: 'none',
-        fontFamily: 'Zelda',
+        fontFamily: 'Scala Sans Offc',
         fontSize: 'small',
         textAlign: 'left' }}>
         {eyes}

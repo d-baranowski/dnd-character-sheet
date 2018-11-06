@@ -17,7 +17,7 @@ const ArmorClass = ({armorClass, showEditor}) => (
       transform="matrix(1.33333 0 0 1.33333 315.612 229.175)"
       fontWeight={700}
       fontSize={6.5}
-      fontFamily="Zelda"
+      fontFamily="Scala Sans Offc"
     >
       <tspan y={0} x="0 3.8675001 7.6634998 13.3705 18.33">
         ARMOR
@@ -27,7 +27,7 @@ const ArmorClass = ({armorClass, showEditor}) => (
       transform="matrix(1.33333 0 0 1.33333 318.39 237.175)"
       fontWeight={700}
       fontSize={6.5}
-      fontFamily="Zelda"
+      fontFamily="Scala Sans Offc"
     >
       <tspan y={0} x="0 3.9324999 7.1500001 11.0175 14.4885">
         CLASS
@@ -35,7 +35,7 @@ const ArmorClass = ({armorClass, showEditor}) => (
     </text>
     <foreignObject x="300" y="190">
       <div>
-        <p style={{height: '30px', width: '60px', border: 'none', fontFamily: 'Zelda', fontSize: 'x-large', textAlign: 'center' }}>{armorClass || 0}</p>
+        <p style={{height: '30px', width: '60px', border: 'none', fontFamily: 'Scala Sans Offc', fontSize: 'x-large', textAlign: 'center' }}>{armorClass || 0}</p>
       </div>
     </foreignObject>
   </InteractiveElement>

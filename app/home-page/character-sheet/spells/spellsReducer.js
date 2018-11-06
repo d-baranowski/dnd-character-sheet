@@ -15,6 +15,17 @@ const pageSize = {
   9: 5
 };
 
+export const classToAbility = {
+  "Bard": "Charisma",
+  "Cleric": "Wisdom",
+  "Druid": "Wisdom",
+  "Paladin": "Charisma",
+  "Ranger": "Wisdom",
+  "Sorcerer": "Charisma",
+  "Warlock": "Charisma",
+  "Wizard": "Intelligence"
+};
+
 const initialState = {
   modalOpen: false,
   modalSpell: {},

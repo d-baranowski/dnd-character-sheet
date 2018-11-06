@@ -17,7 +17,7 @@ const Speed = ({showEditor, speed}) => (
       transform="matrix(1.33333 0 0 1.33333 470.658 240.768)"
       fontWeight={700}
       fontSize={6.5}
-      fontFamily="Zelda"
+      fontFamily="Scala Sans Offc"
     >
       <tspan y={0} x="0 3.471 7.085 10.5885 14.092">
         SPEED
@@ -29,7 +29,7 @@ const Speed = ({showEditor, speed}) => (
           height: '30px',
           width: '60px',
           border: 'none',
-          fontFamily: 'Zelda',
+          fontFamily: 'Scala Sans Offc',
           fontSize: 'x-large',
           textAlign: 'center' }}>
           {speed}ft

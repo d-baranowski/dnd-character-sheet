@@ -6,7 +6,7 @@ import {mapStateToTotalWeight} from "./TotalWeight";
 
 const Status = ({status}) => (
   <g>
-    <text  x="354.29" y="99.2" strokeWidth="1.33" fontFamily="Zelda" fontSize="9.33" fontWeight="400">
+    <text  x="354.29" y="99.2" strokeWidth="1.33" fontFamily="Scala Sans Offc" fontSize="9.33" fontWeight="400">
       <tspan x="354.29" y="99.2">STATUS</tspan>
     </text>
     <foreignObject  x="354" y={74}>
@@ -15,7 +15,7 @@ const Status = ({status}) => (
         lineHeight: "18px",
         width: '75px',
         border: 'none',
-        fontFamily: 'Zelda',
+        fontFamily: 'Scala Sans Offc',
         fontSize: 'small',
         textAlign: 'left' }}>
         {status}

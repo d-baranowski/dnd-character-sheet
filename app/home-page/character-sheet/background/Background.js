@@ -181,7 +181,7 @@ const Background = () => (
             transform="rotate(1.9)"
             fontWeight={500}
             fontSize={30}
-            fontFamily="Zelda"
+            fontFamily="Scala Sans Offc"
           >
             <tspan
               y={105}

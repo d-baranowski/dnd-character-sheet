@@ -35,7 +35,7 @@ const TopBar = () => (
         transform="rotate(2)"
         fontWeight={500}
         fontSize={30}
-        fontFamily="Zelda"
+        fontFamily="Scala Sans Offc"
       >
         <tspan
           y={105}

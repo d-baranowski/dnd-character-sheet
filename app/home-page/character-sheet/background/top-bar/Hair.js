@@ -6,7 +6,7 @@ const x = 670;
 const moveDown = 35;
 const Hair = ({hair, isHovered}) => (
   <g>
-    <text  x={x} y={99.2 + moveDown} strokeWidth="1.33" fontFamily="Zelda" fontSize="9.33" fontWeight={isHovered ? 700 : 400}>
+    <text  x={x} y={99.2 + moveDown} strokeWidth="1.33" fontFamily="Scala Sans Offc" fontSize="9.33" fontWeight={isHovered ? 700 : 400}>
       <tspan x={x} y={99.2 + moveDown}>HAIR</tspan>
     </text>
     <foreignObject  x={x} y={74 + moveDown}>
@@ -15,7 +15,7 @@ const Hair = ({hair, isHovered}) => (
         lineHeight: "18px",
         width: '75px',
         border: 'none',
-        fontFamily: 'Zelda',
+        fontFamily: 'Scala Sans Offc',
         fontSize: 'small',
         textAlign: 'left' }}>
         {hair}

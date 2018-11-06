@@ -60,7 +60,7 @@ class DeathSaves extends React.PureComponent {
           transform="matrix(1.33333 0 0 1.33333 419.69 438.577)"
           fontWeight={this.state.hovered === "success" ? 700 : 400}
           fontSize={5.75}
-          fontFamily="Zelda"
+          fontFamily="Scala Sans Offc"
         >
           <tspan
             y={0}
@@ -73,7 +73,7 @@ class DeathSaves extends React.PureComponent {
           transform="matrix(1.33333 0 0 1.33333 426.398 458.576)"
           fontWeight={this.state.hovered === "failure" ? 700 : 400}
           fontSize={5.75}
-          fontFamily="Zelda"
+          fontFamily="Scala Sans Offc"
         >
           <tspan
             y={0}
@@ -86,7 +86,7 @@ class DeathSaves extends React.PureComponent {
           transform="matrix(1.33333 0 0 1.33333 440.729 479.016)"
           fontWeight={400}
           fontSize={5.75}
-          fontFamily="Zelda"
+          fontFamily="Scala Sans Offc"
         >
           <tspan
             y={0}

@@ -8,7 +8,7 @@ const ExperiencePoints = ({isHovered, experience}) => (
       transform="matrix(1.33333 0 0 1.33333 640.32 128.697)"
       fontWeight={isHovered ? 700 : 400}
       fontSize={7}
-      fontFamily="Zelda"
+      fontFamily="Scala Sans Offc"
     >
       <tspan
         y={0}
@@ -21,7 +21,7 @@ const ExperiencePoints = ({isHovered, experience}) => (
       transform="matrix(1.33333 0 0 1.33333 640.32 128.697) translate(0, -11)"
       fontWeight={500}
       fontSize={12}
-      fontFamily="Zelda"
+      fontFamily="Scala Sans Offc"
     >
       <tspan
         y={0}

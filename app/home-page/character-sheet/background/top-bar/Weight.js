@@ -5,7 +5,7 @@ import Hoverable from '../../../../form/Hoverable';
 const x = 670;
 const Weight = ({weigth, isHovered}) => (
   <g>
-    <text  x={x} y="99.2" strokeWidth="1.33" fontFamily="Zelda" fontSize="9.33" fontWeight={isHovered ? 700 : 400}>
+    <text  x={x} y="99.2" strokeWidth="1.33" fontFamily="Scala Sans Offc" fontSize="9.33" fontWeight={isHovered ? 700 : 400}>
       <tspan x={x} y="99.2">WEIGHT</tspan>
     </text>
     <foreignObject  x={x} y={74}>
@@ -14,7 +14,7 @@ const Weight = ({weigth, isHovered}) => (
         lineHeight: "18px",
         width: '75px',
         border: 'none',
-        fontFamily: 'Zelda',
+        fontFamily: 'Scala Sans Offc',
         fontSize: 'small',
         textAlign: 'left' }}>
         {weigth}

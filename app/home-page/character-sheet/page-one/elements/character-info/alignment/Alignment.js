@@ -10,7 +10,7 @@ const Alignment = ({isHovered, alignment}) => (
       transform="matrix(1.33333 0 0 1.33333 511.3 128.44)"
       fontWeight={isHovered ? 700 : 400}
       fontSize={7}
-      fontFamily="Zelda"
+      fontFamily="Scala Sans Offc"
     >
       <tspan
         y={0}
@@ -23,7 +23,7 @@ const Alignment = ({isHovered, alignment}) => (
       transform="matrix(1.33333 0 0 1.33333 511.3 128.44) translate(0, -11)"
       fontWeight={500}
       fontSize={12}
-      fontFamily="Zelda"
+      fontFamily="Scala Sans Offc"
     >
       <tspan
         y={0}

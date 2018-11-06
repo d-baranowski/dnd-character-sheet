@@ -25,7 +25,7 @@ const Attacks = ({addAttack, attacks, attributeModifiers, proficiencyBonus, open
       transform="matrix(1.33333 0 0 1.33333 358.945 768.121)"
       fontWeight={700}
       fontSize={6.5}
-      fontFamily="Zelda"
+      fontFamily="Scala Sans Offc"
     >
       <tspan
         y={30}
@@ -38,7 +38,7 @@ const Attacks = ({addAttack, attacks, attributeModifiers, proficiencyBonus, open
       transform="matrix(1.33333 0 0 1.33333 298.04 519.077)"
       fontWeight={400}
       fontSize={5.75}
-      fontFamily="Zelda"
+      fontFamily="Scala Sans Offc"
       fill="#969797"
     >
       <tspan y={0} x="0 4.3642502 7.7855 12.834">
@@ -49,7 +49,7 @@ const Attacks = ({addAttack, attacks, attributeModifiers, proficiencyBonus, open
       transform="matrix(1.33333 0 0 1.33333 388.286 519.077)"
       fontWeight={400}
       fontSize={5.75}
-      fontFamily="Zelda"
+      fontFamily="Scala Sans Offc"
       fill="#969797"
     >
       <tspan
@@ -63,7 +63,7 @@ const Attacks = ({addAttack, attacks, attributeModifiers, proficiencyBonus, open
       transform="matrix(1.33333 0 0 1.33333 436.002 519.077)"
       fontWeight={400}
       fontSize={5.75}
-      fontFamily="Zelda"
+      fontFamily="Scala Sans Offc"
       fill="#969797"
     >
       <tspan
@@ -86,7 +86,7 @@ const Attacks = ({addAttack, attacks, attributeModifiers, proficiencyBonus, open
               onClick={() => { openModal(value[0]) }}
               key={value[0]}
               fontSize={11}
-              fontFamily="Zelda"
+              fontFamily="Scala Sans Offc"
             >
               <tspan y={(index + 1) * 12} x="0">{value[1].name}</tspan>
               <tspan y={(index + 1) * 12} x={90}>{prependSign(getAttackBonus(attributeModifiers, value[1], proficiencyBonus))}</tspan>

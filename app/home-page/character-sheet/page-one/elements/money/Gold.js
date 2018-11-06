@@ -16,7 +16,7 @@ const Gold = ({gold, showEditor}) => (
       transform="matrix(1.33333 0 0 1.33333 284.936 916.83)"
       fontWeight={400}
       fontSize={5.75}
-      fontFamily="Zelda"
+      fontFamily="Scala Sans Offc"
       fill="#969797"
     >
       <tspan y={0} x="0 4.0710001">
@@ -31,7 +31,7 @@ const Gold = ({gold, showEditor}) => (
             height: '31px',
             width: '60px',
             border: 'none',
-            fontFamily: 'Zelda',
+            fontFamily: 'Scala Sans Offc',
             fontSize: 'x-small',
             textAlign: 'center'
           }}
