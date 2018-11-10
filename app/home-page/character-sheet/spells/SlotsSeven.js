@@ -5,7 +5,7 @@ import withSimpleForm from "../../../form/withSimpleForm";
 const y = 415;
 const x = 565;
 
-const Slots = ({showEditor, slotsSeven}) => (
+const Slots = ({showEditor, formValue}) => (
   <ActualSlots
     onClick={() => showEditor()}
     rectX={x}
@@ -24,7 +24,7 @@ const Slots = ({showEditor, slotsSeven}) => (
         fontFamily: 'Scala Sans Offc',
         fontSize: 'small',
         textAlign: 'center' }}>
-        {slotsSeven}
+        {formValue}
       </div>
     </foreignObject>
   </ActualSlots>

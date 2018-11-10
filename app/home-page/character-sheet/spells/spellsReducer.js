@@ -68,7 +68,16 @@ export default (state = initialState, action) => {
     const { spellName, level } = action;
     const modalSpell = spells.descriptions[spellName];
     const id = uuidv4();
-    const newSpells = {...state.chosenSpells[level], [id]: {...modalSpell, name: spellName, id, prepared: false}};
+    const newSpells = {
+      ...state.chosenSpells[level],
+      [id]: {
+        ...modalSpell,
+        name: spellName,
+        id,
+        prepared: false,
+        spellCastingClass: action.spellCastingClass
+      }
+    };
     const maxPage = Math.ceil(Object.values(newSpells).length / pageSize[level]);
 
 

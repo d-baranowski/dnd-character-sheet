@@ -50,9 +50,9 @@ class SpellsDrawer extends React.PureComponent {
 }
 
 const mapStateToProps = (state) => ({});
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch, ownProps) => ({
   readSpell: (spellName) => dispatch(readSpell(spellName)),
-  pickSpell: (spellName, level) => { dispatch(pickSpell(spellName, level)); dispatch(closeDrawer()) }
+  pickSpell: (spellName, level) => { dispatch(pickSpell(spellName, level, ownProps.spellCastingClass)); dispatch(closeDrawer()) }
 });
 
 export default drawerRoute(SpellsDrawerRoute)(connect(mapStateToProps, mapDispatchToProps)(SpellsDrawer));

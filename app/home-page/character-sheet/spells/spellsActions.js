@@ -9,10 +9,11 @@ export const readSpell = (spellName) => ({
 });
 readSpell.type = "SPELLS_READ_SPELL";
 
-export const pickSpell = (spellName, level) => ({
+export const pickSpell = (spellName, level, spellCastingClass) => ({
   type: "SPELLS_PICK_SPELL",
   spellName,
-  level
+  level,
+  spellCastingClass
 });
 pickSpell.type = "SPELLS_PICK_SPELL";
 

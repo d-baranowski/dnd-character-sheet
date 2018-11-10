@@ -1,12 +1,11 @@
 import React from 'react';
 import ActualSlots from "./ActualSlots";
 import withSimpleForm from "../../../form/withSimpleForm";
-import PanZoom from "../PanZoom";
 
 const y = 794;
 const x = 315;
 
-const Slots = ({showEditor, slotsFive}) => (
+const Slots = ({showEditor, formValue}) => (
   <ActualSlots
     onClick={() => showEditor()}
     rectX={x}
@@ -25,7 +24,7 @@ const Slots = ({showEditor, slotsFive}) => (
         fontFamily: 'Scala Sans Offc',
         fontSize: 'small',
         textAlign: 'center' }}>
-        {slotsFive}
+        {formValue}
       </div>
     </foreignObject>
   </ActualSlots>

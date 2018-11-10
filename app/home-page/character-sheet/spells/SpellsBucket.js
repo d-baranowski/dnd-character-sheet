@@ -57,10 +57,25 @@ class SpellsBucket extends React.PureComponent {
   }
 }
 
-const mapStateToProps = (state, ownProps) => ({
-  spells: state.spellsReducer.chosenSpells[ownProps.spellLevel] || {},
-  page: state.spellsReducer.page[ownProps.spellLevel]
-});
+const mapStateToProps = (state, ownProps) => {
+  const allSpells = state.spellsReducer.chosenSpells[ownProps.spellLevel] || {};
+  const spells = Object.entries(allSpells).map(([key, value]) => {
+    return {id: key, ...value};
+  }).filter((obj) => {
+    return obj.spellCastingClass === ownProps.castingClass
+  }).reduce((aggregate, currentValue) => {
+    const newValue = {...currentValue};
+    return {
+      ...aggregate,
+      [currentValue.id]: newValue
+    }
+  }, {});
+
+  return {
+    spells: spells,
+    page: state.spellsReducer.page[ownProps.spellLevel]
+  }
+};
 const mapDispatchToProps = (dispatch) => ({
   showEditor: (spellCastingClass, level) => dispatch(setDrawerRoute(SpellsDrawerRoute, {
     hasSearchBar: true,

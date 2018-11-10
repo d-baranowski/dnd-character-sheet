@@ -2,7 +2,7 @@ import React from 'react';
 import ActualSlots from "./ActualSlots";
 import withSimpleForm from "../../../form/withSimpleForm";
 
-const SlotsOne = ({showEditor, slotsOne}) => (
+const SlotsOne = ({showEditor, formValue}) => (
   <ActualSlots
     onClick={() => showEditor()}
     rectX="66.23"
@@ -21,7 +21,7 @@ const SlotsOne = ({showEditor, slotsOne}) => (
         fontFamily: 'Scala Sans Offc',
         fontSize: 'small',
         textAlign: 'center' }}>
-        {slotsOne}
+        {formValue}
       </div>
     </foreignObject>
   </ActualSlots>
