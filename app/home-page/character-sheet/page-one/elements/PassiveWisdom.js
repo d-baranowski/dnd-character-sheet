@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import getValue from '../../../../form/getValue';
+import {getValue as getAttributeValue} from "../../page-one/elements/attributes/state/attributesReducer";
 import createSimpleForm from '../../../../form/createSimpleForm';
 import {setDrawerRoute} from '../../../menu-drawer/state/menuDrawerActions';
 
@@ -78,7 +79,7 @@ class PassiveWisdom extends React.PureComponent {
 }
 
 const mapStateToProps = (state) => ({
-  wisdomModifier: parseInt(getValue(state, 'attributes', 'WisdomModifier') || 0),
+  wisdomModifier: parseInt(getAttributeValue(state, 'WisdomModifier') || 0),
   otherBonus: parseInt(getValue(state, 'perceptionBonus', 'perceptionBonus') || 0)
 });
 

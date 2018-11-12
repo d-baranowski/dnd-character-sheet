@@ -1,5 +1,5 @@
 import React from 'react';
-import getValue from '../../../../../form/getValue';
+import {getValue} from "../attributes/state/attributesReducer"
 import {modifierWithSign} from '../attributes/AttributeBox';
 import InteractiveElement from '../../../InteractiveElement';
 import withSimpleForm from '../../../../../form/withSimpleForm';
@@ -55,7 +55,7 @@ export default withSimpleForm({
   label: "Initiative Bonus",
   stateMapping: (state) =>
     ({
-      dexterity: getValue(state, 'attributes', 'DexterityModifier') || 0
+      dexterity: getValue(state, 'DexterityModifier') || 0
     })
   })
   (Initiative);

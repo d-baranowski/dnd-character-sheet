@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {addAttack, openModal} from './state/attacksActions';
 import style from './Attacks.css';
-import getValue from '../../../../../form/getValue';
+import {getValue} from "../attributes/state/attributesReducer";
 
 
 const getAttackBonus = (
@@ -116,8 +116,8 @@ const mapStateToProps = (state) => {
   return {
     attacks,
     attributeModifiers: {
-      Dexterity: getValue(state, 'attributes', `DexterityModifier`) || 0,
-      Strength: getValue(state, 'attributes', `StrengthModifier`) || 0
+      Dexterity: getValue(state, `DexterityModifier`) || 0,
+      Strength: getValue(state, `StrengthModifier`) || 0
     },
     proficiencyBonus: state.homePageReducer.classesReducer.proficiencyBonus
   };

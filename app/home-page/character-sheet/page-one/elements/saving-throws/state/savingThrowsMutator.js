@@ -1,11 +1,9 @@
-import {attributes} from '../../attributes/state/attributesMutator';
+import {attributes} from '../../attributes/state/attributesReducer';
 
 const getAttributeModifierValue = (state, attributeName) => (
   state &&
-  state.form &&
-  state.form.attributes &&
-  state.form.attributes.values &&
-  state.form.attributes.values[`${attributeName}Modifier`] || 0);
+  state.attributesReducer &&
+  state.attributesReducer[`${attributeName}Modifier`] || 0);
 
 const getAttributeProficiency = (state, attributeName) => (
   state &&
@@ -31,7 +29,7 @@ const reducerMutator = (reducer) => (state, action) => {
 
   const savingThrowsModifiers = {};
   attributes.forEach(attributeName => {
-    const attributeModifier = getAttributeModifierValue(mutatedState, attributeName);
+    const attributeModifier = parseInt(getAttributeModifierValue(mutatedState, attributeName));
     const isProficient = getAttributeProficiency(mutatedState, attributeName);
     const otherBonus = getOtherBonus(mutatedState, attributeName);
     const proficiency = getProficiencyBonus(mutatedState);

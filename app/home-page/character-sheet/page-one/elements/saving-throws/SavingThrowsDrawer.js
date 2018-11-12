@@ -6,7 +6,7 @@ import FormCheckbox from '../../../../../form/FormCheckbox';
 import drawerRoute from '../../../../menu-drawer/drawerRoute';
 import FormInput from '../../../../../form/FormInput';
 import {limit, onlyNumbers} from '../../../../../form/format';
-import {attributes} from '../attributes/state/attributesMutator';
+import {attributes} from '../attributes/state/attributesReducer';
 
 
 export const SavingThrowsDrawerRoute = 'SavingThrows';

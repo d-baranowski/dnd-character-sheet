@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from "react-redux";
-import getValue from "../../../../form/getValue";
+import {getValue} from "../../page-one/elements/attributes/state/attributesReducer";
 
 const Encumbered = ({strength}) => (
   <g>
@@ -26,7 +26,7 @@ const Encumbered = ({strength}) => (
 Encumbered.propTypes = {};
 
 const mapStateToProps = (state) => ({
-  strength: getValue(state, 'attributes', "Strength") || 0
+  strength: getValue(state, 'Strength')
 });
 
 const mapDispatchToProps = (dispatch) => ({

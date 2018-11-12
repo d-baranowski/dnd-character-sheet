@@ -1,9 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import AttributeBox from './AttributeBox';
-import {AttributeDrawerRoute} from './AttributeDrawer';
-import {setDrawerRoute} from '../../../../menu-drawer/state/menuDrawerActions';
-import getValue from '../../../../../form/getValue';
+import {mapAttributesFromStateToProps} from "./state/attributesReducer";
+import {setAttributeValue} from "./state/actions";
 
 
 const attributes = [
@@ -47,9 +46,9 @@ class AttributesContainer extends React.PureComponent {
             name={element.name}
             onMouseEnter={() => this.updateHover(element.name, true)}
             onMouseLeave={() => this.updateHover(element.name, false)}
-            onClick={() => this.props.showAttributeEditor(element.name)}
             isHovered={this.state.isHovered[element.name]}
             value={this.props.values[element.name].value}
+            changeValue={(value) => this.props.updateAttribute(element.name, value)}
             modifier={this.props.values[element.name].modifier}
           />
         ))}
@@ -58,19 +57,8 @@ class AttributesContainer extends React.PureComponent {
   }
 }
 
-export const mapAttributesFromStateToProps = (state) =>
-  attributes.reduce((result, val) => {
-    const copy = {...result};
-    copy.values[val.name] = {};
-    copy.values[val.name].value = getValue(state, 'attributes', val.name) || 0;
-    copy.values[val.name].modifier = getValue(state, 'attributes', `${val.name}Modifier`) || 0;
-    return copy;
-  }, {values: {}});
-
-
 const mapDispatchToProps = (dispatch) => ({
-  showAttributeEditor: (attribute) => dispatch(setDrawerRoute(AttributeDrawerRoute, {name: attribute}))
+  updateAttribute: (name, value) => dispatch(setAttributeValue(name, value))
 });
-
 
 export default connect(mapAttributesFromStateToProps, mapDispatchToProps)(AttributesContainer);

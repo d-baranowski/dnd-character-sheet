@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import connect from "react-redux/es/connect/connect";
-import getValue from "../../../../form/getValue";
+import {getValue} from "../../page-one/elements/attributes/state/attributesReducer";
 import {mapStateToTotalWeight} from "./TotalWeight";
 
 const Status = ({status}) => (
@@ -27,7 +27,7 @@ const Status = ({status}) => (
 Status.propTypes = {};
 
 const mapStateToProps = (state) => {
-  const strength = getValue(state, 'attributes', "Strength") || 0;
+  const strength = getValue(state, "Strength") || 0;
   const totalWeight = mapStateToTotalWeight(state);
 
   if (totalWeight > strength * 15) {

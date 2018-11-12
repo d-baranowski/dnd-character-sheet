@@ -3,8 +3,8 @@ import {connect} from 'react-redux';
 import Skill from './Skill';
 import {setDrawerRoute} from '../../../../menu-drawer/state/menuDrawerActions';
 import {SkillsDrawerRoute} from './SkillsDrawer';
-import {mapAttributesFromStateToProps} from '../attributes/AttributesContainer';
 import getValue from '../../../../../form/getValue';
+import {mapAttributesFromStateToProps} from "../attributes/state/attributesReducer";
 
 
 export const skills = [

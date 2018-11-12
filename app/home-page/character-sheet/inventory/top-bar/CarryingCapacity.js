@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import getValue from "../../../../form/getValue";
+import {getValue} from "../../page-one/elements/attributes/state/attributesReducer";
 import connect from "react-redux/es/connect/connect";
 
 const CarryingCapacity = ({strength}) => (
@@ -26,7 +26,7 @@ const CarryingCapacity = ({strength}) => (
 CarryingCapacity.propTypes = {};
 
 const mapStateToProps = (state) => ({
-  strength: getValue(state, 'attributes', "Strength") || 0
+  strength: getValue(state, 'Strength')
 });
 
 const mapDispatchToProps = (dispatch) => ({

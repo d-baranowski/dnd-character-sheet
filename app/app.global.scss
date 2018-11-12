@@ -18,3 +18,20 @@
   fill-opacity: 0.7;
   cursor: pointer;
 }
+
+@keyframes blink {
+  50% { border-color: #0f0f10; }
+}
+.blinks { /*or other element you want*/
+  animation-name: blink ;
+  animation-duration: .5s ;
+  animation-timing-function: step-end ;
+  animation-iteration-count: infinite ;
+  animation-direction: alternate ;
+}
+.hasCursor {
+  border-right: 1px solid transparent;
+}
+.hasCursorStart {
+  border-left: 1px solid transparent;
+}
