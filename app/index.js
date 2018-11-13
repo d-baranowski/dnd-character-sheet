@@ -14,15 +14,3 @@ render(
   </AppContainer>,
   document.getElementById('root')
 );
-
-if (module.hot) {
-  module.hot.accept('./containers/Root', () => {
-    const NextRoot = require('./Root'); // eslint-disable-line global-require
-    render(
-      <AppContainer>
-        <NextRoot store={globalStore} history={history} />
-      </AppContainer>,
-      document.getElementById('root')
-    );
-  });
-}

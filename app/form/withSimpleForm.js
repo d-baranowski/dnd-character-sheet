@@ -1,8 +1,10 @@
 import {connect} from 'react-redux';
-import {setDrawerRoute} from '../home-page/menu-drawer/state/menuDrawerActions';
-import getValue from './getValue';
-import createSimpleForm from './createSimpleForm';
 import React from 'react';
+import {insertCharacterAtPosition, remove_character} from "./utils";
+import {limit, onlyNumbers} from "./format";
+import compose from 'redux/src/compose';
+import {updateFormValue} from "./state/actions";
+const {clipboard} = require('electron')
 
 const getDefaultValue = (type) => {
   if (type === "textarea") {
@@ -11,23 +13,156 @@ const getDefaultValue = (type) => {
   return 0;
 };
 
-const withSimpleForm = ({formName, label, stateMapping, dispatchMapping, type, limitValue}) => (WrappedComponent) => {
+const isInputKey = (key) => {
+  return key.length === 1 && key.match(/^[0-9a-z]$/i);
+};
+
+const withSimpleForm = ({formName, label, stateMapping, dispatchMapping, type = "number", limitValue = 2}) => (WrappedComponent) => {
   class Result extends React.Component {
     componentWillMount() {
-      const prefix = this.props.prefix;
-      createSimpleForm(prefix + formName, label, prefix + formName, prefix + formName, type, limitValue);
+      this.parse = type === "number" ? compose(limit(limitValue), onlyNumbers) : val => val;
     }
 
-    render() {
+    state = {
+      value: this.props.formValue || "",
+      cursor: 0,
+      editing: false
+    };
+
+    getCursorClass = (index) => {
+      if (!this.state.editing) {
+        return "";
+      }
+
+      return index === this.state.cursor - 1 ? "hasCursor blinks" : index === 0 && this.state.cursor === 0 ? "hasCursorStart blinks" : ""
+    };
+
+    onKeyPress = (event) => {
+      const key = event.key;
+
+      if (event.ctrlKey && key === 'v') {
+        this.pasteFromClipboard();
+        return;
+      }
+
+      if (key === "Backspace") {
+        const startLenght = this.state.value.length;
+        const newValue = remove_character(this.state.value, this.state.cursor - 1);
+
+        this.setState({
+          value: newValue,
+          cursor: newValue.length !== startLenght && this.state.cursor > 0 ? this.state.cursor - 1 : this.state.cursor
+        }, () => this.props.changeValue(newValue))
+      }
+      else if (isInputKey(key)) {
+        const newValue = this.parse(insertCharacterAtPosition(this.state.value, this.state.cursor, key));
+        if (!newValue) {
+          return
+        }
+        this.setState({
+          value: newValue,
+          cursor: this.state.cursor + 1
+        }, () => this.props.changeValue(newValue));
+      } else if (key === "ArrowLeft") {
+        this.setState({
+          cursor: this.state.cursor !== 0 ? this.state.cursor - 1 : 0
+        })
+      } else if (key === "ArrowRight") {
+        this.setState({
+          cursor: this.state.cursor !== this.state.value.length ? this.state.cursor + 1 : this.state.value.length
+        })
+      } else if (key === "Escape") {
+        this.leaveEditMode();
+      }
+    };
+
+    isValid = (str) => {
+      return str.length === 0 || str.match(/^-{0,1}\d{1,2}$/);
+    };
+
+    leaveEditMode = () => {
+      this.setState({
+        editing: false
+      });
+
+      document.removeEventListener("keydown", this.onKeyPress, false);
+      document.removeEventListener('mousedown', this.handleClick);
+    };
+
+    enterEditMode = () => {
+      this.setState({
+        editing: true
+      });
+
+      document.addEventListener("keydown", this.onKeyPress, false);
+      document.addEventListener('mousedown', this.handleClick);
+    };
+
+    setWrapperRef = (node) => {
+      this.wrapperRef = node;
+    };
+
+    componentWillUnmount() {
+      document.removeEventListener('mousedown', this.handleClick);
+      document.removeEventListener("keydown", this.onKeyPress, false);
+    }
+
+    pasteFromClipboard = () => {
+      const pastedText = clipboard.readText();
+      const newValue = this.parse(insertCharacterAtPosition(this.state.value, this.state.cursor, pastedText));
+      if (!newValue) {
+        return
+      }
+      this.setState({
+        value: newValue,
+        cursor: this.state.cursor + pastedText.length
+      }, () => this.props.changeValue(newValue));
+    }
+
+    handleClick = (event) => {
+      if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+        this.leaveEditMode();
+      } else {
+        if (event.which !== 1) { // Not left mouse button
+          this.pasteFromClipboard();
+        }
+      }
+    };
+
+    getRenderValue = () => {
+      if (this.state.value.length === 0 && this.state.editing) {
+        return (
+          <span className="hasCursorStart blinks"> </span>
+        )
+      }
+
       return (
-        <WrappedComponent {...this.props} />
+        this.state.value.split('').map((letter, index) => (
+          <span className={this.getCursorClass(index)} key={index}>
+                  {letter}
+                </span>
+        ))
+      )
+    }
+
+
+    render() {
+      const {children, ...rest} = this.props;
+      const wrappedProps = {
+        ...rest,
+        setWrapperRef: this.setWrapperRef,
+        onClick: this.enterEditMode,
+        renderValue: this.getRenderValue()
+      };
+      return (
+        <WrappedComponent {...wrappedProps}  />
       )
     }
   }
 
   const mapStateToProps = (state, ownProps) => {
     const prefix = ownProps.formPrefix || "";
-    const formValue = getValue(state, prefix + formName, prefix + formName) || getDefaultValue(type);
+    const formValue = state.myFormReducer[prefix + formName] || getDefaultValue(type);
 
     return {
       [prefix + formName]: formValue,
@@ -40,8 +175,8 @@ const withSimpleForm = ({formName, label, stateMapping, dispatchMapping, type, l
     const prefix = ownProps.formPrefix || "";
 
     return {
-      showEditor: () => dispatch(setDrawerRoute(prefix + formName)),
-      ...dispatchMapping && dispatchMapping(dispatch)
+      ...dispatchMapping && dispatchMapping(dispatch),
+      changeValue: (value) => dispatch(updateFormValue(prefix + formName, value))
     }
   };
 

@@ -31,20 +31,19 @@ const Background = ({isHovered, background}) => (
         </tspan>
       </text>
     </g>
-
 );
 
-const HoverableBackground = ({showEditor, background}) => (
+const HoverableBackground = ({onClick, renderValue, setWrapperRef}) => (
   <Hoverable
     x={505}
     y={60}
     width={120}
     height={35}
-    onClick={showEditor}
+    onClick={onClick}
+    setWrapperRef={setWrapperRef}
   >
     <Background
-      background={background}
-      showEditor={showEditor}
+      background={renderValue}
     />
   </Hoverable>
 );

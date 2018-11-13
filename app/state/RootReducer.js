@@ -3,6 +3,7 @@ import { combineReducers } from 'redux';
 import { routerReducer as router } from 'react-router-redux';
 import { reducer as formReducer } from 'redux-form';
 import homePageReducer from '../home-page/state/homePageReducer';
+import myFormReducer from "../form/state/formReducer";
 import savingThrowsMutator
   from '../home-page/character-sheet/page-one/elements/saving-throws/state/savingThrowsMutator';
 import equipmentReducer from '../home-page/character-sheet/inventory/state/equipmentReducer';
@@ -17,7 +18,8 @@ const combinedReducers = combineReducers({
   attributesReducer,
   equipmentReducer,
   equipedReducer,
-  spellsReducer
+  spellsReducer,
+  myFormReducer
 });
 
 const rootReducer = (state, action) => {

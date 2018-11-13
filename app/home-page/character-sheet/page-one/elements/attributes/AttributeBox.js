@@ -1,17 +1,7 @@
 import React from 'react';
+import {insertCharacterAtPosition, remove_character} from "../../../../../form/utils";
 
 export const modifierWithSign = (modifier) => modifier && (modifier > 0 ? '+' : '') + modifier || '0';
-
-function remove_character(str, char_pos)
-{
-  const part1 = str.substring(0, char_pos);
-  const part2 = str.substring(char_pos + 1, str.length);
-  return (part1 + part2);
-}
-
-function insertCharacterAtPosition(main_string, pos, ins_string) {
-  return main_string.slice(0, pos) + ins_string + main_string.slice(pos);
-}
 
 class AttributeBox extends React.Component {
 
@@ -31,7 +21,7 @@ class AttributeBox extends React.Component {
 
   onKeyPress = (event) => {
     const key = event.key;
-    console.log(event);
+
     if (key === "Backspace") {
       const startLenght = this.state.value.length;
       const newValue = remove_character(this.state.value, this.state.cursor - 1);
@@ -110,11 +100,9 @@ class AttributeBox extends React.Component {
       onMouseEnter,
       onMouseLeave,
       isHovered,
-      value,
       modifier
     } = this.props;
 
-    console.log(this.state);
     return (
       <g transform={`translate(0 ${transformY})`}>
         <g  filter={ isHovered && "url(#sofGlow)" }>

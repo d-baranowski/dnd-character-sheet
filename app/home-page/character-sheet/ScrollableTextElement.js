@@ -16,7 +16,7 @@ class ScrollableTextElement extends React.PureComponent {
 
   render() {
     const {isHovered} = this.state;
-    const {fillPath, borderPah, rectX, rectY, rectWidth, rectHeigth, value, fontSize} = this.props;
+    const {fillPath, borderPah, rectX, rectY, rectWidth, rectHeigth, value, fontSize, setWrapperRef} = this.props;
 
     return (
       <g>
@@ -37,6 +37,7 @@ class ScrollableTextElement extends React.PureComponent {
           onMouseOver={this.onMouseOver}
           fontSize={fontSize}
           onClick={this.props.onClick}
+          setWrapperRef={setWrapperRef}
         >
           {value}
         </ScrollableTextField>
