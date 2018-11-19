@@ -26,7 +26,7 @@ const BackStory = ({onClick, renderValue, setWrapperRef}) => (
         y="390"
         x="70"
       >
-        Back Story
+        Backstory
       </tspan>
     </text>
   </ScrollableTextElement>

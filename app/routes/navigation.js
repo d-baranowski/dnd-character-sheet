@@ -58,7 +58,7 @@ const Navigation = ({location, classesWithSpellsSlots}) => (
           }}
         >
           <Link to="/">
-            <span>Skills</span>
+            <span>Stats</span>
             <svg viewBox="0 0 122 40">
               <use xlinkHref="#tab-shape"/>
             </svg>
