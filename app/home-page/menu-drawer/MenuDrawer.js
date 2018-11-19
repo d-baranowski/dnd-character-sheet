@@ -16,6 +16,20 @@ class TemporaryDrawer extends React.Component {
     });
   };
 
+  exitDrawerOnEscape = (event) => {
+    if (event.key === 'Escape') {
+      this.props.setOpen(false);
+    }
+  };
+
+  componentDidMount() {
+    document.addEventListener("keydown", this.exitDrawerOnEscape);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.exitDrawerOnEscape);
+  }
+
   render() {
     const {setOpen, isOpen, route, childProps} = this.props;
     const { hasSearchBar } = childProps || {};
