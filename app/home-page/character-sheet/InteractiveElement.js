@@ -36,6 +36,7 @@ class InteractiveElement extends React.PureComponent {
           onMouseLeave={this.onMouseLeave}
           onMouseOver={this.onMouseOver}
           onClick={this.props.onClick}
+          ref={this.props.setWrapperRef}
         />
       </g>
     );

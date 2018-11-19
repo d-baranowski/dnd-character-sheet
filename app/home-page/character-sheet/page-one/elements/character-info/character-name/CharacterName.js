@@ -4,6 +4,7 @@ import './CharacterNameDrawer';
 import {CharacterNameDrawerRoute} from './CharacterNameDrawer';
 import {setDrawerRoute} from '../../../../../menu-drawer/state/menuDrawerActions';
 import getValue from '../../../../../../form/getValue';
+import withSimpleForm from "../../../../../../form/withSimpleForm";
 
 
 
@@ -20,18 +21,16 @@ class CharacterName extends React.Component {
     this.setState({isHovered: false})
   };
 
-  onClick = () => {
-    this.props.showNameEditor();
-  };
-
   render() {
+    const {onClick, renderValue, setWrapperRef} = this.props;
     return (
       <g>
-        <Presentation isHovered={this.state.isHovered} characterName={this.props.characterName} />
+        <Presentation isHovered={this.state.isHovered} characterName={renderValue} />
         <rect
+          ref={setWrapperRef}
           onMouseLeave={this.onMouseLeave}
           onMouseOver={this.onMouseOver}
-          onClick={this.onClick}
+          onClick={onClick}
           fill="transparent" x="40" y="70" width="310" height="50" />
       </g>
     );
@@ -118,29 +117,20 @@ const Presentation = ({isHovered, characterName}) => (
         CHARACTER NAME
       </tspan>
     </text>
-    <text
+    <foreignObject
+      y={85}
+      x="70"
       fontWeight={400}
       fontSize={18}
       fontFamily="Scala Sans Offc"
     >
-      <tspan
-        y={100}
-        x={70}
-      >
-        {characterName}
-      </tspan>
-    </text>
+      {characterName}
+    </foreignObject>
   </g>
 );
 
-const mapStateToProps = (state) => {
-  return {
-    characterName: getValue(state, 'characterName', 'characterName')
-  }
-};
-
-const mapDispatchToProps = (dispatch) => ({
-  showNameEditor: () => dispatch(setDrawerRoute(CharacterNameDrawerRoute))
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(CharacterName);
+export default withSimpleForm({
+  formName: "characterName",
+  label: "Character Name",
+  type: "textarea"
+})(CharacterName);

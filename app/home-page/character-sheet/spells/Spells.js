@@ -24,7 +24,6 @@ import preparedLevelEight from "./preparedLevelEight";
 import SpellsLevelNine from "./SpellsLevelNine";
 import preparedLevelNine from "./preparedLevelNine";
 import {classToAbility} from "./spellsReducer";
-import {mapAttributesFromStateToProps} from "../page-one/elements/attributes/AttributesContainer";
 import {modifierWithSign} from "../page-one/elements/attributes/AttributeBox";
 import SpellSlotsTotal from "./SpellSlotsTotal";
 import SlotsOne from "./SlotsOne";
@@ -36,6 +35,7 @@ import SlotsSix from "./SlotsSix";
 import SlotsSeven from "./SlotsSeven";
 import SlotsEight from "./SlotsEight";
 import SlotsNine from "./SlotsNine";
+import {mapAttributesFromStateToProps} from "../page-one/elements/attributes/state/attributesReducer";
 
 const mapDispatchToProps = (dispatch) => ({
   prepare: (spellId, prepared) => dispatch(prepareSpell(spellId, prepared))
@@ -700,7 +700,7 @@ class SpellsClass extends React.Component {
                 fontFamily: 'Scala Sans Offc',
                 fontSize: 'small',
                 textAlign: 'center' }}>
-                {8 + this.props.values[classToAbility[spellCastingClass]].modifier + proficiencyBonus}
+                {8 + parseInt(this.props.values[classToAbility[spellCastingClass]].modifier) + proficiencyBonus}
               </div>
             </foreignObject>
             <foreignObject  x="646" y={70}>
@@ -712,7 +712,7 @@ class SpellsClass extends React.Component {
                 fontFamily: 'Scala Sans Offc',
                 fontSize: 'small',
                 textAlign: 'center' }}>
-                {modifierWithSign(this.props.values[classToAbility[spellCastingClass]].modifier + proficiencyBonus)}
+                {modifierWithSign(parseInt(this.props.values[classToAbility[spellCastingClass]].modifier) + proficiencyBonus)}
               </div>
             </foreignObject>
 

@@ -80,14 +80,14 @@ class AlignmentPicker extends React.PureComponent {
         basic
         size='small'
       >
-        <Header content='Choose Alignment'/>
+        <Header textAlign='center' content={this.state.isHovered || "Choose Alignment"}/>
         <Modal.Content>
           <svg
             id="Alignment"
             x="0px"
             y="0px"
             viewBox="0 0 18.908 18.908"
-            width="600"
+            width='100%'
             height="600"
             style={{ padding: 100 }}
           >
@@ -106,7 +106,6 @@ class AlignmentPicker extends React.PureComponent {
           <div
             style={{ width: 600, padding: 100 }}
           >
-            <h4 style={{textAlign: 'center'}}>{this.state.isHovered || "Choose Alignment"}</h4>
           </div>
         </Modal.Content>
       </Modal>

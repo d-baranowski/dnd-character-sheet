@@ -80,7 +80,7 @@ class HitPoints extends React.PureComponent {
         </foreignObject>
 
         <path d="M 359 315 h 100 v 3 h -100 Z" fill="transparent" stroke="black" />
-        <path d={`M 359.5 316.5 h ${this.getBarWidth(maxHp, currentHp)}`} stroke="red" strokeWidth={2} />
+        <path style={{transition: 'd 0.6s'}} d={`M 359.5 316.5 h ${this.getBarWidth(maxHp, currentHp)}`} stroke="red" strokeWidth={2} />
         <rect
           onMouseLeave={this.onMouseLeave}
           onMouseOver={this.onMouseOver}

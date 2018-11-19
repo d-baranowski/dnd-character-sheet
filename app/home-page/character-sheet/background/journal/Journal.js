@@ -2,10 +2,11 @@ import React from 'react';
 import withSimpleForm from '../../../../form/withSimpleForm';
 import ScrollableTextElement from '../../ScrollableTextElement';
 
-const Journal = ({journal, showEditor}) => (
+const Journal = ({onClick, renderValue, setWrapperRef}) => (
   <ScrollableTextElement
-    value={journal}
-    onClick={showEditor}
+    value={renderValue}
+    onClick={onClick}
+    setWrapperRef={setWrapperRef}
     fontSize={16}
     rectX="43"
     rectY="815"
@@ -16,10 +17,10 @@ const Journal = ({journal, showEditor}) => (
   >
     <text
       transform="matrix(1.33333 0 0 1.33333 306.347 276.153)"
-      fontWeight={400}
-      fontSize={7}
+      fontWeight={700}
+      fontSize={8}
       fontFamily="Scala Sans Offc"
-      fill="#969797"
+      fill="black"
     >
       <tspan
         y="570"
@@ -31,4 +32,4 @@ const Journal = ({journal, showEditor}) => (
   </ScrollableTextElement>
 );
 
-export default withSimpleForm({formName:"journal", label:"Back Story", type:"textarea"})(Journal);
+export default withSimpleForm({formName:"journal", label:"Back Story", type:"textarea", allowLineBreak: true})(Journal);

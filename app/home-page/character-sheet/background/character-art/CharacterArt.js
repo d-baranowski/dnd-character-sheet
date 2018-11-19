@@ -16,10 +16,10 @@ const CharacterArt = ({characterAvatar, openModal}) => (
     >
       <text
         transform="matrix(1.33333 0 0 1.33333 306.347 276.153)"
-        fontWeight={400}
-        fontSize={7}
+        fontWeight={700}
+        fontSize={8}
         fontFamily="Scala Sans Offc"
-        fill="#969797"
+        fill="black"
       >
         <tspan
           y="155"

@@ -1,11 +1,11 @@
 import React from 'react';
 import {getValue} from "../attributes/state/attributesReducer"
-import {modifierWithSign} from '../attributes/AttributeBox';
 import InteractiveElement from '../../../InteractiveElement';
 import withSimpleForm from '../../../../../form/withSimpleForm';
+import {modifierWithSign} from "../attributes/AttributeBox";
 
-const Initiative = ({initiativeBonus, dexterity, showEditor}) => {
-  const value = modifierWithSign(parseInt(initiativeBonus) + parseInt(dexterity));
+const Initiative = ({dexterity, onClick, renderValue, setWrapperRef, value, editing}) => {
+  const resultModifier = modifierWithSign(parseInt(value) + parseInt(dexterity));
 
   return (
     <InteractiveElement
@@ -15,7 +15,8 @@ const Initiative = ({initiativeBonus, dexterity, showEditor}) => {
       rectY="180"
       rectWidth="70"
       rectHeigth="70"
-      onClick={showEditor}
+      onClick={onClick}
+      setWrapperRef={setWrapperRef}
     >
       <text
         transform="matrix(1.33333 0 0 1.33333 384.599 240.768)"
@@ -40,7 +41,7 @@ const Initiative = ({initiativeBonus, dexterity, showEditor}) => {
             fontSize: 'x-large',
             textAlign: 'center'
           }}>
-            {value}
+            {editing ? renderValue : resultModifier}
           </p>
         </div>
       </foreignObject>
@@ -51,6 +52,7 @@ const Initiative = ({initiativeBonus, dexterity, showEditor}) => {
 
 
 export default withSimpleForm({
+  limitValue: 4,
   formName: "initiativeBonus",
   label: "Initiative Bonus",
   stateMapping: (state) =>

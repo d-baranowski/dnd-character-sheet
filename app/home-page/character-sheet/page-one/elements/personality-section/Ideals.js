@@ -27,4 +27,4 @@ const Ideals = ({onClick, renderValue, setWrapperRef}) => (
   </ScrollableTextElement>
 );
 
-export default withSimpleForm({formName:"ideals", label:"Ideals", type:"textarea"})(Ideals);
+export default withSimpleForm({formName:"ideals", label:"Ideals", type:"textarea", allowLineBreak: true})(Ideals);

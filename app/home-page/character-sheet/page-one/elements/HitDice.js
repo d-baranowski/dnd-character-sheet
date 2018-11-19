@@ -2,7 +2,7 @@ import React from 'react';
 import InteractiveElement from '../../InteractiveElement';
 import withSimpleForm from '../../../../form/withSimpleForm';
 
-const HitDice = ({hitDiceTotal, showEditor, hitDice = hitDiceTotal}) => (
+const HitDice = ({hitDiceTotal, onClick, setWrapperRef, renderValue}) => (
   <g transform="translate(0, -75)">
     <InteractiveElement
       fillPath="M402.257 426.777v52.091l-5.6 5.6h-91.836l-5.613-5.6v-52.09l5.613-5.614h91.836z"
@@ -11,7 +11,8 @@ const HitDice = ({hitDiceTotal, showEditor, hitDice = hitDiceTotal}) => (
       rectY="420"
       rectWidth="108"
       rectHeigth="70"
-      onClick={showEditor}
+      onClick={onClick}
+      setWrapperRef={setWrapperRef}
     >
       <text
         transform="matrix(1.33333 0 0 1.33333 306.347 436.932)"
@@ -57,7 +58,7 @@ const HitDice = ({hitDiceTotal, showEditor, hitDice = hitDiceTotal}) => (
             overflow: 'hidden',
             fontSize: 'medium',
             textAlign: 'center' }}>
-            {hitDice || hitDiceTotal}
+            {renderValue || hitDiceTotal}
           </p>
         </div>
       </foreignObject>

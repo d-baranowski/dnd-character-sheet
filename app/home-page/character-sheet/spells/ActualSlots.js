@@ -17,7 +17,7 @@ class ActualSlots extends React.PureComponent {
 
   render() {
     const {isHovered} = this.state;
-    const {fillPath, borderPath, rectX, rectY, rectWidth, rectHeight} = this.props;
+    const {fillPath, borderPath, rectX, rectY, rectWidth, rectHeight, setWrapperRef} = this.props;
 
     return (
       <g>
@@ -39,6 +39,7 @@ class ActualSlots extends React.PureComponent {
           onMouseLeave={this.onMouseLeave}
           onMouseOver={this.onMouseOver}
           onClick={this.props.onClick}
+          ref={setWrapperRef}
         />
       </g>
     );

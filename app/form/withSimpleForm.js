@@ -10,14 +10,14 @@ const getDefaultValue = (type) => {
   if (type === "textarea") {
     return ""
   }
-  return 0;
+  return "0";
 };
 
 const isInputKey = (key) => {
-  return key.length === 1 && key.match(/^[0-9a-z]$/i);
+  return key.length === 1 && key.match(/^[0-9a-z]|( )|\+|-$/i);
 };
 
-const withSimpleForm = ({formName, label, stateMapping, dispatchMapping, type = "number", limitValue = 2}) => (WrappedComponent) => {
+const withSimpleForm = ({formName, label, stateMapping, dispatchMapping, type = "number", limitValue = 2, allowLineBreak = false}) => (WrappedComponent) => {
   class Result extends React.Component {
     componentWillMount() {
       this.parse = type === "number" ? compose(limit(limitValue), onlyNumbers) : val => val;
@@ -54,6 +54,16 @@ const withSimpleForm = ({formName, label, stateMapping, dispatchMapping, type = 
           cursor: newValue.length !== startLenght && this.state.cursor > 0 ? this.state.cursor - 1 : this.state.cursor
         }, () => this.props.changeValue(newValue))
       }
+      else if (key === "Enter" && allowLineBreak) {
+        const newValue = this.parse(insertCharacterAtPosition(this.state.value, this.state.cursor, '\u0081'));
+        if (!newValue) {
+          return
+        }
+        this.setState({
+          value: newValue,
+          cursor: this.state.value.length !== newValue.length ? this.state.cursor + 1 : this.state.cursor
+        }, () => this.props.changeValue(newValue));
+      }
       else if (isInputKey(key)) {
         const newValue = this.parse(insertCharacterAtPosition(this.state.value, this.state.cursor, key));
         if (!newValue) {
@@ -61,7 +71,7 @@ const withSimpleForm = ({formName, label, stateMapping, dispatchMapping, type = 
         }
         this.setState({
           value: newValue,
-          cursor: this.state.cursor + 1
+          cursor: this.state.value.length !== newValue.length ? this.state.cursor + 1 : this.state.cursor
         }, () => this.props.changeValue(newValue));
       } else if (key === "ArrowLeft") {
         this.setState({
@@ -129,6 +139,36 @@ const withSimpleForm = ({formName, label, stateMapping, dispatchMapping, type = 
       }
     };
 
+    getLetter = (letter, index) => {
+      if (letter == ' ') {
+        return (
+          <span
+            className={`${this.getCursorClass(index)}`}
+            key={index}
+            dangerouslySetInnerHTML={{__html: '&nbsp;'}}
+          />
+        )
+      } else if (letter == '\u0081') {
+        return (
+          <React.Fragment>
+            <br />
+            <span
+              style={{height: '1rem', width: 0}}
+              className={`${index === this.state.cursor - 1 ? "hasCursor blinks" : ""}`}
+              key={index}
+              dangerouslySetInnerHTML={{__html: '&#8203;'}}
+            />
+          </React.Fragment>
+        )
+      }
+
+      return (
+        <span className={`${this.getCursorClass(index)}`} key={index}>
+          {letter}
+        </span>
+      );
+    };
+
     getRenderValue = () => {
       if (this.state.value.length === 0 && this.state.editing) {
         return (
@@ -136,14 +176,8 @@ const withSimpleForm = ({formName, label, stateMapping, dispatchMapping, type = 
         )
       }
 
-      return (
-        this.state.value.split('').map((letter, index) => (
-          <span className={this.getCursorClass(index)} key={index}>
-                  {letter}
-                </span>
-        ))
-      )
-    }
+      return this.state.value.split('').map((letter, index) => this.getLetter(letter, index));
+    };
 
 
     render() {
@@ -152,7 +186,9 @@ const withSimpleForm = ({formName, label, stateMapping, dispatchMapping, type = 
         ...rest,
         setWrapperRef: this.setWrapperRef,
         onClick: this.enterEditMode,
-        renderValue: this.getRenderValue()
+        renderValue: this.getRenderValue(),
+        editing: this.state.editing,
+        value: this.state.value
       };
       return (
         <WrappedComponent {...wrappedProps}  />

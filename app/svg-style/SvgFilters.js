@@ -10,7 +10,9 @@ const SvgFilters = () => (
       <feGaussianBlur in="thicken" stdDeviation="10" result="blurred" />
 
       {/*Change the colour*/}
-      <feFlood flood-opacity="0.35" flood-color="rgb(0,186,255)" result="glowColor" />
+      <feFlood flood-opacity="0.35" flood-color="rgb(0,186,255)" result="glowColor" >
+        <animate attributeName="flood-opacity" from="0" to="0.35" dur="1s" begin="0s" repeatCount="1"/>
+      </feFlood>
 
       {/*Color in the glows*/}
       <feComposite in="glowColor" in2="blurred" operator="in" result="softGlow_colored" />
@@ -22,6 +24,8 @@ const SvgFilters = () => (
       </feMerge>
     </filter>
     <filter id="hardGlow" height="300%" width="300%" x="-75%" y="-75%">
+      <animate attributeName="height" from="1%" to="300%" dur="1s" begin="0s" repeatCount="1"/>
+      <animate attributeName="width" from="1%" to="300%" dur="1s" begin="0s" repeatCount="1"/>
       {/*Thicken out the original shape*/}
       <feMorphology operator="dilate" radius="1" in="SourceAlpha" result="thicken" />
 
@@ -29,7 +33,9 @@ const SvgFilters = () => (
       <feGaussianBlur in="thicken" stdDeviation="10" result="blurred" />
 
       {/*Change the colour*/}
-      <feFlood flood-opacity="0.7" flood-color="rgb(0,186,255)" result="glowColor" />
+      <feFlood flood-opacity="0.7" flood-color="rgb(0,186,255)" result="glowColor">
+        <animate attributeName="flood-opacity" from="0" to="0.7" dur="1s" begin="0s" repeatCount="1"/>
+      </feFlood>
 
       {/*Color in the glows*/}
       <feComposite in="glowColor" in2="blurred" operator="in" result="softGlow_colored" />

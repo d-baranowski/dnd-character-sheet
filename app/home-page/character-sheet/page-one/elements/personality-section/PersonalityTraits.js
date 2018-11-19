@@ -30,4 +30,4 @@ const PersonalityTraits = ({onClick, renderValue, setWrapperRef}) => (
   </ScrollableTextElement>
 );
 
-export default withSimpleForm({formName:"personalityTraits", label:"Personality Traits", type:"textarea"})(PersonalityTraits);
+export default withSimpleForm({formName:"personalityTraits", label:"Personality Traits", type:"textarea", allowLineBreak: true})(PersonalityTraits);

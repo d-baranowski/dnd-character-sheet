@@ -2,10 +2,11 @@ import React from 'react';
 import ScrollableTextElement from '../../ScrollableTextElement';
 import withSimpleForm from '../../../../form/withSimpleForm';
 
-const BackStory = ({backstory, showEditor}) => (
+const BackStory = ({onClick, renderValue, setWrapperRef}) => (
   <ScrollableTextElement
-    value={backstory}
-    onClick={showEditor}
+    value={renderValue}
+    onClick={onClick}
+    setWrapperRef={setWrapperRef}
     fontSize={16}
     rectX="43"
     rectY="510"
@@ -16,10 +17,10 @@ const BackStory = ({backstory, showEditor}) => (
   >
     <text
       transform="matrix(1.33333 0 0 1.33333 306.347 276.153)"
-      fontWeight={400}
-      fontSize={7}
+      fontWeight={700}
+      fontSize={8}
       fontFamily="Scala Sans Offc"
-      fill="#969797"
+      fill="black"
     >
       <tspan
         y="390"
@@ -31,4 +32,4 @@ const BackStory = ({backstory, showEditor}) => (
   </ScrollableTextElement>
 );
 
-export default withSimpleForm({formName:"backstory", label:"Back Story", type:"textarea"})(BackStory);
+export default withSimpleForm({formName:"backstory", label:"Back Story", type:"textarea", allowLineBreak: true})(BackStory);

@@ -3,9 +3,10 @@ import ActualSlots from "./ActualSlots";
 import withSimpleForm from "../../../form/withSimpleForm";
 
 const y = 719;
-const SlotsTwo = ({showEditor, formValue}) => (
+const SlotsTwo = ({onClick, renderValue, setWrapperRef}) => (
   <ActualSlots
-    onClick={() => showEditor()}
+    setWrapperRef={setWrapperRef}
+    onClick={onClick}
     rectX="66.23"
     rectY={y}
     rectWidth={210}
@@ -22,7 +23,7 @@ const SlotsTwo = ({showEditor, formValue}) => (
         fontFamily: 'Scala Sans Offc',
         fontSize: 'small',
         textAlign: 'center' }}>
-        {formValue}
+        {renderValue}
       </div>
     </foreignObject>
   </ActualSlots>

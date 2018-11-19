@@ -28,5 +28,5 @@ const Flaws = ({onClick, renderValue, setWrapperRef}) => (
 );
 
 
-export default withSimpleForm({formName:"flaws", label:"Flaws", type:"textarea"})(Flaws);
+export default withSimpleForm({formName:"flaws", label:"Flaws", type:"textarea", allowLineBreak: true})(Flaws);
 

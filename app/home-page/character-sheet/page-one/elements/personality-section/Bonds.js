@@ -27,5 +27,5 @@ const Bonds = ({onClick, renderValue, setWrapperRef}) => (
   </ScrollableTextElement>
 );
 
-export default withSimpleForm({formName:"bonds", label:"Bonds", type:"textarea"})(Bonds);
+export default withSimpleForm({formName:"bonds", label:"Bonds", type:"textarea", allowLineBreak: true})(Bonds);
 
