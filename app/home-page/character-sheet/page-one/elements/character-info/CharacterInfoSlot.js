@@ -22,7 +22,7 @@ const characterInfoSlot = ({formName, label, textTransform, x, y, width, height,
       <foreignObject
         y={0}
         x="0"
-        transform={`${textTransform} translate(0, -23)`}
+        transform={`${textTransform} translate(0, -30)`}
         fontWeight={500}
         fontSize={12}
         fontFamily="Scala Sans Offc"
