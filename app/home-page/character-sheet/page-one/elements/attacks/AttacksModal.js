@@ -98,10 +98,10 @@ const AttacksModal = ({attack, modalOpen, closeModal, removeAttack, updateAttack
 );
 
 const mapStateToProps = (state) => {
-  const {modalOpen, modalEditId, attacks} = state.homePageReducer.attacksReducer;
+  const {modalOpen, modalEditSlot, attacks} = state.homePageReducer.attacksReducer;
   return {
     modalOpen,
-    attack: {...attacks[modalEditId] || {}}
+    attack: {...attacks[modalEditSlot] || {}}
   };
 };
 

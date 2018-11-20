@@ -122,7 +122,7 @@ SpellSlotsTotal.propTypes = {};
 
 const mapStateToProps = (state, ownProps) => {
   const level = state.homePageReducer.classesReducer.classes[ownProps.spellCastingClass].level;
-  const spellSlots = level && spellSlotsPerClass[ownProps.spellCastingClass][level > 20 ? 20 : level];
+  const spellSlots = level > 0 && spellSlotsPerClass[ownProps.spellCastingClass][level > 20 ? 19 : level - 1];
 
   return {
     spellSlots

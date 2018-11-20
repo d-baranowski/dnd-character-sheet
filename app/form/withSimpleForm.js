@@ -14,7 +14,7 @@ const getDefaultValue = (type) => {
 };
 
 const isInputKey = (key) => {
-  return key.length === 1 && key.match(/^[0-9a-z]|( )|\+|-$/i);
+  return key.length === 1 && key.match(/^[0-9a-z]|( )|\+|-|\.$/i);
 };
 
 const withSimpleForm = ({formName, label, stateMapping, dispatchMapping, type = "number", limitValue = 2, allowLineBreak = false}) => (WrappedComponent) => {

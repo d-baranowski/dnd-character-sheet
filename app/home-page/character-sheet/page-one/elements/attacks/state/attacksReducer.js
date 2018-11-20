@@ -33,7 +33,7 @@ export default (state = initialState, action) => {
 
   if (action.type === updateAttack.type) {
     const newState = {...state, attacks: {...state.attacks}};
-    newState.attacks[action.attack.id] = {...state.attacks[action.attack.id], ...action.attack};
+    newState.attacks[state.modalEditSlot] = {...state.attacks[state.modalEditSlot], ...action.attack};
     return newState;
   }
 

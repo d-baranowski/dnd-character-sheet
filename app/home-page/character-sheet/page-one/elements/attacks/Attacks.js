@@ -9,7 +9,7 @@ const getAttackBonus = (
   attributeModifiers,
   attack,
   proficiencyBonus
-) => attributeModifiers[attack.attribute] + (attack.proficient ? proficiencyBonus : 0) + parseInt(attack.otherBonus || "0") || 0;
+) => parseInt(attributeModifiers[attack.attribute]) + (attack.proficient ? proficiencyBonus : 0) + parseInt(attack.otherBonus || "0") || 0;
 
 const prependSign = (value) => value >= 0 ? "+" + value : "-" + value;
 
@@ -91,7 +91,7 @@ const Attacks = ({addAttack, attacks, attributeModifiers, proficiencyBonus, open
               <tspan y={(index + 1) * 12} x="0">{value[1].name}</tspan>
               <tspan y={(index + 1) * 12} x={90}>{prependSign(getAttackBonus(attributeModifiers, value[1], proficiencyBonus))}</tspan>
               <tspan y={(index + 1) * 12} x={138}>{
-                value[1].damageDice} {prependSign((attributeModifiers[value[1].attribute] || 0) + (parseInt(value[1].otherBonus || "0")))} / {value[1].damageType
+                value[1].damageDice} {prependSign(parseInt((attributeModifiers[value[1].attribute] || 0)) + (parseInt(value[1].otherBonus || "0")))} / {value[1].damageType
               }</tspan>
             </text>
           ))

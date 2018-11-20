@@ -136,7 +136,7 @@ class FeaturesAndTraitsModal extends React.PureComponent {
 }
 
 const mapStateToProps = (state) => ({
-  feat: state.homePageReducer.featsAndTraitsReducer.modalSpell,
+  feat: state.homePageReducer.featsAndTraitsReducer.modalFeat,
   modalOpen:  state.homePageReducer.featsAndTraitsReducer.modalOpen
 });
 

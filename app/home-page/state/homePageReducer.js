@@ -15,7 +15,7 @@ const reducer = combineReducers({
   featsAndTraitsReducer,
   characterInfoReducer,
   deathSavesReducer,
-  attacksReducer,
+  attacksReducer, // Add undo
   backgroundReducer
 });
 
