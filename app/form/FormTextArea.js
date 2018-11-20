@@ -17,7 +17,6 @@ class FormTextArea extends React.PureComponent {
         style={{marginBottom: 10}}
         label={label}
         placeholder={label} id={id}
-        autoFocus
         {...input}
         {...custom}
       />
