@@ -12,7 +12,7 @@ const getY = () => {
     return -28;
   }
   if (pixelRatio === 2) {
-    return -22;
+    return -24;
   }
 
   return -28;
