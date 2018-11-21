@@ -4,8 +4,7 @@ import {insertCharacterAtPosition, remove_character} from "./utils";
 import {limit, onlyNumbers} from "./format";
 import compose from 'redux/src/compose';
 import {updateFormValue} from "./state/actions";
-const {clipboard} = require('electron');
-import { ActionCreators } from 'redux-undo';
+const {clipboard} = require('electron')
 
 const getDefaultValue = (type) => {
   if (type === "textarea") {
@@ -43,23 +42,6 @@ const withSimpleForm = ({formName, label, stateMapping, dispatchMapping, type = 
 
       if (event.ctrlKey && key === 'v') {
         this.pasteFromClipboard();
-        return;
-      }
-
-      if (event.ctrlKey && key === 'z') {
-        this.props.undo();
-        this.setState({
-          value: this.props.formValue
-        });
-        return;
-      }
-
-      if (event.ctrlKey && key === 'y') {
-        this.props.redo();
-        return;
-      }
-
-      if (event.ctrlKey) {
         return;
       }
 
@@ -199,7 +181,6 @@ const withSimpleForm = ({formName, label, stateMapping, dispatchMapping, type = 
 
 
     render() {
-      console.log("render", this.props, this.state);
       const {children, ...rest} = this.props;
       const wrappedProps = {
         ...rest,
@@ -217,7 +198,7 @@ const withSimpleForm = ({formName, label, stateMapping, dispatchMapping, type = 
 
   const mapStateToProps = (state, ownProps) => {
     const prefix = ownProps.formPrefix || "";
-    const formValue = state.myFormReducer && state.myFormReducer.present && state.myFormReducer.present[prefix + formName] || getDefaultValue(type);
+    const formValue = state.myFormReducer[prefix + formName] || getDefaultValue(type);
 
     return {
       [prefix + formName]: formValue,
@@ -231,9 +212,7 @@ const withSimpleForm = ({formName, label, stateMapping, dispatchMapping, type = 
 
     return {
       ...dispatchMapping && dispatchMapping(dispatch),
-      changeValue: (value) => dispatch(updateFormValue(prefix + formName, value)),
-      undo: () => dispatch(ActionCreators.undo()),
-      redo: () => dispatch(ActionCreators.redo()),
+      changeValue: (value) => dispatch(updateFormValue(prefix + formName, value))
     }
   };
 
