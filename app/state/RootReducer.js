@@ -10,6 +10,7 @@ import equipmentReducer from '../home-page/character-sheet/inventory/state/equip
 import equipedReducer from "../home-page/character-sheet/inventory/state/equipedReducer";
 import spellsReducer from "../home-page/character-sheet/spells/spellsReducer";
 import attributesReducer from "../home-page/character-sheet/page-one/elements/attributes/state/attributesReducer";
+import undoable from 'redux-undo';
 
 const combinedReducers = combineReducers({
   router,
@@ -19,7 +20,7 @@ const combinedReducers = combineReducers({
   equipmentReducer,
   equipedReducer,
   spellsReducer,
-  myFormReducer
+  myFormReducer: undoable(myFormReducer, { limit: 60 })
 });
 
 const rootReducer = (state, action) => {
