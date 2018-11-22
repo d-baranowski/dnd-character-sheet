@@ -4,7 +4,8 @@ import {insertCharacterAtPosition, remove_character} from "./utils";
 import {limit, onlyNumbers} from "./format";
 import compose from 'redux/src/compose';
 import {updateFormValue} from "./state/actions";
-const {clipboard} = require('electron')
+
+const {clipboard} = require('electron');
 
 const getDefaultValue = (type) => {
   if (type === "textarea") {
@@ -19,14 +20,53 @@ const isInputKey = (key) => {
 
 const withSimpleForm = ({formName, label, stateMapping, dispatchMapping, type = "number", limitValue = 2, allowLineBreak = false}) => (WrappedComponent) => {
   class Result extends React.Component {
-    componentWillMount() {
-      this.parse = type === "number" ? compose(limit(limitValue), onlyNumbers) : val => val;
-    }
-
     state = {
+      past: [],
+      future: [],
       value: this.props.formValue || "",
       cursor: 0,
       editing: false
+    };
+
+    update = (value, cursor) => {
+      let newPast = this.state.past;
+      if (!this.state.past[0] || Math.abs(value.length - this.state.past[0].value.length) > 3) {
+        newPast = [{value, cursor}, ...this.state.past].slice(0,600);
+      }
+
+      this.setState({
+        past: newPast,
+        value,
+        cursor
+      }, () => this.props.changeValue(value))
+    };
+
+    undo = () => {
+      if (this.state.past.length < 1) {
+        return;
+      }
+      const {cursor, value} = this.state.past[0];
+
+      this.setState({
+        past: this.state.past.slice(1, this.state.past.length),
+        cursor,
+        value,
+        future: [{cursor, value}, ...this.state.future].slice(0,300)
+      })
+    };
+
+    redo = () => {
+      if (this.state.future.length < 1) {
+        return;
+      }
+      const {cursor, value} = this.state.future[0];
+
+      this.setState({
+        future: this.state.future.slice(1, this.state.future.length),
+        cursor,
+        value,
+        past: [{cursor, value}, ...this.state.past].slice(0,600)
+      })
     };
 
     getCursorClass = (index) => {
@@ -45,34 +85,37 @@ const withSimpleForm = ({formName, label, stateMapping, dispatchMapping, type = 
         return;
       }
 
+      if (event.ctrlKey && key === 'z') {
+        this.undo();
+        return;
+      }
+
+      if (event.ctrlKey && key === 'y') {
+        this.redo();
+        return;
+      }
+
       if (key === "Backspace") {
         const startLenght = this.state.value.length;
         const newValue = remove_character(this.state.value, this.state.cursor - 1);
 
-        this.setState({
-          value: newValue,
-          cursor: newValue.length !== startLenght && this.state.cursor > 0 ? this.state.cursor - 1 : this.state.cursor
-        }, () => this.props.changeValue(newValue))
+        this.update(newValue, newValue.length !== startLenght && this.state.cursor > 0 ? this.state.cursor - 1 : this.state.cursor);
       }
       else if (key === "Enter" && allowLineBreak) {
         const newValue = this.parse(insertCharacterAtPosition(this.state.value, this.state.cursor, '\u0081'));
         if (!newValue) {
           return
         }
-        this.setState({
-          value: newValue,
-          cursor: this.state.value.length !== newValue.length ? this.state.cursor + 1 : this.state.cursor
-        }, () => this.props.changeValue(newValue));
+
+        this.update(newValue, this.state.value.length !== newValue.length ? this.state.cursor + 1 : this.state.cursor);
       }
       else if (isInputKey(key)) {
         const newValue = this.parse(insertCharacterAtPosition(this.state.value, this.state.cursor, key));
         if (!newValue) {
           return
         }
-        this.setState({
-          value: newValue,
-          cursor: this.state.value.length !== newValue.length ? this.state.cursor + 1 : this.state.cursor
-        }, () => this.props.changeValue(newValue));
+
+        this.update(newValue, this.state.value.length !== newValue.length ? this.state.cursor + 1 : this.state.cursor);
       } else if (key === "ArrowLeft") {
         this.setState({
           cursor: this.state.cursor !== 0 ? this.state.cursor - 1 : 0
@@ -85,6 +128,10 @@ const withSimpleForm = ({formName, label, stateMapping, dispatchMapping, type = 
         this.leaveEditMode();
       }
     };
+
+    componentWillMount() {
+      this.parse = type === "number" ? compose(limit(limitValue), onlyNumbers) : val => val;
+    }
 
     isValid = (str) => {
       return str.length === 0 || str.match(/^-{0,1}\d{1,2}$/);
@@ -123,11 +170,9 @@ const withSimpleForm = ({formName, label, stateMapping, dispatchMapping, type = 
       if (!newValue) {
         return
       }
-      this.setState({
-        value: newValue,
-        cursor: this.state.cursor + pastedText.length
-      }, () => this.props.changeValue(newValue));
-    }
+
+      this.update(newValue, this.state.cursor + pastedText.length);
+    };
 
     handleClick = (event) => {
       if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
