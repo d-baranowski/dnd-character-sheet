@@ -17,7 +17,7 @@ class FileManager {
           return;
         }
 
-        this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "LOAD_CHARACTER", payload: '${data}'})`);
+        this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "LOAD_CHARACTER", payload: ${JSON.stringify(data)}})`);
       });
     }
   }

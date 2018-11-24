@@ -28,6 +28,11 @@ const withSimpleForm = ({formName, label, stateMapping, dispatchMapping, type = 
       editing: false
     };
 
+    constructor(props) {
+      super(props);
+      this.parse = type === "number" ? compose(limit(limitValue), onlyNumbers) : val => val;
+    }
+
     update = (value, cursor) => {
       let newPast = this.state.past;
       if (!this.state.past[0] || Math.abs(value.length - this.state.past[0].value.length) > 3) {
@@ -129,18 +134,13 @@ const withSimpleForm = ({formName, label, stateMapping, dispatchMapping, type = 
       }
     };
 
-    componentWillMount() {
-      this.parse = type === "number" ? compose(limit(limitValue), onlyNumbers) : val => val;
-    }
-
     static getDerivedStateFromProps(props, state) {
       if (props.formValue !== state.value) {
         return {
-          value: props.selected,
+          value: props.formValue,
         };
       }
 
-      // Return null if the state hasn't changed
       return null;
     }
 
