@@ -72,6 +72,11 @@ app.on('ready', async () => {
     }
   });
 
+
+  const fileManager = new FileManager(mainWindow);
+  const menuBuilder = new MenuBuilder(mainWindow, fileManager);
+  menuBuilder.buildMenu();
+
   mainWindow.loadURL(`file://${__dirname}/app.html`);
 
   // @TODO: Use 'ready-to-show' event
@@ -90,13 +95,8 @@ app.on('ready', async () => {
     mainWindow = null;
   });
 
-  const fileManager = new FileManager(mainWindow);
-  const menuBuilder = new MenuBuilder(mainWindow, fileManager);
-
   if (path.parse(process.argv[1])) {
     const filePath = path.parse(process.argv[1]);
     fileManager.openFile([path.join(filePath.dir, filePath.base)]);
   }
-
-  menuBuilder.buildMenu();
 });

@@ -133,6 +133,17 @@ const withSimpleForm = ({formName, label, stateMapping, dispatchMapping, type = 
       this.parse = type === "number" ? compose(limit(limitValue), onlyNumbers) : val => val;
     }
 
+    static getDerivedStateFromProps(props, state) {
+      if (props.formValue !== state.value) {
+        return {
+          value: props.selected,
+        };
+      }
+
+      // Return null if the state hasn't changed
+      return null;
+    }
+
     isValid = (str) => {
       return str.length === 0 || str.match(/^-{0,1}\d{1,2}$/);
     };
