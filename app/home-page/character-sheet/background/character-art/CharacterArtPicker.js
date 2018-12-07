@@ -5,8 +5,8 @@ import {connect} from 'react-redux';
 import {closeModal, setCharacterArt} from '../state/backgroundActions';
 
 class AlignmentPicker extends React.PureComponent {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.filePicker = React.createRef();
     this.state = {
       file: ""

@@ -14,7 +14,7 @@ import Speed from './elements/Speed';
 import ProficiencyBonus from './elements/ProficiencyBodnus.container';
 import PassiveWisdom from './elements/PassiveWisdom';
 import AttributesContainer from './elements/attributes/AttributesContainer';
-import HitDice from './elements/HitDice';
+import HitDice from './elements/hit-dice/HitDice';
 import MoneyContainer from './elements/money/MoneyContainer';
 import SkillsContainer from './elements/skills/SkillsContainer';
 import SavingThrowsContainer from './elements/saving-throws/SavingThrowsContainer';
@@ -30,6 +30,7 @@ import AlignmentPicker from './elements/character-info/alignment/AlignmentPicker
 import AttacksModal from './elements/attacks/AttacksModal';
 import MenuDrawer from '../../menu-drawer/MenuDrawer';
 import PanZoom from '../PanZoom';
+import HitDiceSelector from "./elements/hit-dice/HitDiceSelector";
 
 
 
@@ -40,6 +41,7 @@ class PageOne extends React.PureComponent {
       <MenuDrawer>
         <AttacksModal />
         <FeaturesAndTraitsModal />
+        <HitDiceSelector/>
         <PanZoom>
           <GrayDecorations />
           <Logo />

@@ -1,8 +1,9 @@
 import React from 'react';
-import InteractiveElement from '../../InteractiveElement';
-import withSimpleForm from '../../../../form/withSimpleForm';
+import InteractiveElement from '../../../InteractiveElement';
+import {connect} from "react-redux";
+import {setModalVisibility} from "./state/hitDiceActions";
 
-const HitDice = ({hitDiceTotal, onClick, setWrapperRef, renderValue}) => (
+const HitDice = ({hitDiceTotal, onClick, hitDiceString}) => (
   <g transform="translate(0, -75)">
     <InteractiveElement
       fillPath="M402.257 426.777v52.091l-5.6 5.6h-91.836l-5.613-5.6v-52.09l5.613-5.614h91.836z"
@@ -12,7 +13,6 @@ const HitDice = ({hitDiceTotal, onClick, setWrapperRef, renderValue}) => (
       rectWidth="108"
       rectHeigth="70"
       onClick={onClick}
-      setWrapperRef={setWrapperRef}
     >
       <text
         transform="matrix(1.33333 0 0 1.33333 306.347 436.932)"
@@ -58,7 +58,7 @@ const HitDice = ({hitDiceTotal, onClick, setWrapperRef, renderValue}) => (
             overflow: 'hidden',
             fontSize: 'medium',
             textAlign: 'center' }}>
-            {renderValue || hitDiceTotal}
+            {hitDiceString}
           </p>
         </div>
       </foreignObject>
@@ -72,25 +72,35 @@ const mapStateToProps = (state) => {
     result[val[1].hitDie] = 0;
     return result;
   }, {});
-  const hitDice = classes.reduce((result, val) => {
+
+  const hitDiceTotal = classes.reduce((result, val) => {
     result[val[1].hitDie]+= parseInt(val[1].level);
     return result;
-  }, startValue);
+  }, {...startValue});
+
+  const hitDice = classes.reduce((result, val) => {
+    result[val[1].hitDie] = hitDiceTotal[val[1].hitDie] + state.homePageReducer.hitDiceReducer[val[1].hitDie];
+    return result;
+  }, {...hitDiceTotal});
 
   const hitDiceString = Object.entries(hitDice).filter((value) => value[1] > 0).reduce((result, val) => {
     result += val[1] + val[0] + " ";
     return result;
   }, "");
 
+  const hitDiceStringTotal = Object.entries(hitDiceTotal).filter((value) => value[1] > 0).reduce((result, val) => {
+    result += val[1] + val[0] + " ";
+    return result;
+  }, "");
+
   return {
-    hitDiceTotal: hitDiceString
+    hitDiceTotal: hitDiceStringTotal,
+    hitDiceString
   }
 };
 
-export default withSimpleForm({
-  formName: "hitDice",
-  label: "Hit Dice",
-  type: "textarea",
-  stateMapping: mapStateToProps
-})
-(HitDice);
+const mapDispatchToProps = (dispatch) => ({
+  onClick: () => dispatch(setModalVisibility(true))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(HitDice);

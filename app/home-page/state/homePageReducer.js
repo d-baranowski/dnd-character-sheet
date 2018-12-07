@@ -7,6 +7,7 @@ import characterInfoReducer from '../character-sheet/page-one/elements/character
 import deathSavesReducer from '../character-sheet/page-one/elements/death-saves/state/deathSavesReducer';
 import attacksReducer from '../character-sheet/page-one/elements/attacks/state/attacksReducer';
 import backgroundReducer from '../character-sheet/background/state/backgroundReducer';
+import hitDiceReducer from "../character-sheet/page-one/elements/hit-dice/state/hitDiceReducer";
 
 const reducer = combineReducers({
   menuDrawerReducer,
@@ -16,7 +17,8 @@ const reducer = combineReducers({
   characterInfoReducer,
   deathSavesReducer,
   attacksReducer, // Add undo
-  backgroundReducer
+  backgroundReducer,
+  hitDiceReducer
 });
 
 export default reducer;
