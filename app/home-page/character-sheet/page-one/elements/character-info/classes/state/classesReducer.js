@@ -19,7 +19,7 @@ const initialState = {
   proficiencyBonus: 0,
 };
 
-const calculateTotalLevel = (state) => {
+export const calculateTotalLevel = (state) => {
   const mapped = Object.entries(state.classes)
     .map(([key, value]) => value.level);
 

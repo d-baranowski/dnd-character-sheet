@@ -5,6 +5,26 @@
   src: url("/resources/fonts/Zelda.otf");
 }
 
+.fire {
+  g {
+    transition: fill 0.5s ease-out;
+  }
+}
+
+.fire:hover {
+  g {
+    fill: #ff3a00;
+  }
+}
+
+.transition-position {
+  transition: left 0.2s ease-out;
+}
+
+.no-select {
+  user-select: none;
+}
+
 .padded {
   padding: 10px;
 }
@@ -36,6 +56,19 @@
   border-left: 1px solid transparent;
 }
 
-.handleWhiteSpace {
-
+#fire-overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  background-image: url(http://78.media.tumblr.com/9951ca2e7e884a48ca5b5269f5514cd6/tumblr_nwjrkxWOcd1tslewgo1_500.gif);
+  background-repeat:no-repeat;
+  background-size:100%;
+  background-position:left bottom;
+  background-color: black;
+  filter:blur(2px);
+  z-index: 100;
+  transition: opacity ease-out 1000ms;
 }
+
