@@ -140,7 +140,7 @@ export default (state = initialState, action) => {
       ...state.chosenSpells,
       [level]: {
         ...state.chosenSpells[level],
-        [action.spell.id]: action.spell
+        [action.spell.id]: { ...state.chosenSpells[level][action.spell.id], ...action.spell }
       }
     };
 

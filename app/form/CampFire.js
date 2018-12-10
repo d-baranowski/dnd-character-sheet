@@ -6,7 +6,7 @@ const CampFire = ({onClick}) => (
     <svg id="startLongRest" onClick={onClick} style={{
       position: 'fixed',
       top: 10,
-      left: 10,
+      right: 10,
       cursor: 'pointer',
       width: 50,
       height: 50,

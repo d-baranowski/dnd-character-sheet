@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import CampFire from "./CampFire";
 import {Button} from "semantic-ui-react";
 import {connect} from "react-redux";
-import "./CampfireContainer.scss";
 
 class CampfireContainer extends Component {
   state = {
@@ -69,7 +68,7 @@ class CampfireContainer extends Component {
               display: 'flex',
               position: 'fixed',
               top: 75,
-              left: this.state.showConfirmation ? 10 : -400,
+              right: this.state.showConfirmation ? 10 : -400,
               zIndex: 1,
               padding: 10,
               background: 'white',
