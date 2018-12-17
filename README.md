@@ -1,8 +1,23 @@
 # D&D Character Sheet Manager
 Built using Electron & React.
 
-This project is under construction.
+Esthetically pleasing 5e Character sheet with many useful features.
+ 
+* SRD Content for spells and feats
+* Automatic long rest
+* Animated health bar
+* 3d animated hit dice menu
+* Pretty alignment picker
+* Auto calculated values from modifiers
 
+[![Alt text](example.png?raw=true "Screen shoot")](
+https://www.youtube.com/watch?v=4BCLUY1GEWU&list=PLxEsTDd6C5F4nDbgDgNLImzM1Ck_bN61T)
+
+[Watch Demo Here](
+https://www.youtube.com/watch?v=4BCLUY1GEWU&list=PLxEsTDd6C5F4nDbgDgNLImzM1Ck_bN61T)
+
+[Download](https://github.com/d-baranowski/dnd-character-sheet/releases/latest)
+Your operating system will warn you against installing it because I didnt bother signing the application.   
 ## Run
 
 Start the app in the `dev` environment. This starts the renderer process in [**hot-module-replacement**](https://webpack.js.org/guides/hmr-react/) mode and starts a webpack dev server that sends hot updates to the renderer process:
