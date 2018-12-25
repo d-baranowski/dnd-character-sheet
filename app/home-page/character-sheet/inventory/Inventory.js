@@ -9,12 +9,16 @@ import EquipmentSlots from './equipment-slots/EquipmentSlots';
 import EquipmentTable from './equipment-table/EquipmentTable';
 import EquipmentModal from './equipment-table/EquipmentModal';
 import EquipedModal from "./equipment-slots/EquipedModal";
+import connectSimpleForm from "../../../form/connectSimpleForm";
 
-const Inventory = () => (
+const Inventory = ({formValue, changeValue}) => (
   <MenuDrawer>
     <EquipmentModal />
     <EquipedModal />
-    <PanZoom>
+    <PanZoom
+      value={formValue}
+      setValue={changeValue}
+    >
       <GrayDecorations />
       <TopBarDecorativeMonsters />
       <TopBar />
@@ -25,4 +29,4 @@ const Inventory = () => (
   </MenuDrawer>
 );
 
-export default Inventory;
+export default connectSimpleForm("InventoryPanZoom")(Inventory);

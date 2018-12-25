@@ -13,12 +13,16 @@ import Weight from './top-bar/Weight';
 import Eyes from './top-bar/Eyes';
 import Skin from './top-bar/Skin';
 import Hair from './top-bar/Hair';
+import connectSimpleForm from "../../../form/connectSimpleForm";
 
-const Background = () => (
+const Background = ({formValue, changeValue}) => (
   <React.Fragment>
     <CharacterArtPicker/>
     <MenuDrawer>
-      <PanZoom>
+      <PanZoom
+        value={formValue}
+        setValue={changeValue}
+      >
         <GrayDecorations/>
         <g transform="translate(50)" id="DnD-logo">
           <path
@@ -196,4 +200,4 @@ const Background = () => (
     </MenuDrawer>
   </React.Fragment>
 );
-export default Background;
+export default connectSimpleForm("BackgroundPanZoom")(Background);

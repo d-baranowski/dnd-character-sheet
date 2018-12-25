@@ -36,6 +36,7 @@ import SlotsSeven from "./SlotsSeven";
 import SlotsEight from "./SlotsEight";
 import SlotsNine from "./SlotsNine";
 import {mapAttributesFromStateToProps} from "../page-one/elements/attributes/state/attributesReducer";
+import connectSimpleForm from "../../../form/connectSimpleForm";
 
 const mapDispatchToProps = (dispatch) => ({
   prepare: (spellId, prepared) => dispatch(prepareSpell(spellId, prepared))
@@ -53,7 +54,10 @@ class SpellsClass extends React.Component {
       <React.Fragment>
         <SpellsModal />
         <MenuDrawer>
-          <PanZoom>
+          <PanZoom
+            value={this.props.formValue}
+            setValue={this.props.changeValue}
+          >
             <defs>
               <clipPath id="a">
                 <path d="M0 0h612v792H0z"/>
@@ -746,6 +750,6 @@ const Spells = (spellCastingClass) => connect((state) => ({
   ...mapAttributesFromStateToProps(state),
   proficiencyBonus: state.homePageReducer.classesReducer.proficiencyBonus,
   spellCastingClass
-}), mapDispatchToProps)(SpellsClass);
+}), mapDispatchToProps)(connectSimpleForm(spellCastingClass + "SpellsPanZoom")(SpellsClass));
 
 export default Spells;

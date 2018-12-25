@@ -31,6 +31,7 @@ import AttacksModal from './elements/attacks/AttacksModal';
 import MenuDrawer from '../../menu-drawer/MenuDrawer';
 import PanZoom from '../PanZoom';
 import HitDiceSelector from "./elements/hit-dice/HitDiceSelector";
+import connectSimpleForm from "../../../form/connectSimpleForm";
 
 
 
@@ -42,7 +43,10 @@ class PageOne extends React.PureComponent {
         <AttacksModal />
         <FeaturesAndTraitsModal />
         <HitDiceSelector/>
-        <PanZoom>
+        <PanZoom
+          value={this.props.formValue}
+          setValue={this.props.changeValue}
+        >
           <GrayDecorations />
           <Logo />
           <CharacterName />
@@ -78,5 +82,5 @@ class PageOne extends React.PureComponent {
   }
 }
 
-export default PageOne;
+export default connectSimpleForm("PageOnePanZoom")(PageOne);
 
