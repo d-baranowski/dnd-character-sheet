@@ -4,6 +4,7 @@ import { createHashHistory } from 'history';
 import { routerMiddleware, routerActions } from 'react-router-redux';
 import { createLogger } from 'redux-logger';
 import rootReducer from '../RootReducer';
+import sideEffectsMiddleware from "../middleware/sideEffectsMiddleware";
 
 const history = createHashHistory();
 
@@ -14,6 +15,9 @@ const configureStore = (initialState?: counterStateType) => {
 
   // Thunk Middleware
   middleware.push(thunk);
+
+  // The thing
+  middleware.push(sideEffectsMiddleware);
 
   // Logging Middleware
   const logger = createLogger({

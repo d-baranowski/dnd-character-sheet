@@ -218,6 +218,19 @@ export default class MenuBuilder {
                 }
               ]
       },
+      {
+        label: '&Synchronise',
+        submenu:
+            [
+              {
+                label: 'Join Room',
+                click: () => {
+                  this.mainWindow.webContents
+                    .executeJavaScript(`document.store.dispatch({type: "JOIN_WEB_RTC_ROOM"})`);
+                }
+              }
+            ]
+      },
     ];
 
     return templateDefault;

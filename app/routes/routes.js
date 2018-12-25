@@ -10,27 +10,29 @@ import Spells from '../home-page/character-sheet/spells/Spells';
 import spellSlotsPerClass from "../home-page/character-sheet/spells/spellSlotsPerClass";
 import CampFire from "../form/CampFire";
 import CampfireContainer from "../form/CampfireContainer";
+import SynchronizationComponent from "../synchronisation/SynchronizationComponent";
 
 class routes extends React.PureComponent {
   render() {
     return (
       <App>
-      <Navigation/>
-      <CampfireContainer />
-      <Switch>
-        <Route exact path="/" component={PageOne}/>
-        <Route exact path="/equipment" component={Inventory}/>
-        <Route exact path="/background" component={Background}/>
-        {Object.keys(spellSlotsPerClass).map((magicUser) => (
-          <Route
-            key={magicUser}
-            exact
-            path={`/spells-of-${magicUser}`}
-            component={Spells(magicUser)}
-          />
-        ))}
-      </Switch>
-    </App>)
+        <SynchronizationComponent/>
+        <Navigation/>
+        <CampfireContainer/>
+        <Switch>
+          <Route exact path="/" component={PageOne}/>
+          <Route exact path="/equipment" component={Inventory}/>
+          <Route exact path="/background" component={Background}/>
+          {Object.keys(spellSlotsPerClass).map((magicUser) => (
+            <Route
+              key={magicUser}
+              exact
+              path={`/spells-of-${magicUser}`}
+              component={Spells(magicUser)}
+            />
+          ))}
+        </Switch>
+      </App>)
   }
 }
 
