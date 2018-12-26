@@ -155,6 +155,11 @@ export default (scaleDroneToken, roomId) => {
               },
               events: () => {
                 return eventLog;
+              },
+              close: () => {
+                dataChannel.close();
+                drone.close();
+                room.unsubscribe();
               }
             })
           }

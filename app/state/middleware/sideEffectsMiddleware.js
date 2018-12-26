@@ -6,6 +6,10 @@ const registerSideEffect = (actionName, callback) => {
   }
 
   sideEffects[actionName].push(callback);
+
+  if (actionName === '*') {
+    sideEffects[actionName] = [callback];
+  }
 };
 
 const sideEffectsMiddleware = store => next => action => {

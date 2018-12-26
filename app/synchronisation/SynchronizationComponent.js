@@ -24,7 +24,7 @@ class SynchronizationComponent extends Component {
       if (!this.state.roomName) {
         this.setState({roomName: action.payload.roomName});
         const {promise, events} = createConnection('tbrd6Bv7LyXeG8xX', action.payload.roomName);
-        promise.then(({publish, subscribe, events}) => {
+        promise.then(({publish, subscribe, events, close}) => {
           subscribe("Follow", (data) => {
             store.dispatch(data);
           });
@@ -35,10 +35,18 @@ class SynchronizationComponent extends Component {
             }
 
             next(action);
-          })
+          });
+
+          this.close = () => {
+            close();
+            setTimeout(() => {
+              this.setState({roomName: ""});
+              clearInterval(this.updateInterval);
+            }, 1500)
+          }
         });
 
-        setInterval(() => {
+        this.updateInterval = setInterval(() => {
           const currentEvents = events();
           this.setState({latestEvent: currentEvents[currentEvents.length - 1]})
         }, 3000)
@@ -62,6 +70,7 @@ class SynchronizationComponent extends Component {
           {this.state.roomName && <div>
             <div><strong>Room Name:</strong> {this.state.roomName}</div>
             <div><strong>Event:</strong> {this.state.latestEvent}</div>
+            <button onClick={() => this.close && this.close()}>Close</button>
           </div>}
         </div>
         <Modal
