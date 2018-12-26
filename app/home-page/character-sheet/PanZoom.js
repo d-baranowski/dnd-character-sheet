@@ -45,8 +45,6 @@ class PanZoom extends React.PureComponent {
         toolbarPosition='none'
         scaleFactorMax={7}
         scaleFactorMin={0.5}
-        value={this.props.value}
-        onChangeValue={value => { this.props.setValue(value); }}
         disableDoubleClickZoomWithToolAuto
       >
         <svg height={1056} width={816}>
