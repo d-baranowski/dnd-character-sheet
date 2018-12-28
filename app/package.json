@@ -1,13 +1,13 @@
 {
-  "name": "electron-react-boilerplate",
-  "productName": "electron-react-boilerplate",
-  "version": "1.0.0",
-  "description": "Electron application boilerplate based on React, React Router, Webpack, React Hot Loader for rapid application development",
+  "name": "dnd-character-sheet",
+  "productName": "dnd-character-sheet",
+  "version": "0.1.4",
+  "description": "dnd-character-sheet",
   "main": "./main.prod.js",
   "author": {
-    "name": "C. T. Lin",
-    "email": "chentsulin@gmail.com",
-    "url": "https://github.com/chentsulin"
+    "name": "Daniel Baranowski",
+    "email": "dan@devtales.net",
+    "url": "https://github.com/d-baranowski/dnd-character-sheet"
   },
   "scripts": {
     "electron-rebuild": "node -r babel-register ../internals/scripts/ElectronRebuild.js",
