@@ -1,7 +1,7 @@
 {
   "name": "dnd-character-sheet",
   "productName": "dnd-character-sheet",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "dnd-character-sheet",
   "main": "./main.prod.js",
   "author": {

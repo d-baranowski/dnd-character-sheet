@@ -1,11 +1,10 @@
 {
   "name": "dnd-character-sheet",
   "productName": "D&D Character Sheet",
-  "version": "0.0.1",
+  "version": "0.1.5",
   "description": "5e Dungeons and dragons character sheet aiming to look like the paper version.",
   "scripts": {
-    "build": "build --win",
-    "ship": "build --win -p always",
+    "build": "concurrently \"npm run build-main\" \"npm run build-renderer\"",
     "build-dll": "cross-env NODE_ENV=development node --trace-warnings -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.renderer.dev.dll.js --colors",
     "build-main": "cross-env NODE_ENV=production node --trace-warnings -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.main.prod.js --colors",
     "build-renderer": "cross-env NODE_ENV=production node --trace-warnings -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.renderer.prod.js --colors",
