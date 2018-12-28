@@ -7,7 +7,7 @@ export default class App extends React.Component<Props> {
   props: Props;
 
   state = {
-    updatesReady: true
+    updatesReady: false
   };
 
   componentDidMount() {
@@ -19,11 +19,12 @@ export default class App extends React.Component<Props> {
 
   render() {
     return <React.Fragment>
-      {this.state.msg && <div>
-        New updates ready
+      {this.state.updatesReady && <div style={{zIndex: 1, position: 'absolute'}}>
+        New updates ready!
         <button onClick={() => {
           ipcRenderer.send('quitAndInstall')}
         }>Install</button>
+        <button onClick={() => {this.setState({updatesReady: false})}}>Dismiss</button>
       </div>}
       <div>{this.props.children}</div>
     </React.Fragment>;
