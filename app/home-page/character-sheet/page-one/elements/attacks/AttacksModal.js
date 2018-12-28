@@ -43,7 +43,11 @@ const AttacksModal = ({attack, modalOpen, closeModal, removeAttack, updateAttack
           onChange={(e, { value }) => updateAttack({...attack, attribute: value})}
           options={[
             {key: 'Str', text: 'Strength', value: 'Strength'},
-            {key: 'Dex', text: 'Dexterity',value: 'Dexterity'}
+            {key: 'Dex', text: 'Dexterity',value: 'Dexterity'},
+            {key: 'Con', text: 'Constitution',value: 'Constitution'},
+            {key: 'Int', text: 'Intelligence',value: 'Intelligence'},
+            {key: 'Wis', text: 'Wisdom',value: 'Wisdom'},
+            {key: 'Cha', text: 'Charisma',value: 'Charisma'},
           ]}
           placeholder='Attribute'
           selection
@@ -57,10 +61,10 @@ const AttacksModal = ({attack, modalOpen, closeModal, removeAttack, updateAttack
         label="Proficient"
       />
       <div>
-        <h3>Other Bonus</h3>
+        <h3>To Hit Bonus</h3>
         <Input
           style={{marginBottom: 10}}
-          placeholder='Other Bonus'
+          placeholder='To Hit Bonus'
           value={attack.otherBonus}
           onChange={(event) => updateAttack({...attack, otherBonus: event.target.value})}
         />
@@ -80,6 +84,15 @@ const AttacksModal = ({attack, modalOpen, closeModal, removeAttack, updateAttack
           placeholder='Damage Dice'
           value={attack.damageDice}
           onChange={(event) => updateAttack({...attack, damageDice: event.target.value})}
+        />
+      </div>
+      <div>
+        <h3>Damage Bonus</h3>
+        <Input
+          style={{marginBottom: 10}}
+          placeholder='Damage Bonus'
+          value={attack.otherBonus}
+          onChange={(event) => updateAttack({...attack, damageBonus: event.target.value})}
         />
       </div>
       <div>

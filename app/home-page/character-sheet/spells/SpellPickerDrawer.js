@@ -10,7 +10,7 @@ export const SpellsDrawerRoute = "Spells";
 
 class SpellsDrawer extends React.PureComponent {
   allPossibleValues = () => {
-    return spells.byClass[this.props.spellCastingClass][this.props.level].concat("New Spell").sort((a, b) => {
+    return spells.byClass[this.props.spellCastingClass][this.props.level].sort((a, b) => {
       if (a.name < b.name) return -1;
       if (a.name > b.name) return 1;
       return 0;
@@ -18,7 +18,10 @@ class SpellsDrawer extends React.PureComponent {
   };
 
   render() {
-    const matchingSpells = this.allPossibleValues().filter((spellName) => spellName.toUpperCase().includes(this.props.searchTerm.toUpperCase()));
+    const matchingSpells = [
+      "New Spell",
+      ...this.allPossibleValues().filter((spellName) => spellName.toUpperCase().includes(this.props.searchTerm.toUpperCase()))
+    ];
 
     return (
       <div>

@@ -91,7 +91,7 @@ const Attacks = ({addAttack, attacks, attributeModifiers, proficiencyBonus, open
               <tspan y={(index + 1) * 12} x="0">{value[1].name}</tspan>
               <tspan y={(index + 1) * 12} x={90}>{prependSign(getAttackBonus(attributeModifiers, value[1], proficiencyBonus))}</tspan>
               <tspan y={(index + 1) * 12} x={138}>{
-                value[1].damageDice} {prependSign(parseInt((attributeModifiers[value[1].attribute] || 0)) + (parseInt(value[1].otherBonus || "0")))} / {value[1].damageType
+                value[1].damageDice} {prependSign(parseInt((attributeModifiers[value[1].attribute] || 0)) + (parseInt(value[1].damageBonus || "0")))} / {value[1].damageType
               }</tspan>
             </text>
           ))
@@ -117,7 +117,11 @@ const mapStateToProps = (state) => {
     attacks,
     attributeModifiers: {
       Dexterity: getValue(state, `DexterityModifier`) || 0,
-      Strength: getValue(state, `StrengthModifier`) || 0
+      Strength: getValue(state, `StrengthModifier`) || 0,
+      Constitution: getValue(state, `ConstitutionModifier`) || 0,
+      Intelligence: getValue(state, `IntelligenceModifier`) || 0,
+      Wisdom: getValue(state, `WisdomModifier`) || 0,
+      Charisma: getValue(state, `CharismaModifier`) || 0
     },
     proficiencyBonus: state.homePageReducer.classesReducer.proficiencyBonus
   };

@@ -5457,5 +5457,55 @@
       "If you want to cast either spell at a higher level, you must expend a spell slot as normal."
     ],
     "url": "http://www.dnd5eapi.co/api/features/416"
+  },
+  {
+    "name": "Find Familiar",
+    "desc": [
+      "Casting Time: 1 hour",
+      "Range: 10 feet",
+      "Components: V S M (10 gp worth of charcoal, incense, and herbs that must be consumed by fire in a brass brazier)",
+      "Duration: Instantaneous",
+      "You gain the service of a familiar, a spirit that takes an animal form you choose: bat, cat, crab, frog (toad), hawk, Lizard, Octopus, owl, Poisonous Snake, fish (quipper), rat, raven, Sea Horse, Spider, or Weasel. Appearing in an unoccupied space within range, the familiar has the Statistics of the chosen form, though it is a Celestial, fey, or fiend (your choice) instead of a beast.",
+      "Your familiar acts independently of you, but it always obeys your commands. In Combat, it rolls its own initiative and acts on its own turn. A familiar can't Attack, but it can take other actions as normal.",
+      "When the familiar drops to 0 Hit Points, it disappears, leaving behind no physical form. It reappears after you cast this spell again.",
+      "While your familiar is within 100 feet of you, you can communicate with it telepathically. Additionally, as an action, you can see through your familiar's eyes and hear what it hears until the start of your next turn, gaining the benefits of any Special Senses that the familiar has. During this time, you are deaf and blind with regard to your own Senses.",
+      "As an action, you can temporarily dismiss your familiar. It disappears into a pocket dimension where it awaits your summons. Alternatively, you can dismiss it forever. As an action while it is temporarily dismissed, you can cause it to reappear in any unoccupied space within 30 feet of you.",
+      "You can't have more than one familiar at a time. If you cast this spell while you already have a familiar, you instead cause it to adopt a new form. Choose one of the forms from the above list. Your familiar transforms into the chosen creature.",
+      "Finally, when you Cast a Spell with a range of touch, your familiar can deliver the spell as if it had cast the spell. Your familiar must be within 100 feet of you, and it must use its reaction to deliver the spell when you cast it. If the spell requires an Attack roll, you use your Attack modifier for the roll."
+    ]
+  },
+  {
+    "name": "Necromancy Servant",
+    "desc": [
+      "Beginning when you select this school at 2nd level, the gold and time you must spend to copy a necromancy spell into your spellbook is halved."
+    ]
+  },
+  {
+    "name": "Grim Harvest",
+    "desc": [
+      "At 2nd level, you gain the ability to reap life energy from creatures you kill with your spells. Once per turn when you kill one or more creatures with a spell of 1st level or higher, you regain hit points equal to twice the spell’s level, or three times its level if the spell belongs to the School of Necromancy. You don’t gain this benefit for killing constructs or undead."
+    ]
+  },
+  {
+    "name":  "Undead Thralls",
+    "desc": [
+      "At 6th level, you add the animate dead spell to your spellbook if it is not there already. When you cast animate dead, you can target one additional corpse or pile of bones, creating another zombie or skeleton, as appropriate.",
+      "Whenever you create an undead using a necromancy spell, it has additional benefits:",
+      "- The creature’s hit point maximum is increased by an amount equal to your wizard level.",
+      "- The creature adds your proficiency bonus to its weapon damage rolls."
+    ]
+  },
+  {
+    "name": "Insured To Undeath",
+    "desc": [
+      "Beginning at 10th level, you have resistance to necrotic damage, and your hit point maximum can't be reduced. You have spent so much time dealing with undead and the forces that animate them that you have become inured to some of their worst effects."
+    ]
+  },
+  {
+    "name": "Command Undead",
+    "desc": [
+      "Starting at 14th level, you can use magic to bring undead under your control, even those created by other wizards. As an action, you can choose one undead that you can see within 60 feet of you. That creature must make a Charisma saving throw against your wizard spell save DC. If it succeeds, you can’t use this feature on it again. If it fails, it becomes friendly to you and obeys your commands until you use this feature again.",
+      "Intelligent undead are harder to control in this way. If the target has an Intelligence of 8 or higher, it has advantage on the saving throw. If it fails the saving throw and has an Intelligence of 12 or higher, it can repeat the saving throw at the end of every hour until it succeeds and breaks free."
+    ]
   }
 ]

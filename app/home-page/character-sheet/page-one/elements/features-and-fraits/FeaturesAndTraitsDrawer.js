@@ -17,7 +17,10 @@ const allPossibleValues = feats.concat(features).concat(traits).sort((a,b) => {
 
 class FeaturesAndTraitsDrawer extends React.PureComponent {
   render() {
-    const matchingFeats = allPossibleValues.filter((feat) => feat.name.toUpperCase().includes(this.props.searchTerm.toUpperCase()));
+    const matchingFeats = [
+      { name: "New", "desc": "Press the quill icon in the top right corner to customise this feature." },
+      ...allPossibleValues.filter((feat) => feat.name.toUpperCase().includes(this.props.searchTerm.toUpperCase()))
+    ];
 
     return (
       <div>

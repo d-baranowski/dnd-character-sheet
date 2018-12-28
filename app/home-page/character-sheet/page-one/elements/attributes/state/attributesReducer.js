@@ -1,17 +1,17 @@
 import {setAttributeValue} from "./actions";
 
 const initialState = {
-  Strength: '0',
+  Strength: '',
   StrengthModifier: '0',
-  Dexterity: '0',
+  Dexterity: '',
   DexterityModifier: '0',
-  Constitution: '0',
+  Constitution: '',
   ConstitutionModifier: '0',
-  Intelligence: '0',
+  Intelligence: '',
   IntelligenceModifier: '0',
-  Wisdom: '0',
+  Wisdom: '',
   WisdomModifier: '0',
-  Charisma: '0',
+  Charisma: '',
   CharismaModifier: '0'
 };
 
@@ -48,7 +48,7 @@ export const mapAttributesFromStateToProps = (state) =>
   attributes.reduce((result, val) => {
     const copy = {...result};
     copy.values[val] = {};
-    copy.values[val].value = getValue(state, val) || 0;
+    copy.values[val].value = getValue(state, val) || '';
     copy.values[val].modifier = getValue(state, `${val}Modifier`) || 0;
     return copy;
   }, {values: {}});

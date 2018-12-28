@@ -51,7 +51,8 @@ const Basket = ({basket, transform, basketPage, incrementItem, decrementItem, in
                   border: 'none',
                   fontFamily: 'Scala Sans Offc',
                   fontSize: 'medium',
-                  textAlign: 'center'
+                  textAlign: 'center',
+                  overflow: 'hidden'
                 }}
                 onClick={() => openModal(val.id)}
                 className={styles.presable}

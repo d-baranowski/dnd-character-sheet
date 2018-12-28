@@ -4,6 +4,26 @@ import {insertCharacterAtPosition, remove_character} from "./utils";
 import {limit, onlyNumbers} from "./format";
 import compose from 'redux/src/compose';
 import {updateFormValue} from "./state/actions";
+import * as ReactDOM from "react-dom";
+
+function getNearestElement(elements, ev) {
+  let linkCoords = elements.map(link => {
+    let rect = link.getBoundingClientRect();
+    return [rect.x, rect.y];
+  });
+
+
+    let distances = [];
+
+    linkCoords.forEach(linkCoord => {
+      let distance = Math.hypot(linkCoord[0]-parseInt(ev.clientX), linkCoord[1]-parseInt(ev.clientY));
+      distances.push(parseInt(distance));
+    });
+
+    let closestLinkIndex = distances.indexOf(Math.min(...distances));
+
+    return elements[closestLinkIndex];
+}
 
 const {clipboard} = require('electron');
 
@@ -11,11 +31,11 @@ const getDefaultValue = (type) => {
   if (type === "textarea") {
     return ""
   }
-  return "0";
+  return "";
 };
 
 const isInputKey = (key) => {
-  return key.length === 1 && key.match(/^[0-9a-z]|( )|\+|-|\.$/i);
+  return key.length === 1;
 };
 
 const withSimpleForm = ({formName, label, stateMapping, dispatchMapping, type = "number", limitValue = 2, allowLineBreak = false}) => (WrappedComponent) => {
@@ -57,7 +77,7 @@ const withSimpleForm = ({formName, label, stateMapping, dispatchMapping, type = 
         cursor,
         value,
         future: [{cursor, value}, ...this.state.future].slice(0,300)
-      })
+      }, () => this.props.changeValue(value))
     };
 
     redo = () => {
@@ -71,7 +91,7 @@ const withSimpleForm = ({formName, label, stateMapping, dispatchMapping, type = 
         cursor,
         value,
         past: [{cursor, value}, ...this.state.past].slice(0,600)
-      })
+      }, () => this.props.changeValue(value))
     };
 
     getCursorClass = (index) => {
@@ -80,6 +100,42 @@ const withSimpleForm = ({formName, label, stateMapping, dispatchMapping, type = 
       }
 
       return index === this.state.cursor - 1 ? "hasCursor blinks" : index === 0 && this.state.cursor === 0 ? "hasCursorStart blinks" : ""
+    };
+
+    moveToPreviousLine = (element) => {
+      let count = 0;
+      let curr = element;
+
+      while(curr.previousSibling) {
+        curr = curr.previousSibling;
+        if (curr.offsetTop < element.offsetTop && Math.abs( element.offsetLeft - curr.offsetLeft) < 10) {
+          break;
+        }
+
+        count++;
+      }
+
+      this.setState({
+        cursor: this.state.cursor !== 0 ? this.state.cursor - count : 0
+      })
+    };
+
+    moveToNextLine = (element) => {
+      let count = 0;
+      let curr = element;
+
+      while(curr.nextSibling) {
+        curr = curr.nextSibling;
+        if (curr.offsetTop > element.offsetTop && Math.abs( element.offsetLeft - curr.offsetLeft) < 10) {
+          break;
+        }
+
+        count++;
+      }
+
+      this.setState({
+        cursor: this.state.cursor + count < this.state.value.length ? this.state.cursor + count : this.state.value.length
+      })
     };
 
     onKeyPress = (event) => {
@@ -129,7 +185,18 @@ const withSimpleForm = ({formName, label, stateMapping, dispatchMapping, type = 
         this.setState({
           cursor: this.state.cursor !== this.state.value.length ? this.state.cursor + 1 : this.state.value.length
         })
-      } else if (key === "Escape") {
+      } else if (key === "ArrowUp") {
+        const elements = document.getElementsByClassName('hasCursor');
+        if (elements.length === 1) {
+          this.moveToPreviousLine(elements[0]);
+        }
+      } else if (key === "ArrowDown") {
+        const elements = document.getElementsByClassName('hasCursor');
+        if (elements.length === 1) {
+          this.moveToNextLine(elements[0])
+        }
+      }
+      else if (key === "Escape") {
         this.leaveEditMode();
       }
     };
@@ -235,13 +302,37 @@ const withSimpleForm = ({formName, label, stateMapping, dispatchMapping, type = 
       return this.state.value.split('').map((letter, index) => this.getLetter(letter, index));
     };
 
+    moveCursorToMouse = (e) => {
+      const elements = Array.prototype.slice.call(ReactDOM.findDOMNode(this).getElementsByTagName('span'));
+      const clicked = getNearestElement(elements, e);
+      const hasCursor = document.getElementsByClassName('hasCursor')[0];
+      let currentCursor;
+      let desiredCursor;
+
+      for (let i = 0; i < elements.length; i++) {
+        if (elements[i] === hasCursor) {
+          currentCursor = i;
+        } else if (elements[i] === clicked) {
+          desiredCursor = i;
+        }
+
+        if (typeof currentCursor == 'number' && typeof desiredCursor == 'number' ) {
+          break;
+        }
+      }
+
+      const move = desiredCursor - currentCursor;
+      this.setState({
+        cursor: this.state.cursor + move < this.state.value.length ? this.state.cursor + move : this.state.value.length
+      })
+    };
 
     render() {
       const {children, ...rest} = this.props;
       const wrappedProps = {
         ...rest,
         setWrapperRef: this.setWrapperRef,
-        onClick: this.enterEditMode,
+        onClick: this.state.editing ? this.moveCursorToMouse : this.enterEditMode,
         renderValue: this.getRenderValue(),
         editing: this.state.editing,
         value: this.state.value

@@ -704,7 +704,9 @@
         "Prestidigitation",
         "Ray of Frost",
         "Shocking Grasp",
-        "True Strike"
+        "True Strike",
+        "Mold Earth",
+        "Fire Bolt"
       ],
       "1": [
         "Alarm",
@@ -732,7 +734,8 @@
         "Silent Image",
         "Sleep",
         "Thunderwave",
-        "Unseen Servant"
+        "Unseen Servant",
+        "Ray of Sickness"
       ],
       "2": [
         "Acid Arrow",
@@ -2437,6 +2440,17 @@
         "***At Higher Levels.*** When you cast this spell using a spell slot of 4 or higher, the damage increases by 1d6 for each slot level above 3rd."
       ]
     },
+    "Fire bolt":  {
+      "content": [
+        "*evocation cantrip*",
+        "**Casting Time:** 1 action",
+        "**Range:** 120 feet",
+        "**Components:** V, S",
+        "**Duration:** Instantaneous",
+        "You hurl a small flame at a creature or object, making a ranged spell attack. The target takes 1d10 fire damage on hit. The fire ignites any flammable object hit by it that isn't being worn or carried.",
+        "The spell's damage die increase by one at levels 5, 11, and 17."
+      ]
+    },
     "Fire Shield": {
       "content": [
         "*4th-level evocation*",
@@ -3554,6 +3568,20 @@
         "Similarly, this spell doesn’t directly affect plant growth. The moved earth carries any plants along with it."
       ]
     },
+    "Mold Earth": {
+      "content": [
+        "*Cantrip transmutation*",
+        "**Casting Time:** 1 action",
+        "**Range:** 30 feet",
+        "**Components:** V, S",
+        "**Duration:** Instanteneous/1 hour",
+        "Choose a portion of dirt or stone that you can see and fits in a 5-foot cube. You change it in one of the following ways:",
+        " - If you target loose earth, you can move it up to 5 feet away. This movement doesn't deal damage.",
+        " - You cause shapes and colors to appear. The changes last for 1 hour.",
+        " - You cause the ground to become difficult terrain, or make difficult terrain become normal. This change lasts for 1 hour.",
+        " If you cast this spell multiple times, you can have no more than two of its non-instantaneous effects active at a time, and you can dismiss an effect as an action."
+      ]
+    },
     "Nondetection": {
       "content": [
         "*3rd-level abjuration*",
@@ -3900,6 +3928,17 @@
         "**Duration:** Instantaneous",
         "A frigid beam of blue-white light streaks toward a creature within range. Make a ranged spell attack against the target. On a hit, it takes 1d8 cold damage, and its speed is reduced by 10 feet until the start of your next turn.",
         "The spell’s damage increases by 1d8 when you reach 5 (2d8), 11 (3d8), and 17 (4d8)."
+      ]
+    },
+    "Ray of Sickness": {
+      "content": [
+        "*1st level necromancy*",
+        "**Casting Time:** 1 action",
+        "**Range:** 60 feet",
+        "**Components:** V, S",
+        "**Duration:** Instantaneous",
+        "Make a ranged spell attack. On hit, the target takes 2d8 poison damage and must make a Constitution save. On a fail, it's poisoned until the end of your next turn.",
+        "*At Higher Levels:*  The damage increases by 1d8 for each slot level above 1st."
       ]
     },
     "Regenerate": {

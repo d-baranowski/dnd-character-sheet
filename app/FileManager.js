@@ -26,14 +26,24 @@ class FileManager {
     this.mainWindow.webContents.executeJavaScript(`JSON.stringify(document.store.getState())`, (state) => {
       if (this.savePath) {
         fs.writeFile(this.savePath, state, (err) => {
-          // ToDo handle error
+          if (err) {
+            this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "FAILED_TO_SAVE_CHARACTER", payload: '${this.savePath}'})`);
+            return;
+          }
+
+          this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "SAVED_CHARACTER", payload: '${this.savePath}'})`);
         });
       } else {
         dialog.showSaveDialog({filters: [{name: "Character", extensions: ["dnd"]}]}, (fileName) => {
           if (fileName === undefined) return;
           this.savePath = fileName;
           fs.writeFile(fileName, state, (err) => {
-            // ToDo handle error
+            if (err) {
+              this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "FAILED_TO_SAVE_CHARACTER", payload: '${this.savePath}'})`);
+              return;
+            }
+
+            this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "SAVED_CHARACTER", payload: '${this.savePath}'})`);
           });
         });
       }
@@ -46,7 +56,12 @@ class FileManager {
         if (fileName === undefined) return;
         this.savePath = fileName;
         fs.writeFile(fileName, state, (err) => {
-          // ToDo handle error
+          if (err) {
+            this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "FAILED_TO_SAVE_CHARACTER", payload: '${this.savePath}' })`);
+            return;
+          }
+
+          this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "SAVED_CHARACTER", payload: '${this.savePath}' })`);
         });
       });
     });
