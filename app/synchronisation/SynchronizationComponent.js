@@ -5,12 +5,14 @@ import {Button, Input, Modal} from "semantic-ui-react";
 import {connect} from "react-redux";
 
 class SynchronizationComponent extends Component {
+  loadingCharacterTokens = [];
+
   state = {
     value: "",
     roomName: "",
     latestEvent: "",
     status: "",
-    modalOpen: false,
+    modalOpen: false
   };
 
   componentDidMount() {
@@ -26,15 +28,35 @@ class SynchronizationComponent extends Component {
         const {promise, events} = createConnection('tbrd6Bv7LyXeG8xX', action.payload.roomName);
         promise.then(({publish, subscribe, events, close}) => {
           subscribe("Follow", (data) => {
-            store.dispatch(data);
+            if (data.type === "LOAD_CHARACTER_TOKEN") {
+              this.loadingCharacterTokens[data.index] = data.value;
+
+              if (this.loadingCharacterTokens.length === data.length) {
+                try {
+                  const joined = this.loadingCharacterTokens.join('');
+                  JSON.parse(joined);
+                  store.dispatch({type: "LOAD_CHARACTER", cameFromRemoteSource: true, payload: joined})
+                } catch (e) {
+                  store.dispatch({type: "FAILED_LOAD_CHARACTER", cameFromRemoteSource: true})
+                }
+              }
+
+            } else {
+              store.dispatch(data);
+            }
           });
 
           sideEffectsMiddleware.registerSideEffect('*', ({store, action, next}) => {
             if (!action.cameFromRemoteSource) {
-              publish({ ...action, cameFromRemoteSource: true});
+              if (action.type === 'LOAD_CHARACTER') {
+                const tokens = action.payload.match(/.{1,100}/g);
+                tokens.forEach((token, index, array) => {
+                  publish({type: "LOAD_CHARACTER_TOKEN", value: token, index, length: array.length})
+                })
+              } else {
+                publish({ ...action, cameFromRemoteSource: true});
+              }
             }
-
-            next(action);
           });
 
           this.close = () => {

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import sideEffectsMiddleware from "../state/middleware/sideEffectsMiddleware";
 import {Icon, Label} from "semantic-ui-react";
 
-class SavingNotification extends Component {
+class Notification extends Component {
   state = {
     notification: "", error: false
   };
@@ -21,6 +21,13 @@ class SavingNotification extends Component {
       setTimeout(() => {
         this.setState({notification: "", error: false})
       }, 1000)
+    });
+
+    sideEffectsMiddleware.registerSideEffect("FAILED_LOAD_CHARACTER", () => {
+      this.setState({notification: "Failed to load character!", error: true});
+      setTimeout(() => {
+        this.setState({notification: "", error: false})
+      }, 3000)
     });
   }
 
@@ -43,6 +50,6 @@ class SavingNotification extends Component {
   }
 }
 
-SavingNotification.propTypes = {};
+Notification.propTypes = {};
 
-export default SavingNotification;
+export default Notification;

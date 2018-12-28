@@ -86,6 +86,13 @@ app.on('ready', async () => {
 
 
   const fileManager = new FileManager(mainWindow);
+
+  const autoSaveInterval = setInterval(() => {
+    if (fileManager.savePath) {
+      fileManager.saveFile();
+    }
+  }, 60 * 1000);
+
   const menuBuilder = new MenuBuilder(mainWindow, fileManager);
   menuBuilder.buildMenu();
 
@@ -104,6 +111,7 @@ app.on('ready', async () => {
 
 
   mainWindow.on('closed', () => {
+    clearInterval(autoSaveInterval);
     mainWindow = null;
   });
 

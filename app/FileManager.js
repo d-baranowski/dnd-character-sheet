@@ -27,11 +27,11 @@ class FileManager {
       if (this.savePath) {
         fs.writeFile(this.savePath, state, (err) => {
           if (err) {
-            this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "FAILED_TO_SAVE_CHARACTER", payload: '${this.savePath}'})`);
+            this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "FAILED_TO_SAVE_CHARACTER", payload: '${this.savePath}', cameFromRemoteSource: true})`);
             return;
           }
 
-          this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "SAVED_CHARACTER", payload: '${this.savePath}'})`);
+          this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "SAVED_CHARACTER", payload: '${this.savePath}', cameFromRemoteSource: true})`);
         });
       } else {
         dialog.showSaveDialog({filters: [{name: "Character", extensions: ["dnd"]}]}, (fileName) => {
@@ -39,11 +39,11 @@ class FileManager {
           this.savePath = fileName;
           fs.writeFile(fileName, state, (err) => {
             if (err) {
-              this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "FAILED_TO_SAVE_CHARACTER", payload: '${this.savePath}'})`);
+              this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "FAILED_TO_SAVE_CHARACTER", payload: '${this.savePath}', cameFromRemoteSource: true})`);
               return;
             }
 
-            this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "SAVED_CHARACTER", payload: '${this.savePath}'})`);
+            this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "SAVED_CHARACTER", payload: '${this.savePath}', cameFromRemoteSource: true})`);
           });
         });
       }
@@ -57,11 +57,11 @@ class FileManager {
         this.savePath = fileName;
         fs.writeFile(fileName, state, (err) => {
           if (err) {
-            this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "FAILED_TO_SAVE_CHARACTER", payload: '${this.savePath}' })`);
+            this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "FAILED_TO_SAVE_CHARACTER", payload: '${this.savePath}', cameFromRemoteSource: true })`);
             return;
           }
 
-          this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "SAVED_CHARACTER", payload: '${this.savePath}' })`);
+          this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "SAVED_CHARACTER", payload: '${this.savePath}', cameFromRemoteSource: true })`);
         });
       });
     });

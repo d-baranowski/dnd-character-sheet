@@ -11,6 +11,16 @@ class AttributeBox extends React.Component {
     editing: false
   };
 
+  static getDerivedStateFromProps(props, state) {
+    if (props.value !== state.value) {
+      return {
+        value: props.value,
+      };
+    }
+
+    return null;
+  }
+
   getCursorClass = (index) => {
     if (!this.state.editing) {
       return "";

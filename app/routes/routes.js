@@ -11,7 +11,7 @@ import spellSlotsPerClass from "../home-page/character-sheet/spells/spellSlotsPe
 import CampFire from "../form/CampFire";
 import CampfireContainer from "../form/CampfireContainer";
 import SynchronizationComponent from "../synchronisation/SynchronizationComponent";
-import SavingNotification from "../notifications/saving-notification";
+import Notification from "../notifications/Notification";
 
 class routes extends React.PureComponent {
   render() {
@@ -20,7 +20,7 @@ class routes extends React.PureComponent {
         <SynchronizationComponent/>
         <Navigation/>
         <CampfireContainer/>
-        <SavingNotification/>
+        <Notification/>
         <Switch>
           <Route exact path="/" component={PageOne}/>
           <Route exact path="/equipment" component={Inventory}/>
