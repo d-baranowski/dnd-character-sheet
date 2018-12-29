@@ -49,7 +49,7 @@ class SynchronizationComponent extends Component {
           sideEffectsMiddleware.registerSideEffect('*', ({store, action, next}) => {
             if (!action.cameFromRemoteSource) {
               if (action.type === 'LOAD_CHARACTER') {
-                const tokens = action.payload.match(/.{1,200}/g);
+                const tokens = action.payload.match(/.{1,1024}/g);
                 tokens.forEach((token, index, array) => {
                   publish({type: "LOAD_CHARACTER_TOKEN", value: token, index, length: array.length})
                 })
