@@ -1,7 +1,7 @@
 {
   "name": "dnd-character-sheet",
   "productName": "D&D Character Sheet",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "5e Dungeons and dragons character sheet aiming to look like the paper version.",
   "scripts": {
     "build": "concurrently \"npm run build-main\" \"npm run build-renderer\"",
