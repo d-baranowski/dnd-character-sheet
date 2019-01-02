@@ -1,8 +1,7 @@
-export function remove_character(str, char_pos)
-{
+export function removeCharacter(str, char_pos) {
   const part1 = str.substring(0, char_pos);
   const part2 = str.substring(char_pos + 1, str.length);
-  return (part1 + part2);
+  return part1 + part2;
 }
 
 export function insertCharacterAtPosition(main_string, pos, ins_string) {

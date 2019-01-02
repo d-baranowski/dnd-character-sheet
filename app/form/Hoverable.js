@@ -6,18 +6,19 @@ class Hoverable extends React.PureComponent {
   };
 
   onMouseOver = () => {
-    this.setState({isHovered: true})
+    this.setState({ isHovered: true });
   };
 
   onMouseLeave = () => {
-    this.setState({isHovered: false})
+    this.setState({ isHovered: false });
   };
 
   render() {
     const { children } = this.props;
 
     const childrenWithProps = React.Children.map(children, child =>
-      React.cloneElement(child, { isHovered: this.state.isHovered }));
+      React.cloneElement(child, { isHovered: this.state.isHovered })
+    );
 
     return (
       <React.Fragment>

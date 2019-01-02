@@ -8,7 +8,11 @@ import Race from './Race';
 
 const OtherCharacterInfo = () => (
   <g>
-    <path id="classLevelBackroundPlayerNameITP" d="M766.037 136.61H347.512V55.752h418.525z" fill="#fff" />
+    <path
+      id="classLevelBackroundPlayerNameITP"
+      d="M766.037 136.61H347.512V55.752h418.525z"
+      fill="#fff"
+    />
     <path
       id="toDoWithClassLevelItpBorder"
       d="M766.037 136.61H347.512V55.752h418.525z"

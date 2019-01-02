@@ -16,10 +16,10 @@ import Hair from './top-bar/Hair';
 
 const Background = () => (
   <React.Fragment>
-    <CharacterArtPicker/>
+    <CharacterArtPicker />
     <MenuDrawer>
       <PanZoom>
-        <GrayDecorations/>
+        <GrayDecorations />
         <g transform="translate(50)" id="DnD-logo">
           <path
             d="M150.5 745.08c.28 0 .28-.41 0-.41h-.39v.41h.39m.27-.72c.66.15.52 1.15-.27 1.15h-.86v-1.8h.47v.56h.17l.43-.57h.5v.1l-.44.56m-.43-1.16c.85 0 1.33.62 1.33 1.4 0 .8-.48 1.41-1.33 1.41-.84 0-1.32-.62-1.33-1.4 0-.8.49-1.41 1.33-1.41m1.76 1.4c0-.96-.63-1.76-1.76-1.76-1.12 0-1.75.8-1.75 1.77 0 .95.63 1.76 1.75 1.76 1.13 0 1.76-.8 1.76-1.76"
@@ -51,7 +51,7 @@ const Background = () => (
             d="M574.52 730.88c16.24.05 17.69 1.17 19.16 2.3m-18.55-34.5c19.6-2.23 17.93 3.58 18.8 3.76"
             transform="matrix(1.33333 0 0 -1.33333 0 1056)"
           />
-          <path fill="#fff" d="M767.21 141.19H348.69V60.33H767.2v80.86"/>
+          <path fill="#fff" d="M767.21 141.19H348.69V60.33H767.2v80.86" />
           <path
             fill="none"
             stroke="#000"
@@ -119,10 +119,10 @@ const Background = () => (
           />
         </g>
 
-        <Journal/>
-        <CharacterArt/>
-        <AlliesAndOrganisations/>
-        <BackStory/>
+        <Journal />
+        <CharacterArt />
+        <AlliesAndOrganisations />
+        <BackStory />
 
         <path
           id="path6"
@@ -183,15 +183,11 @@ const Background = () => (
             fontSize={30}
             fontFamily="Scala Sans Offc"
           >
-            <tspan
-              y={105}
-              x={140}
-            >
+            <tspan y={105} x={140}>
               Depiction
             </tspan>
           </text>
         </g>
-
       </PanZoom>
     </MenuDrawer>
   </React.Fragment>

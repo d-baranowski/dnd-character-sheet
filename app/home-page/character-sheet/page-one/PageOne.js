@@ -30,18 +30,15 @@ import AlignmentPicker from './elements/character-info/alignment/AlignmentPicker
 import AttacksModal from './elements/attacks/AttacksModal';
 import MenuDrawer from '../../menu-drawer/MenuDrawer';
 import PanZoom from '../PanZoom';
-import HitDiceSelector from "./elements/hit-dice/HitDiceSelector";
-
-
+import HitDiceSelector from './elements/hit-dice/HitDiceSelector';
 
 class PageOne extends React.PureComponent {
-
   render() {
     return (
       <MenuDrawer>
         <AttacksModal />
         <FeaturesAndTraitsModal />
-        <HitDiceSelector/>
+        <HitDiceSelector />
         <PanZoom>
           <GrayDecorations />
           <Logo />
@@ -79,4 +76,3 @@ class PageOne extends React.PureComponent {
 }
 
 export default PageOne;
-

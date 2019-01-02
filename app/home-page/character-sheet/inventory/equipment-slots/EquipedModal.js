@@ -1,8 +1,8 @@
 import React from 'react';
-import _ from 'lodash'
-import {connect} from 'react-redux';
-import {Modal, Search} from 'semantic-ui-react';
-import {closeModal, selectItem} from '../state/equipedActions';
+import _ from 'lodash';
+import { connect } from 'react-redux';
+import { Modal, Search } from 'semantic-ui-react';
+import { closeModal, selectItem } from '../state/equipedActions';
 
 const findResults = (value, source) => {
   const re = new RegExp(_.escapeRegExp(value), 'i');
@@ -11,11 +11,11 @@ const findResults = (value, source) => {
   return _.filter(source, isMatch);
 };
 
-const resultRenderer = (value) => (value.name);
+const resultRenderer = value => value.name;
 
 class EquipedModal extends React.PureComponent {
   state = {
-    searchTerm: ""
+    searchTerm: ''
   };
 
   constructor() {
@@ -25,26 +25,23 @@ class EquipedModal extends React.PureComponent {
   updateSearch(value) {
     this.setState({
       searchTerm: value
-    })
+    });
   }
 
-  handleResultSelect = (e, {result}) => {
+  handleResultSelect = (e, { result }) => {
     this.props.selectItem(result, this.props.slot);
     this.props.closeModal();
   };
 
   render() {
-    const {removeItem, modalOpen, closeModal , equipment} = this.props;
+    const { removeItem, modalOpen, closeModal, equipment } = this.props;
     const results = findResults(this.state.searchTerm, equipment);
 
     return (
-      <Modal
-        open={modalOpen}
-        onClose={closeModal}
-      >
+      <Modal open={modalOpen} onClose={closeModal}>
         <svg
           onClick={() => {
-            removeItem(item.id)
+            removeItem(item.id);
           }}
           width="1.28571429em"
           height="1.28571429em"
@@ -54,17 +51,17 @@ class EquipedModal extends React.PureComponent {
             right: 21
           }}
         >
-          <use xlinkHref="#icon-delete"/>
+          <use xlinkHref="#icon-delete" />
         </svg>
-        <Modal.Header>{'Equip Item'}</Modal.Header>
+        <Modal.Header>Equip Item</Modal.Header>
         <Modal.Content>
           <div>
             <h3>Equip Item</h3>
             <Search
               loading={false}
               onResultSelect={this.handleResultSelect}
-              onSearchChange={(e, {value}) => {
-                this.updateSearch(value)
+              onSearchChange={(e, { value }) => {
+                this.updateSearch(value);
               }}
               results={results}
               resultRenderer={resultRenderer}
@@ -74,13 +71,14 @@ class EquipedModal extends React.PureComponent {
         </Modal.Content>
       </Modal>
     );
-  };
+  }
 }
 
-const mapStateToProps = (state) => {
-  const equipment = Object.values(state.equipmentReducer.inventory).reduce((accumulator, value) => {
-    return [...accumulator, ...Object.values(value)];
-  }, []);
+const mapStateToProps = state => {
+  const equipment = Object.values(state.equipmentReducer.inventory).reduce(
+    (accumulator, value) => [...accumulator, ...Object.values(value)],
+    []
+  );
 
   const slot = state.equipedReducer.modalEditSlot;
   return {
@@ -91,7 +89,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   closeModal: () => dispatch(closeModal()),
   selectItem: (item, slot) => dispatch(selectItem(item, slot))
 });

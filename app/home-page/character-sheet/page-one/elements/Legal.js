@@ -4,7 +4,7 @@ const Legal = () => (
   <g>
     <g clipPath="url(#p)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
       <text
-        style={{ InkscapeFontSpecification: "Interstate-Light" }}
+        style={{ InkscapeFontSpecification: 'Interstate-Light' }}
         transform="matrix(1 0 0 -1 174.516 12.32)"
         fontWeight={300}
         fontSize={5.5}

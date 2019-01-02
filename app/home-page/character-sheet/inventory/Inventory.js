@@ -8,7 +8,7 @@ import CharacterArt from './CharacterArt';
 import EquipmentSlots from './equipment-slots/EquipmentSlots';
 import EquipmentTable from './equipment-table/EquipmentTable';
 import EquipmentModal from './equipment-table/EquipmentModal';
-import EquipedModal from "./equipment-slots/EquipedModal";
+import EquipedModal from './equipment-slots/EquipedModal';
 
 const Inventory = () => (
   <MenuDrawer>

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import drawerRoute from '../../../../../menu-drawer/drawerRoute';
-import {limit} from '../../../../../../form/format';
+import { limit } from '../../../../../../form/format';
 import FormInput from '../../../../../../form/FormInput';
 
-export const CharacterNameDrawerRoute = "CharacterName";
+export const CharacterNameDrawerRoute = 'CharacterName';
 
 class CharacterNameDrawer extends React.PureComponent {
   constructor() {
@@ -32,5 +32,8 @@ class CharacterNameDrawer extends React.PureComponent {
   }
 }
 
-export default  drawerRoute(CharacterNameDrawerRoute)(reduxForm({ form: 'characterName', destroyOnUnmount: false })
-                (CharacterNameDrawer));
+export default drawerRoute(CharacterNameDrawerRoute)(
+  reduxForm({ form: 'characterName', destroyOnUnmount: false })(
+    CharacterNameDrawer
+  )
+);

@@ -1,7 +1,6 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {toggleInspiration} from './state/inspirationActions';
-
+import { connect } from 'react-redux';
+import { toggleInspiration } from './state/inspirationActions';
 
 class InspirationContainer extends React.PureComponent {
   state = {
@@ -9,11 +8,11 @@ class InspirationContainer extends React.PureComponent {
   };
 
   onMouseOver = () => {
-    this.setState({isHovered: true})
+    this.setState({ isHovered: true });
   };
 
   onMouseLeave = () => {
-    this.setState({isHovered: false})
+    this.setState({ isHovered: false });
   };
 
   onClick = () => {
@@ -21,12 +20,12 @@ class InspirationContainer extends React.PureComponent {
   };
 
   render() {
-    const {isHovered} = this.state;
-    const {hasInspiration} = this.props;
+    const { isHovered } = this.state;
+    const { hasInspiration } = this.props;
 
     return (
       <g>
-        <g filter={ isHovered && "url(#sofGlow)" }>
+        <g filter={isHovered && 'url(#sofGlow)'}>
           <g transform="matrix(1.33333 0 0 -1.33333 0 1056)">
             <path
               id="InspirationBorder"
@@ -37,7 +36,7 @@ class InspirationContainer extends React.PureComponent {
         </g>
         <path
           id="InspirationFill"
-          fill={hasInspiration ? "red" : "white"}
+          fill={hasInspiration ? 'red' : 'white'}
           d="m 130.0322,202.30752 c -1.12473,-0.35072 -2.32164,-1.51447 -2.77794,-2.70098 -0.32139,-0.83572 -0.36107,-2.02714 -0.41972,-12.6025 -0.0446,-8.03461 0.006,-12.10077 0.16267,-13.02932 0.41344,-2.4535 1.84937,-3.8955 4.11161,-4.12898 1.03719,-0.10705 1.13368,-0.076 1.95974,0.63116 1.20235,1.02925 3.04028,1.87817 4.59421,2.12202 1.7103,0.2684 9.39631,0.26492 11.07541,-0.005 1.62361,-0.26101 3.00774,-0.88478 4.3739,-1.97114 1.13663,-0.90384 1.71068,-1.01465 3.17752,-0.61337 1.0017,0.27404 2.50866,1.77667 2.90699,2.89866 0.36774,1.03581 0.56694,22.42748 0.23202,24.91614 -0.34068,2.53141 -1.33258,3.95884 -3.11972,4.48957 -1.57972,0.46912 -2.02371,0.39074 -3.19616,-0.56422 -1.20529,-0.98173 -2.69443,-1.678 -4.19906,-1.96335 -1.40696,-0.26682 -10.08392,-0.24961 -11.55822,0.0229 -1.44901,0.26787 -2.90663,0.97477 -4.15898,2.01699 -1.0451,0.86976 -1.63233,0.9591 -3.16427,0.48141 z"
         />
         <path
@@ -69,18 +68,25 @@ class InspirationContainer extends React.PureComponent {
           onMouseLeave={this.onMouseLeave}
           onMouseOver={this.onMouseOver}
           onClick={this.onClick}
-          fill="transparent" width={155} height={35} x={120} y={168} />
+          fill="transparent"
+          width={155}
+          height={35}
+          x={120}
+          y={168}
+        />
       </g>
     );
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   hasInspiration: state.homePageReducer.inspirationReducer.hasInspiration
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   toggleInspiration: () => dispatch(toggleInspiration())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(InspirationContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(
+  InspirationContainer
+);

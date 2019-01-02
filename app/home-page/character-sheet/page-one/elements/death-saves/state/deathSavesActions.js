@@ -1,5 +1,5 @@
-export const modulateDeathSaves = (save) => ({
-  type: "MODULATE_DEATH_SAVES",
+export const modulateDeathSaves = save => ({
+  type: 'MODULATE_DEATH_SAVES',
   save
 });
-modulateDeathSaves.type = "MODULATE_DEATH_SAVES";
+modulateDeathSaves.type = 'MODULATE_DEATH_SAVES';

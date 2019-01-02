@@ -7,14 +7,14 @@ class ScrollableTextField extends React.PureComponent {
   }
 
   isScrollable = () => {
-    const {current} = this.scollMe;
+    const { current } = this.scollMe;
     return current.scrollHeight > current.clientHeight;
   };
 
-  wheel = (e) => {
-    const {current} = this.scollMe;
-    const deltaMove =  Math.round(e.deltaY / 6);
-    current.scrollTop = current.scrollTop + deltaMove;
+  wheel = e => {
+    const { current } = this.scollMe;
+    const deltaMove = Math.round(e.deltaY / 6);
+    current.scrollTop += deltaMove;
 
     if (this.isScrollable()) {
       e.stopPropagation();
@@ -22,7 +22,7 @@ class ScrollableTextField extends React.PureComponent {
   };
 
   ensureCursorInView = () => {
-    const {current} = this.scollMe;
+    const { current } = this.scollMe;
 
     if (!current) {
       return;
@@ -34,15 +34,15 @@ class ScrollableTextField extends React.PureComponent {
       return;
     }
 
-    //Determine container top and bottom
-    let cTop = current.scrollTop;
-    let cBottom = cTop + current.clientHeight;
+    // Determine container top and bottom
+    const cTop = current.scrollTop;
+    const cBottom = cTop + current.clientHeight;
 
-    //Determine element top and bottom
-    let eTop = cursor.offsetTop;
-    let eBottom = eTop + cursor.clientHeight;
+    // Determine element top and bottom
+    const eTop = cursor.offsetTop;
+    const eBottom = eTop + cursor.clientHeight;
 
-    //Check if out of view
+    // Check if out of view
     current.scrollTop = cursor.offsetTop + cursor.clientHeight;
   };
 
@@ -78,7 +78,7 @@ class ScrollableTextField extends React.PureComponent {
           onMouseLeave={this.props.onMouseLeave}
           onMouseOver={this.props.onMouseOver}
           onClick={this.props.onClick}
-          onWheel={(e) => this.wheel(e)}
+          onWheel={e => this.wheel(e)}
         />
       </React.Fragment>
     );

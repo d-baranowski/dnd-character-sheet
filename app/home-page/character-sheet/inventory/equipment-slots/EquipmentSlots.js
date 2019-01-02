@@ -1,5 +1,5 @@
 import React from 'react';
-import EquipmentSlot from "./EquipmentSlot";
+import EquipmentSlot from './EquipmentSlot';
 
 const EquipmentSlots = () => (
   <g id="boxes">

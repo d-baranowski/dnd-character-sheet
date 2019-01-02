@@ -1,4 +1,11 @@
-import {openModal, closeModal, pickFeat, setPage, editChosenFeat, deleteChosenFeat} from './featuresAndTraitsActions';
+import {
+  openModal,
+  closeModal,
+  pickFeat,
+  setPage,
+  editChosenFeat,
+  deleteChosenFeat
+} from './featuresAndTraitsActions';
 import uuid from '../../../../../../uuid';
 
 const initialState = {
@@ -13,7 +20,10 @@ const initialState = {
 
 export const paginate = (array, pageSize, pageNumber) => {
   const actualPageNumber = pageNumber - 1;
-  return array.slice(actualPageNumber * pageSize, (actualPageNumber + 1) * pageSize);
+  return array.slice(
+    actualPageNumber * pageSize,
+    (actualPageNumber + 1) * pageSize
+  );
 };
 
 export default (state = initialState, action) => {
@@ -22,7 +32,7 @@ export default (state = initialState, action) => {
       ...state,
       modalOpen: true,
       modalFeat: action.feat
-    }
+    };
   }
 
   if (action.type === closeModal.type) {
@@ -30,11 +40,11 @@ export default (state = initialState, action) => {
       ...state,
       modalOpen: false,
       modalFeat: {}
-    }
+    };
   }
 
   if (action.type === pickFeat.type) {
-    const newChosen = [...state.chosenFeats, {...action.feat, id: uuid()}];
+    const newChosen = [...state.chosenFeats, { ...action.feat, id: uuid() }];
     const newActivePage = Math.ceil(newChosen.length / state.pageSize);
     return {
       ...state,
@@ -42,7 +52,7 @@ export default (state = initialState, action) => {
       currentPage: newActivePage,
       maxPage: newActivePage,
       pagedFeats: paginate(newChosen, state.pageSize, newActivePage)
-    }
+    };
   }
 
   if (action.type === setPage.type) {
@@ -53,18 +63,18 @@ export default (state = initialState, action) => {
       ...state,
       currentPage: newPage,
       pagedFeats: paginate(state.chosenFeats, state.pageSize, newPage)
-    }
+    };
   }
 
   if (action.type === editChosenFeat.type) {
     const newChosen = [...state.chosenFeats];
-    const editIndex = newChosen.findIndex((feat) => feat.id === action.id);
-    newChosen[editIndex] = {...action.newValue};
+    const editIndex = newChosen.findIndex(feat => feat.id === action.id);
+    newChosen[editIndex] = { ...action.newValue };
     return {
       ...state,
       chosenFeats: newChosen,
       pagedFeats: paginate(newChosen, state.pageSize, state.currentPage)
-    }
+    };
   }
 
   if (action.type === deleteChosenFeat.type) {
@@ -73,8 +83,8 @@ export default (state = initialState, action) => {
       ...state,
       chosenFeats: newChosen,
       pagedFeats: paginate(newChosen, state.pageSize, state.currentPage)
-    }
+    };
   }
 
   return state;
-}
+};

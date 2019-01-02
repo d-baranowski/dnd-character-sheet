@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import CampFire from "./CampFire";
-import {Button} from "semantic-ui-react";
-import {connect} from "react-redux";
+import React, { Component } from 'react';
+import CampFire from './CampFire';
+import { Button } from 'semantic-ui-react';
+import { connect } from 'react-redux';
 
 class CampfireContainer extends Component {
   state = {
@@ -13,7 +13,7 @@ class CampfireContainer extends Component {
   }
 
   showFireOverlay = () => {
-    this.setState({showConfirmation: false});
+    this.setState({ showConfirmation: false });
     const element = document.getElementById('fire-overlay');
     element.style.display = 'unset';
     element.style.opacity = 0;
@@ -39,52 +39,73 @@ class CampfireContainer extends Component {
     document.removeEventListener('mousedown', this.handleClickOutside);
   }
 
-  setWrapperRef = (node) => {
+  setWrapperRef = node => {
     this.wrapperRef = node;
   };
 
-  handleClickOutside = (event) => {
+  handleClickOutside = event => {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-      if (event.target.id === "startLongRest") {
+      if (event.target.id === 'startLongRest') {
         return true;
       }
-      this.setState({showConfirmation: false});
+      this.setState({ showConfirmation: false });
     }
   };
 
   render() {
     return (
       <div>
-        <CampFire onClick={(event) => {
-          if (this.state.showConfirmation === false) {
-            this.setState({showConfirmation: true})
-          }
-        }}/>
+        <CampFire
+          onClick={event => {
+            if (this.state.showConfirmation === false) {
+              this.setState({ showConfirmation: true });
+            }
+          }}
+        />
         <div
           ref={this.setWrapperRef}
           className="transition-position no-select"
-          style={
-            {
-              display: 'flex',
-              position: 'fixed',
-              top: 75,
-              right: this.state.showConfirmation ? 10 : -400,
-              zIndex: 1,
-              padding: 10,
-              background: 'white',
-              boxShadow: 'rgb(204, 204, 204) 0px 1px 2px'
-            }
-          }
+          style={{
+            display: 'flex',
+            position: 'fixed',
+            top: 75,
+            right: this.state.showConfirmation ? 10 : -400,
+            zIndex: 1,
+            padding: 10,
+            background: 'white',
+            boxShadow: 'rgb(204, 204, 204) 0px 1px 2px'
+          }}
         >
-          <p style={{margin: 0, padding: 0, marginRight: 5, lineHeight: '28px'}}>Do you want to take a long rest?</p>
-          <Button onClick={() => {
-            this.setState({showConfirmation: false})
-          }} size='mini' color='red'>No</Button>
-          <Button onClick={() => {
-            this.showFireOverlay();
-          }} size='mini' color='blue'>Yes</Button>
+          <p
+            style={{
+              margin: 0,
+              padding: 0,
+              marginRight: 5,
+              lineHeight: '28px'
+            }}
+          >
+            Do you want to take a long rest?
+          </p>
+          <Button
+            onClick={() => {
+              this.setState({ showConfirmation: false });
+            }}
+            size="mini"
+            color="red"
+          >
+            No
+          </Button>
+          <Button
+            onClick={() => {
+              this.showFireOverlay();
+            }}
+            size="mini"
+            color="blue"
+          >
+            Yes
+          </Button>
         </div>
-        <div style={{display: 'none', opacity: 0}} id="fire-overlay"/>
+        <div style={{ display: 'none', opacity: 0 }} id="fire-overlay" />
       </div>
     );
   }
@@ -92,12 +113,10 @@ class CampfireContainer extends Component {
 
 CampfireContainer.propTypes = {};
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({});
 
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  longRest: () => dispatch({type: "LONG_REST"})
+const mapDispatchToProps = dispatch => ({
+  longRest: () => dispatch({ type: 'LONG_REST' })
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CampfireContainer);

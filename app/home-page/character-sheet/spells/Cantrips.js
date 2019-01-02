@@ -1,5 +1,5 @@
 import React from 'react';
-import SpellsBucket from "./SpellsBucket";
+import SpellsBucket from './SpellsBucket';
 
 class Cantrips extends React.PureComponent {
   render() {
@@ -13,7 +13,7 @@ class Cantrips extends React.PureComponent {
         spellsX={43}
         spellsY={241}
       />
-    )
+    );
   }
 }
 

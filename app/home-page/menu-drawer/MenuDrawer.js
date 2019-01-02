@@ -1,37 +1,37 @@
 import React from 'react';
-import {Input, Menu, Segment, Sidebar} from 'semantic-ui-react'
-import {connect} from 'react-redux';
-import {openDrawer, closeDrawer} from './state/menuDrawerActions'
-import {drawerRoutes} from './drawerRoute';
+import { Input, Menu, Segment, Sidebar } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import { openDrawer, closeDrawer } from './state/menuDrawerActions';
+import { drawerRoutes } from './drawerRoute';
 import styles from './MenuDrawer.css';
 
 class TemporaryDrawer extends React.Component {
   state = {
-    searchTerm: ""
+    searchTerm: ''
   };
 
-  handleChange = (event) => {
+  handleChange = event => {
     this.setState({
       searchTerm: event.target.value
     });
   };
 
-  exitDrawerOnEscape = (event) => {
+  exitDrawerOnEscape = event => {
     if (event.key === 'Escape') {
       this.props.setOpen(false);
     }
   };
 
   componentDidMount() {
-    document.addEventListener("keydown", this.exitDrawerOnEscape);
+    document.addEventListener('keydown', this.exitDrawerOnEscape);
   }
 
   componentWillUnmount() {
-    document.removeEventListener("keydown", this.exitDrawerOnEscape);
+    document.removeEventListener('keydown', this.exitDrawerOnEscape);
   }
 
   render() {
-    const {setOpen, isOpen, route, childProps} = this.props;
+    const { setOpen, isOpen, route, childProps } = this.props;
     const { hasSearchBar } = childProps || {};
     const ActiveRoute = drawerRoutes[route] ? drawerRoutes[route] : () => null;
 
@@ -39,36 +39,33 @@ class TemporaryDrawer extends React.Component {
       <Sidebar.Pushable as={Segment} className={styles.noMargin}>
         <Sidebar
           as={Menu}
-          animation='overlay'
-          icon='labeled'
+          animation="overlay"
+          icon="labeled"
           vertical
           visible={isOpen}
         >
-          <div style={{ width: "100%",  height: 55 }}>
-            {hasSearchBar && <Input
-              autoFocus
-              style={{float: "left", marginTop: 15, marginLeft: 15}}
-              icon='search'
-              placeholder='Search...'
-              value={this.state.searchTerm}
-              onChange={this.handleChange}
-            />}
-            <svg
-              onClick={() => setOpen(false)}
-              className={styles.closeButton}
-            >
+          <div style={{ width: '100%', height: 55 }}>
+            {hasSearchBar && (
+              <Input
+                autoFocus
+                style={{ float: 'left', marginTop: 15, marginLeft: 15 }}
+                icon="search"
+                placeholder="Search..."
+                value={this.state.searchTerm}
+                onChange={this.handleChange}
+              />
+            )}
+            <svg onClick={() => setOpen(false)} className={styles.closeButton}>
               <use xlinkHref="#si-glyph-delete" />
             </svg>
           </div>
-          <div style={{overflowY: 'auto', height: 'calc(100% - 55px)'}}>
+          <div style={{ overflowY: 'auto', height: 'calc(100% - 55px)' }}>
             <div className={styles.container}>
               <ActiveRoute searchTerm={this.state.searchTerm} {...childProps} />
             </div>
           </div>
         </Sidebar>
-        <Sidebar.Pusher>
-            {this.props.children}
-        </Sidebar.Pusher>
+        <Sidebar.Pusher>{this.props.children}</Sidebar.Pusher>
       </Sidebar.Pushable>
     );
   }
@@ -81,11 +78,11 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  setOpen: (shouldOpen) => {
+  setOpen: shouldOpen => {
     if (shouldOpen) {
-      dispatch(openDrawer())
+      dispatch(openDrawer());
     } else {
-      dispatch(closeDrawer())
+      dispatch(closeDrawer());
     }
   }
 });

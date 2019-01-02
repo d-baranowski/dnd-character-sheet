@@ -1,11 +1,20 @@
 import React from 'react';
-import {getValue} from "../attributes/state/attributesReducer"
+import { getValue } from '../attributes/state/attributesReducer';
 import InteractiveElement from '../../../InteractiveElement';
 import withSimpleForm from '../../../../../form/withSimpleForm';
-import {modifierWithSign} from "../attributes/AttributeBox";
+import { modifierWithSign } from '../attributes/AttributeBox';
 
-const Initiative = ({dexterity, onClick, renderValue, setWrapperRef, value, editing}) => {
-  const resultModifier = modifierWithSign(parseInt(value) + parseInt(dexterity));
+const Initiative = ({
+  dexterity,
+  onClick,
+  renderValue,
+  setWrapperRef,
+  value,
+  editing
+}) => {
+  const resultModifier = modifierWithSign(
+    (parseInt(value) || 0) + (parseInt(dexterity) || 0)
+  );
 
   return (
     <InteractiveElement
@@ -33,14 +42,16 @@ const Initiative = ({dexterity, onClick, renderValue, setWrapperRef, value, edit
       </text>
       <foreignObject x="375" y="190">
         <div>
-          <p style={{
-            height: '30px',
-            width: '60px',
-            border: 'none',
-            fontFamily: 'Scala Sans Offc',
-            fontSize: 'x-large',
-            textAlign: 'center'
-          }}>
+          <p
+            style={{
+              height: '30px',
+              width: '60px',
+              border: 'none',
+              fontFamily: 'Scala Sans Offc',
+              fontSize: 'x-large',
+              textAlign: 'center'
+            }}
+          >
             {editing ? renderValue : resultModifier}
           </p>
         </div>
@@ -49,15 +60,11 @@ const Initiative = ({dexterity, onClick, renderValue, setWrapperRef, value, edit
   );
 };
 
-
-
 export default withSimpleForm({
   limitValue: 4,
-  formName: "initiativeBonus",
-  label: "Initiative Bonus",
-  stateMapping: (state) =>
-    ({
-      dexterity: getValue(state, 'DexterityModifier') || 0
-    })
+  formName: 'initiativeBonus',
+  label: 'Initiative Bonus',
+  stateMapping: state => ({
+    dexterity: getValue(state, 'DexterityModifier') || 0
   })
-  (Initiative);
+})(Initiative);

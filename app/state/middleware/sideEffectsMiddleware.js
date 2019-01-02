@@ -13,15 +13,15 @@ const registerSideEffect = (actionName, callback) => {
 };
 
 const sideEffectsMiddleware = store => next => action => {
-  (sideEffects[action.type] || []).forEach((callback) => {
-    callback({store, action, next});
+  (sideEffects[action.type] || []).forEach(callback => {
+    callback({ store, action, next });
   });
 
-  (sideEffects['*'] || []).forEach((callback) => {
-    callback({store, action, next});
+  (sideEffects['*'] || []).forEach(callback => {
+    callback({ store, action, next });
   });
 
-  return next(action)
+  return next(action);
 };
 
 sideEffectsMiddleware.registerSideEffect = registerSideEffect;

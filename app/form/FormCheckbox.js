@@ -1,13 +1,9 @@
 import React from 'react';
-import {Checkbox, Segment} from 'semantic-ui-react';
+import { Checkbox, Segment } from 'semantic-ui-react';
 
 class FormCheckbox extends React.PureComponent {
   render() {
-    const {
-      input,
-      label,
-      value
-    } = this.props;
+    const { input, label, value } = this.props;
     return (
       <Segment>
         <Checkbox

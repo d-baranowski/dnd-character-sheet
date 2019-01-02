@@ -1,6 +1,7 @@
 // @flow
 import fs from 'fs';
 import { app, Menu, BrowserWindow, dialog } from 'electron';
+
 const path = require('path');
 
 export default class MenuBuilder {
@@ -20,9 +21,10 @@ export default class MenuBuilder {
       this.setupDevelopmentEnvironment();
     }
 
-    const template = process.platform === 'darwin'
-      ? this.buildDefaultTemplate()
-      : this.buildDefaultTemplate();
+    const template =
+      process.platform === 'darwin'
+        ? this.buildDefaultTemplate()
+        : this.buildDefaultTemplate();
 
     const menu = Menu.buildFromTemplate(template);
     Menu.setApplicationMenu(menu);
@@ -151,7 +153,10 @@ export default class MenuBuilder {
             label: '&Open',
             accelerator: 'Ctrl+O',
             click: () => {
-              const path = dialog.showOpenDialog({properties: ['openFile'], filters: [{name: "Character", extensions: ["dnd"]}]});
+              const path = dialog.showOpenDialog({
+                properties: ['openFile'],
+                filters: [{ name: 'Character', extensions: ['dnd'] }]
+              });
               this.fileManager.openFile(path);
             }
           },
@@ -174,7 +179,7 @@ export default class MenuBuilder {
             click: () => {
               this.mainWindow.close();
             }
-          },
+          }
         ]
       },
       {
@@ -219,29 +224,29 @@ export default class MenuBuilder {
               ]
       },
       {
-        label: "Edit",
+        label: 'Edit',
         submenu: [
-          /*{ label: "Undo", accelerator: "CmdOrCtrl+Z", selector: "undo:" },
-          { label: "Redo", accelerator: "Shift+CmdOrCtrl+Z", selector: "redo:" },*/
-          { label: "Cut", accelerator: "CmdOrCtrl+X", selector: "cut:" },
-          { label: "Copy", accelerator: "CmdOrCtrl+C", selector: "copy:" },
-          { label: "Paste", accelerator: "CmdOrCtrl+V", selector: "paste:" },
-          /*{ label: "Select All", accelerator: "CmdOrCtrl+A", selector: "selectAll:" }*/
+          /* { label: "Undo", accelerator: "CmdOrCtrl+Z", selector: "undo:" },
+          { label: "Redo", accelerator: "Shift+CmdOrCtrl+Z", selector: "redo:" }, */
+          { label: 'Cut', accelerator: 'CmdOrCtrl+X', selector: 'cut:' },
+          { label: 'Copy', accelerator: 'CmdOrCtrl+C', selector: 'copy:' },
+          { label: 'Paste', accelerator: 'CmdOrCtrl+V', selector: 'paste:' }
+          /* { label: "Select All", accelerator: "CmdOrCtrl+A", selector: "selectAll:" } */
         ]
       },
       {
         label: '&Synchronise',
-        submenu:
-            [
-              {
-                label: 'Join Room',
-                click: () => {
-                  this.mainWindow.webContents
-                    .executeJavaScript(`document.store.dispatch({type: "JOIN_WEB_RTC_ROOM"})`);
-                }
-              }
-            ]
-      },
+        submenu: [
+          {
+            label: 'Join Room',
+            click: () => {
+              this.mainWindow.webContents.executeJavaScript(
+                `document.store.dispatch({type: "JOIN_WEB_RTC_ROOM"})`
+              );
+            }
+          }
+        ]
+      }
     ];
 
     return templateDefault;

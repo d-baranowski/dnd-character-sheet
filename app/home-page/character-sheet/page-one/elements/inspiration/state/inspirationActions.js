@@ -1,5 +1,5 @@
 export const toggleInspiration = () => ({
-  type: 'TOGGLE_INSPIRATION',
+  type: 'TOGGLE_INSPIRATION'
 });
 
 toggleInspiration.type = 'TOGGLE_INSPIRATION';

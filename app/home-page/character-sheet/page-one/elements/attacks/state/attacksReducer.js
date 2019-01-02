@@ -1,4 +1,10 @@
-import {addAttack, removeAttack, updateAttack, openModal, closeModal} from "./attacksActions"
+import {
+  addAttack,
+  removeAttack,
+  updateAttack,
+  openModal,
+  closeModal
+} from './attacksActions';
 import uuidv4 from '../../../../../../uuid';
 
 const initialState = {
@@ -10,7 +16,12 @@ const initialState = {
 export default (state = initialState, action) => {
   if (action.type === addAttack.type) {
     const attackId = uuidv4();
-    const newState = {...state, attacks: {...state.attacks}, modalOpen: true, modalEditSlot: attackId};
+    const newState = {
+      ...state,
+      attacks: { ...state.attacks },
+      modalOpen: true,
+      modalEditSlot: attackId
+    };
     newState.attacks[attackId] = {
       id: attackId,
       name: '',
@@ -26,14 +37,22 @@ export default (state = initialState, action) => {
   }
 
   if (action.type === removeAttack.type) {
-    const newState = {...state, attacks: {...state.attacks}, modalOpen: false, modalEditSlot: undefined};
+    const newState = {
+      ...state,
+      attacks: { ...state.attacks },
+      modalOpen: false,
+      modalEditSlot: undefined
+    };
     delete newState.attacks[action.id];
     return newState;
   }
 
   if (action.type === updateAttack.type) {
-    const newState = {...state, attacks: {...state.attacks}};
-    newState.attacks[state.modalEditSlot] = {...state.attacks[state.modalEditSlot], ...action.attack};
+    const newState = { ...state, attacks: { ...state.attacks } };
+    newState.attacks[state.modalEditSlot] = {
+      ...state.attacks[state.modalEditSlot],
+      ...action.attack
+    };
     return newState;
   }
 
@@ -42,15 +61,15 @@ export default (state = initialState, action) => {
       ...state,
       modalOpen: true,
       modalEditSlot: action.id
-    }
+    };
   }
 
   if (action.type === closeModal.type) {
     return {
       ...state,
       modalOpen: false
-    }
+    };
   }
 
   return state;
-}
+};

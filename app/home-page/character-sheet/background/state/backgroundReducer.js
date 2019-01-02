@@ -2,7 +2,7 @@ import { setCharacterArt, openModal, closeModal } from './backgroundActions';
 
 const initialState = {
   modalOpen: false,
-  characterAvatar: "",
+  characterAvatar: '',
   pickerX: undefined,
   pickerY: undefined,
   width: undefined,
@@ -14,14 +14,14 @@ export default (state = initialState, action) => {
     return {
       ...state,
       characterAvatar: action.image
-    }
+    };
   }
 
   if (action.type === openModal.type) {
     return {
       ...state,
       modalOpen: true
-    }
+    };
   }
 
   if (action.type === closeModal.type) {
@@ -32,8 +32,8 @@ export default (state = initialState, action) => {
       pickerY: action.y,
       width: action.width,
       height: action.height
-    }
+    };
   }
 
   return state;
-}
+};

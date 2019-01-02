@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const CharacterSheet3PgsComplete02 = props => (
   <svg height={1056} width={816} {...props}>
@@ -211,7 +211,7 @@ const CharacterSheet3PgsComplete02 = props => (
       <path d="M490.851 504.929a1.284 1.284 0 1 0 2.569 0 1.284 1.284 0 0 0-2.569 0" />
     </g>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc' }}
       transform="matrix(1.33333 0 0 1.33333 93.493 132.184)"
       fontWeight={400}
       fontSize={7}
@@ -225,7 +225,7 @@ const CharacterSheet3PgsComplete02 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc' }}
       transform="matrix(1.33333 0 0 1.33333 354.293 132.44)"
       fontWeight={400}
       fontSize={7}
@@ -248,7 +248,7 @@ const CharacterSheet3PgsComplete02 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc' }}
       transform="matrix(1.33333 0 0 1.33333 562.8 200.852)"
       fontWeight={400}
       fontSize={5.75}
@@ -260,7 +260,7 @@ const CharacterSheet3PgsComplete02 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc-Bold" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc-Bold' }}
       transform="matrix(1.33333 0 0 1.33333 514.158 1017.817)"
       fontWeight={700}
       fontSize={6.5}
@@ -310,7 +310,7 @@ const CharacterSheet3PgsComplete02 = props => (
       transform="matrix(1.33333 0 0 -1.33333 230.47 1032.733)"
     >
       <text
-        style={{ InkscapeFontSpecification: "Interstate-Light" }}
+        style={{ InkscapeFontSpecification: 'Interstate-Light' }}
         transform="matrix(1 0 0 -1 0 -4.4)"
         fontWeight={300}
         fontSize={5.5}
@@ -330,4 +330,3 @@ const CharacterSheet3PgsComplete02 = props => (
 );
 
 export default CharacterSheet3PgsComplete02;
-

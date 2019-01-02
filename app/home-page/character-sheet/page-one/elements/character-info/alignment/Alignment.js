@@ -1,10 +1,9 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import Hoverable from '../../../../../../form/Hoverable';
-import {setModalVisibility} from '../state/characterInfoActions';
+import { setModalVisibility } from '../state/characterInfoActions';
 
-
-const Alignment = ({isHovered, alignment}) => (
+const Alignment = ({ isHovered, alignment }) => (
   <g>
     <text
       transform="matrix(1.33333 0 0 1.33333 511.3 128.44)"
@@ -25,17 +24,14 @@ const Alignment = ({isHovered, alignment}) => (
       fontSize={12}
       fontFamily="Scala Sans Offc"
     >
-      <tspan
-        y={0}
-        x="0"
-      >
+      <tspan y={0} x="0">
         {alignment}
       </tspan>
     </text>
   </g>
 );
 
-const HoverableAlignment = ({alignment, setModalVisibility}) => (
+const HoverableAlignment = ({ alignment, setModalVisibility }) => (
   <Hoverable
     x={505}
     y={95}
@@ -43,18 +39,16 @@ const HoverableAlignment = ({alignment, setModalVisibility}) => (
     height={35}
     onClick={() => setModalVisibility(true)}
   >
-    <Alignment
-      alignment={alignment}
-    />
+    <Alignment alignment={alignment} />
   </Hoverable>
 );
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   alignment: state.homePageReducer.characterInfoReducer.alignment
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  setModalVisibility: (visible) => dispatch(setModalVisibility(visible))
+const mapDispatchToProps = dispatch => ({
+  setModalVisibility: visible => dispatch(setModalVisibility(visible))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HoverableAlignment);

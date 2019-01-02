@@ -1,11 +1,11 @@
 import compose from 'redux/src/compose';
 import React from 'react';
 import FormInput from '../../../../../form/FormInput';
-import {limit, onlyNumbers} from '../../../../../form/format';
-import {Field, reduxForm} from 'redux-form';
+import { limit, onlyNumbers } from '../../../../../form/format';
+import { Field, reduxForm } from 'redux-form';
 import drawerRoute from '../../../../menu-drawer/drawerRoute';
 
-export const HitPointsDrawerRoute = "hitPoints";
+export const HitPointsDrawerRoute = 'hitPoints';
 
 class HitPointsDrawer extends React.PureComponent {
   render() {
@@ -43,4 +43,6 @@ class HitPointsDrawer extends React.PureComponent {
   }
 }
 
-export default drawerRoute(HitPointsDrawerRoute)(reduxForm({form: "hitPoints", destroyOnUnmount: false})(HitPointsDrawer));
+export default drawerRoute(HitPointsDrawerRoute)(
+  reduxForm({ form: 'hitPoints', destroyOnUnmount: false })(HitPointsDrawer)
+);

@@ -18,9 +18,18 @@ const getY = () => {
   return -28;
 };
 
-const characterInfoSlot = ({formName, label, textTransform, x, y, width, height, type = "textarea", limitValue = undefined}) => {
-
-  const CharacterInfoSlot = ({value, renderValue, isHovered, editing}) => (
+const characterInfoSlot = ({
+  formName,
+  label,
+  textTransform,
+  x,
+  y,
+  width,
+  height,
+  type = 'textarea',
+  limitValue = undefined
+}) => {
+  const CharacterInfoSlot = ({ value, renderValue, isHovered, editing }) => (
     <g>
       <text
         transform={textTransform}
@@ -28,10 +37,7 @@ const characterInfoSlot = ({formName, label, textTransform, x, y, width, height,
         fontSize={7}
         fontFamily="Scala Sans Offc"
       >
-        <tspan
-          y={0}
-          x={0}
-        >
+        <tspan y={0} x={0}>
           {label.toUpperCase()}
         </tspan>
       </text>
@@ -54,10 +60,7 @@ const characterInfoSlot = ({formName, label, textTransform, x, y, width, height,
           fontSize={12}
           fontFamily="Scala Sans Offc"
         >
-          <tspan
-            y={0}
-            x="0"
-          >
+          <tspan y={0} x="0">
             {value}
           </tspan>
         </text>
@@ -65,7 +68,13 @@ const characterInfoSlot = ({formName, label, textTransform, x, y, width, height,
     </g>
   );
 
-  const HoverableCharacterInfoSlot = ({onClick, renderValue, setWrapperRef, editing, value}) => (
+  const HoverableCharacterInfoSlot = ({
+    onClick,
+    renderValue,
+    setWrapperRef,
+    editing,
+    value
+  }) => (
     <Hoverable
       x={x}
       y={y}
@@ -82,7 +91,9 @@ const characterInfoSlot = ({formName, label, textTransform, x, y, width, height,
     </Hoverable>
   );
 
-  return withSimpleForm({formName, label, type, limitValue})(HoverableCharacterInfoSlot);
+  return withSimpleForm({ formName, label, type, limitValue })(
+    HoverableCharacterInfoSlot
+  );
 };
 
 export default characterInfoSlot;

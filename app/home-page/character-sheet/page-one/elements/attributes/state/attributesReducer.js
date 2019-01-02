@@ -1,4 +1,4 @@
-import {setAttributeValue} from "./actions";
+import { setAttributeValue } from './actions';
 
 const initialState = {
   Strength: '',
@@ -15,13 +15,19 @@ const initialState = {
   CharismaModifier: '0'
 };
 
-export const attributes = [ "Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"];
+export const attributes = [
+  'Strength',
+  'Dexterity',
+  'Constitution',
+  'Intelligence',
+  'Wisdom',
+  'Charisma'
+];
 
-const getModifier = (value) => Math.floor((parseInt(value) - 10) / 2);
+const getModifier = value => Math.floor((parseInt(value) - 10) / 2);
 
 export default (state = initialState, action) => {
-
-  if(action.type === setAttributeValue.type) {
+  if (action.type === setAttributeValue.type) {
     if (!action.value && !action.value.match) {
       return state;
     }
@@ -34,21 +40,28 @@ export default (state = initialState, action) => {
       return state;
     }
 
-    return {...state, [action.name]: action.value.length === 0 ? 0 : action.value, [`${action.name}Modifier`]: action.value.length === 0 ? 0 : getModifier(action.value)};
+    return {
+      ...state,
+      [action.name]: action.value.length === 0 ? 0 : action.value,
+      [`${action.name}Modifier`]:
+        action.value.length === 0 ? 0 : getModifier(action.value)
+    };
   }
 
   return state;
-}
-
-export const getValue = (state, attribute) => {
-  return state.attributesReducer[attribute]
 };
 
-export const mapAttributesFromStateToProps = (state) =>
-  attributes.reduce((result, val) => {
-    const copy = {...result};
-    copy.values[val] = {};
-    copy.values[val].value = getValue(state, val) || '';
-    copy.values[val].modifier = getValue(state, `${val}Modifier`) || 0;
-    return copy;
-  }, {values: {}});
+export const getValue = (state, attribute) =>
+  state.attributesReducer[attribute];
+
+export const mapAttributesFromStateToProps = state =>
+  attributes.reduce(
+    (result, val) => {
+      const copy = { ...result };
+      copy.values[val] = {};
+      copy.values[val].value = getValue(state, val) || '';
+      copy.values[val].modifier = getValue(state, `${val}Modifier`) || 0;
+      return copy;
+    },
+    { values: {} }
+  );

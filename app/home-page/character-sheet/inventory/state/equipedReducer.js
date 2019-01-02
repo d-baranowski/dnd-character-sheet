@@ -1,4 +1,4 @@
-import {closeModal, openModal, selectItem} from "./equipedActions";
+import { closeModal, openModal, selectItem } from './equipedActions';
 
 const initialState = {
   modalOpen: false,
@@ -15,25 +15,25 @@ const initialState = {
     slotNine: undefined,
     slotTen: undefined,
     slotEleven: undefined,
-    slotTwelve: undefined,
+    slotTwelve: undefined
   }
 };
 
 export default (state = initialState, action) => {
   if (action.type === closeModal.type) {
-    return {...state, modalOpen: false}
+    return { ...state, modalOpen: false };
   }
 
   if (action.type === openModal.type) {
-    return {...state, modalOpen: true, modalEditSlot: action.modalEditSlot}
+    return { ...state, modalOpen: true, modalEditSlot: action.modalEditSlot };
   }
 
   if (action.type === selectItem.type) {
     return {
       ...state,
-      equipped: {...state.equipped, [action.slot]: action.item.id}
-    }
+      equipped: { ...state.equipped, [action.slot]: action.item.id }
+    };
   }
 
   return state;
-}
+};

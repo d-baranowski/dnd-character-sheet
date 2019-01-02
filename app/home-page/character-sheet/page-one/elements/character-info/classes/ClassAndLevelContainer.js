@@ -1,7 +1,7 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {setDrawerRoute} from '../../../../../menu-drawer/state/menuDrawerActions';
-import {ClassAndLevelDrawerRoute} from './ClassAndLevelDrawer';
+import { connect } from 'react-redux';
+import { setDrawerRoute } from '../../../../../menu-drawer/state/menuDrawerActions';
+import { ClassAndLevelDrawerRoute } from './ClassAndLevelDrawer';
 
 class ClassAndLevelContainer extends React.PureComponent {
   state = {
@@ -9,22 +9,27 @@ class ClassAndLevelContainer extends React.PureComponent {
   };
 
   onMouseOver = () => {
-    this.setState({isHovered: true})
+    this.setState({ isHovered: true });
   };
 
   onMouseLeave = () => {
-    this.setState({isHovered: false})
+    this.setState({ isHovered: false });
   };
 
-  getClassAndLevelText = () => Object.entries(this.props.dndClasses)
-    .map(([key, value]) => ({name: key, value}))
-    .filter((value => value.value.level > 0))
-    .reduce((accumulator, current, index, array) =>
-        `${accumulator} ${array.length > 1 ? current.value.abbreviation : current.name} / ${current.value.level}`
-      , "");
+  getClassAndLevelText = () =>
+    Object.entries(this.props.dndClasses)
+      .map(([key, value]) => ({ name: key, value }))
+      .filter(value => value.value.level > 0)
+      .reduce(
+        (accumulator, current, index, array) =>
+          `${accumulator} ${
+            array.length > 1 ? current.value.abbreviation : current.name
+          } / ${current.value.level}`,
+        ''
+      );
 
   render() {
-    const {isHovered} = this.state;
+    const { isHovered } = this.state;
     return (
       <g>
         <text
@@ -33,10 +38,7 @@ class ClassAndLevelContainer extends React.PureComponent {
           fontSize={7}
           fontFamily="Scala Sans Offc"
         >
-          <tspan
-            y={0}
-            x="0"
-          >
+          <tspan y={0} x="0">
             CLASS & LEVEL
           </tspan>
         </text>
@@ -46,10 +48,7 @@ class ClassAndLevelContainer extends React.PureComponent {
           fontSize={12}
           fontFamily="Scala Sans Offc"
         >
-          <tspan
-            y={0}
-            x="0"
-          >
+          <tspan y={0} x="0">
             {this.getClassAndLevelText()}
           </tspan>
         </text>
@@ -61,17 +60,20 @@ class ClassAndLevelContainer extends React.PureComponent {
           x="360"
           y="60"
           width="133"
-          height="35" />
+          height="35"
+        />
       </g>
-    )
+    );
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   dndClasses: state.homePageReducer.classesReducer.classes
 });
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   showEditor: () => dispatch(setDrawerRoute(ClassAndLevelDrawerRoute))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ClassAndLevelContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(
+  ClassAndLevelContainer
+);

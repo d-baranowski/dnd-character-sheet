@@ -1,4 +1,4 @@
-import THREE from "../libs/three.min";
+import THREE from '../libs/three.min';
 
 const getDirection = (x1, y1, x2, y2) => {
   // might be negative:
@@ -19,7 +19,7 @@ class DieBox {
     this.aspect = Math.min(this.cw / this.w, this.ch / this.h);
     this._scale = Math.sqrt(this.w * this.w + this.h * this.h) / 13;
 
-    this.renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
+    this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     this.renderer.setSize(this.cw * 2, this.ch * 2);
 
     this.renderer.setClearColor(0x000000, 0);
@@ -29,8 +29,14 @@ class DieBox {
 
     container.appendChild(this.renderer.domElement);
 
-    const wh = Math.min(this.cw, this.ch) / this.aspect / Math.tan(10 * Math.PI / 180);
-    this.camera = new THREE.PerspectiveCamera(20, this.cw / this.ch, 1, wh * 1.3);
+    const wh =
+      Math.min(this.cw, this.ch) / this.aspect / Math.tan(10 * Math.PI / 180);
+    this.camera = new THREE.PerspectiveCamera(
+      20,
+      this.cw / this.ch,
+      1,
+      wh * 1.3
+    );
     this.camera.position.z = wh;
 
     const ambientLight = new THREE.AmbientLight(0xf0f0f0);
@@ -42,28 +48,33 @@ class DieBox {
 
     this.scene.add(light);
 
-    container.addEventListener('click', (ev) => {
+    container.addEventListener('click', ev => {
       const die = this.searchDieByMouse(ev);
-      die && die.onClick()
+      die && die.onClick();
     });
 
-    container.addEventListener('contextmenu', (ev) => {
+    container.addEventListener('contextmenu', ev => {
       const die = this.searchDieByMouse(ev);
       die && die.onRightClick();
     });
 
     this.renderer.render(this.scene, this.camera);
-  };
+  }
 
-  searchDieByMouse = (ev) => {
-    const clickCube = new THREE.Mesh( new THREE.CubeGeometry( 5, 5, 5 ), new THREE.MeshNormalMaterial() );
+  searchDieByMouse = ev => {
+    const clickCube = new THREE.Mesh(
+      new THREE.CubeGeometry(5, 5, 5),
+      new THREE.MeshNormalMaterial()
+    );
     const rect = ev.target.getBoundingClientRect();
     const x = ev.clientX - rect.left - this.w;
     const y = (ev.clientY - rect.top - this.h) * -1;
     clickCube.position.x = x;
     clickCube.position.y = y;
     const clickBox = new THREE.Box3().setFromObject(clickCube);
-    return this.dice.find(die => new THREE.Box3().setFromObject(die).containsBox(clickBox));
+    return this.dice.find(die =>
+      new THREE.Box3().setFromObject(die).containsBox(clickBox)
+    );
   };
 
   drawSelector(dice) {
@@ -74,12 +85,11 @@ class DieBox {
     }
 
     this.renderer.render(this.scene, this.camera);
-  };
+  }
 
   render() {
     this.renderer.render(this.scene, this.camera);
-  };
+  }
 }
 
-
-export default DieBox
+export default DieBox;

@@ -1,9 +1,9 @@
 import React from 'react';
 import electron from 'electron';
-import {ReactSVGPanZoom} from 'react-svg-pan-zoom';
+import { ReactSVGPanZoom } from 'react-svg-pan-zoom';
 import SvgFilters from '../../svg-style/SvgFilters';
 
-const {remote} = electron;
+const { remote } = electron;
 
 class PanZoom extends React.PureComponent {
   constructor() {
@@ -21,13 +21,16 @@ class PanZoom extends React.PureComponent {
 
   resizeToBounds() {
     setTimeout(() => {
-      const bounds = remote.getCurrentWindow().webContents.getOwnerBrowserWindow().getContentBounds();
+      const bounds = remote
+        .getCurrentWindow()
+        .webContents.getOwnerBrowserWindow()
+        .getContentBounds();
       this.setState({
         width: bounds.width,
         height: bounds.height
       });
-    }, 0)
-  };
+    }, 0);
+  }
 
   render() {
     return (
@@ -40,21 +43,21 @@ class PanZoom extends React.PureComponent {
         width={this.state.width}
         height={this.state.height}
         scaleFactorOnWheel={1.3}
-        tool='auto'
-        miniaturePosition='none'
-        toolbarPosition='none'
+        tool="auto"
+        miniaturePosition="none"
+        toolbarPosition="none"
         scaleFactorMax={7}
         scaleFactorMin={0.5}
         disableDoubleClickZoomWithToolAuto
       >
         <svg height={1056} width={816}>
           <defs>
-            <SvgFilters/>
+            <SvgFilters />
           </defs>
           {this.props.children}
         </svg>
       </ReactSVGPanZoom>
-    )
+    );
   }
 }
 

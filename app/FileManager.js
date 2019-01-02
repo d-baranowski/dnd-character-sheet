@@ -17,54 +17,94 @@ class FileManager {
           return;
         }
 
-        this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "LOAD_CHARACTER", payload: ${JSON.stringify(data)}})`);
+        this.mainWindow.webContents.executeJavaScript(
+          `document.store.dispatch({type: "LOAD_CHARACTER", payload: ${JSON.stringify(
+            data
+          )}})`
+        );
       });
     }
   }
 
   saveFile() {
-    this.mainWindow.webContents.executeJavaScript(`JSON.stringify(document.store.getState())`, (state) => {
-      if (this.savePath) {
-        fs.writeFile(this.savePath, state, (err) => {
-          if (err) {
-            this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "FAILED_TO_SAVE_CHARACTER", payload: '${this.savePath}', cameFromRemoteSource: true})`);
-            return;
-          }
-
-          this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "SAVED_CHARACTER", payload: '${this.savePath}', cameFromRemoteSource: true})`);
-        });
-      } else {
-        dialog.showSaveDialog({filters: [{name: "Character", extensions: ["dnd"]}]}, (fileName) => {
-          if (fileName === undefined) return;
-          this.savePath = fileName;
-          fs.writeFile(fileName, state, (err) => {
+    this.mainWindow.webContents.executeJavaScript(
+      `JSON.stringify(document.store.getState())`,
+      state => {
+        if (this.savePath) {
+          fs.writeFile(this.savePath, state, err => {
             if (err) {
-              this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "FAILED_TO_SAVE_CHARACTER", payload: '${this.savePath}', cameFromRemoteSource: true})`);
+              this.mainWindow.webContents.executeJavaScript(
+                `document.store.dispatch({type: "FAILED_TO_SAVE_CHARACTER", payload: '${
+                  this.savePath
+                }', cameFromRemoteSource: true})`
+              );
               return;
             }
 
-            this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "SAVED_CHARACTER", payload: '${this.savePath}', cameFromRemoteSource: true})`);
+            this.mainWindow.webContents.executeJavaScript(
+              `document.store.dispatch({type: "SAVED_CHARACTER", payload: '${
+                this.savePath
+              }', cameFromRemoteSource: true})`
+            );
           });
-        });
+        } else {
+          dialog.showSaveDialog(
+            { filters: [{ name: 'Character', extensions: ['dnd'] }] },
+            fileName => {
+              if (fileName === undefined) return;
+              this.savePath = fileName;
+              fs.writeFile(fileName, state, err => {
+                if (err) {
+                  this.mainWindow.webContents.executeJavaScript(
+                    `document.store.dispatch({type: "FAILED_TO_SAVE_CHARACTER", payload: '${
+                      this.savePath
+                    }', cameFromRemoteSource: true})`
+                  );
+                  return;
+                }
+
+                this.mainWindow.webContents.executeJavaScript(
+                  `document.store.dispatch({type: "SAVED_CHARACTER", payload: '${
+                    this.savePath
+                  }', cameFromRemoteSource: true})`
+                );
+              });
+            }
+          );
+        }
       }
-    });
+    );
   }
 
   saveAs() {
-    this.mainWindow.webContents.executeJavaScript(`JSON.stringify(document.store.getState())`, (state) => {
-      dialog.showSaveDialog({filters: [{name: "Character", extensions: ["dnd"]}]}, (fileName) => {
-        if (fileName === undefined) return;
-        this.savePath = fileName;
-        fs.writeFile(fileName, state, (err) => {
-          if (err) {
-            this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "FAILED_TO_SAVE_CHARACTER", payload: '${this.savePath}', cameFromRemoteSource: true })`);
-            return;
-          }
+    this.mainWindow.webContents.executeJavaScript(
+      `JSON.stringify(document.store.getState())`,
+      state => {
+        dialog.showSaveDialog(
+          { filters: [{ name: 'Character', extensions: ['dnd'] }] },
+          fileName => {
+            if (fileName === undefined) return;
+            this.savePath = fileName;
+            fs.writeFile(fileName, state, err => {
+              if (err) {
+                this.mainWindow.webContents.executeJavaScript(
+                  `document.store.dispatch({type: "FAILED_TO_SAVE_CHARACTER", payload: '${
+                    this.savePath
+                  }', cameFromRemoteSource: true })`
+                );
+                return;
+              }
 
-          this.mainWindow.webContents.executeJavaScript(`document.store.dispatch({type: "SAVED_CHARACTER", payload: '${this.savePath}', cameFromRemoteSource: true })`);
-        });
-      });
-    });
+              this.mainWindow.webContents.executeJavaScript(
+                `document.store.dispatch({type: "SAVED_CHARACTER", payload: '${
+                  this.savePath
+                }', cameFromRemoteSource: true })`
+              );
+            });
+          }
+        );
+      }
+    );
   }
 }
 

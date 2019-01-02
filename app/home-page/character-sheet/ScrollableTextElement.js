@@ -7,23 +7,31 @@ class ScrollableTextElement extends React.PureComponent {
   };
 
   onMouseOver = () => {
-    this.setState({isHovered: true})
+    this.setState({ isHovered: true });
   };
 
   onMouseLeave = () => {
-    this.setState({isHovered: false})
+    this.setState({ isHovered: false });
   };
 
   render() {
-    const {isHovered} = this.state;
-    const {fillPath, borderPah, rectX, rectY, rectWidth, rectHeigth, value, fontSize, setWrapperRef} = this.props;
+    const { isHovered } = this.state;
+    const {
+      fillPath,
+      borderPah,
+      rectX,
+      rectY,
+      rectWidth,
+      rectHeigth,
+      value,
+      fontSize,
+      setWrapperRef
+    } = this.props;
 
     return (
       <g>
-        <g filter={ isHovered && "url(#sofGlow)" }>
-          <path d={fillPath}
-                fill="#fff"
-          />
+        <g filter={isHovered && 'url(#sofGlow)'}>
+          <path d={fillPath} fill="#fff" />
           <path d={borderPah} />
         </g>
         {this.props.children}
@@ -42,7 +50,7 @@ class ScrollableTextElement extends React.PureComponent {
           {value}
         </ScrollableTextField>
       </g>
-    )
+    );
   }
 }
 

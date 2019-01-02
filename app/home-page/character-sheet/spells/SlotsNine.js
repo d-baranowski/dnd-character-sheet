@@ -1,11 +1,11 @@
 import React from 'react';
-import ActualSlots from "./ActualSlots";
-import withSimpleForm from "../../../form/withSimpleForm";
+import ActualSlots from './ActualSlots';
+import withSimpleForm from '../../../form/withSimpleForm';
 
 const y = 830;
 const x = 565;
 
-const Slots = ({onClick, renderValue, setWrapperRef}) => (
+const Slots = ({ onClick, renderValue, setWrapperRef }) => (
   <ActualSlots
     rectX={x}
     rectY={y}
@@ -16,19 +16,22 @@ const Slots = ({onClick, renderValue, setWrapperRef}) => (
     setWrapperRef={setWrapperRef}
     onClick={onClick}
   >
-    <foreignObject  x={x + 68.77} y={y}>
-      <div style={{
-        height: '35px',
-        lineHeight: "35px",
-        width: '140px',
-        border: 'none',
-        fontFamily: 'Scala Sans Offc',
-        fontSize: 'small',
-        textAlign: 'center' }}>
+    <foreignObject x={x + 68.77} y={y}>
+      <div
+        style={{
+          height: '35px',
+          lineHeight: '35px',
+          width: '140px',
+          border: 'none',
+          fontFamily: 'Scala Sans Offc',
+          fontSize: 'small',
+          textAlign: 'center'
+        }}
+      >
         {renderValue}
       </div>
     </foreignObject>
   </ActualSlots>
 );
 
-export default withSimpleForm({formName: 'slotsNine', label: 'Slots'})(Slots);
+export default withSimpleForm({ formName: 'slotsNine', label: 'Slots' })(Slots);

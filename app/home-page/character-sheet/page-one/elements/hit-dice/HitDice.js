@@ -1,9 +1,9 @@
 import React from 'react';
 import InteractiveElement from '../../../InteractiveElement';
-import {connect} from "react-redux";
-import {setModalVisibility} from "./state/hitDiceActions";
+import { connect } from 'react-redux';
+import { setModalVisibility } from './state/hitDiceActions';
 
-const HitDice = ({hitDiceTotal, onClick, hitDiceString}) => (
+const HitDice = ({ hitDiceTotal, onClick, hitDiceString }) => (
   <g transform="translate(0, -75)">
     <InteractiveElement
       fillPath="M402.257 426.777v52.091l-5.6 5.6h-91.836l-5.613-5.6v-52.09l5.613-5.614h91.836z"
@@ -42,22 +42,22 @@ const HitDice = ({hitDiceTotal, onClick, hitDiceString}) => (
         fontSize={5.75}
         fontFamily="Scala Sans Offc"
       >
-        <tspan
-          y={0}
-          x="3"
-        >
+        <tspan y={0} x="3">
           Hit Dice
         </tspan>
       </text>
       <foreignObject x="304" y="440">
         <div>
-          <p style={{
-            height: '30px',
-            width: '94px',
-            fontFamily: 'Scala Sans Offc',
-            overflow: 'hidden',
-            fontSize: 'medium',
-            textAlign: 'center' }}>
+          <p
+            style={{
+              height: '30px',
+              width: '94px',
+              fontFamily: 'Scala Sans Offc',
+              overflow: 'hidden',
+              fontSize: 'medium',
+              textAlign: 'center'
+            }}
+          >
             {hitDiceString}
           </p>
         </div>
@@ -66,40 +66,52 @@ const HitDice = ({hitDiceTotal, onClick, hitDiceString}) => (
   </g>
 );
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   const classes = Object.entries(state.homePageReducer.classesReducer.classes);
   const startValue = classes.reduce((result, val) => {
     result[val[1].hitDie] = 0;
     return result;
   }, {});
 
-  const hitDiceTotal = classes.reduce((result, val) => {
-    result[val[1].hitDie]+= parseInt(val[1].level);
-    return result;
-  }, {...startValue});
+  const hitDiceTotal = classes.reduce(
+    (result, val) => {
+      result[val[1].hitDie] += parseInt(val[1].level);
+      return result;
+    },
+    { ...startValue }
+  );
 
-  const hitDice = classes.reduce((result, val) => {
-    result[val[1].hitDie] = hitDiceTotal[val[1].hitDie] + state.homePageReducer.hitDiceReducer[val[1].hitDie];
-    return result;
-  }, {...hitDiceTotal});
+  const hitDice = classes.reduce(
+    (result, val) => {
+      result[val[1].hitDie] =
+        hitDiceTotal[val[1].hitDie] +
+        state.homePageReducer.hitDiceReducer[val[1].hitDie];
+      return result;
+    },
+    { ...hitDiceTotal }
+  );
 
-  const hitDiceString = Object.entries(hitDice).filter((value) => value[1] > 0).reduce((result, val) => {
-    result += val[1] + val[0] + " ";
-    return result;
-  }, "");
+  const hitDiceString = Object.entries(hitDice)
+    .filter(value => value[1] > 0)
+    .reduce((result, val) => {
+      result += `${val[1] + val[0]} `;
+      return result;
+    }, '');
 
-  const hitDiceStringTotal = Object.entries(hitDiceTotal).filter((value) => value[1] > 0).reduce((result, val) => {
-    result += val[1] + val[0] + " ";
-    return result;
-  }, "");
+  const hitDiceStringTotal = Object.entries(hitDiceTotal)
+    .filter(value => value[1] > 0)
+    .reduce((result, val) => {
+      result += `${val[1] + val[0]} `;
+      return result;
+    }, '');
 
   return {
     hitDiceTotal: hitDiceStringTotal,
     hitDiceString
-  }
+  };
 };
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   onClick: () => dispatch(setModalVisibility(true))
 });
 

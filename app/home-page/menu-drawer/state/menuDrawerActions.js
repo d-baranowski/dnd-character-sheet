@@ -15,4 +15,4 @@ const setDrawerRoute = (route, props) => ({
 });
 setDrawerRoute.type = 'SET_DRAWER_ROUTE';
 
-export { openDrawer, closeDrawer, setDrawerRoute }
+export { openDrawer, closeDrawer, setDrawerRoute };

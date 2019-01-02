@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import InteractiveElement from "../InteractiveElement";
+import InteractiveElement from '../InteractiveElement';
 
 class ActualSlots extends React.PureComponent {
   state = {
@@ -8,25 +8,31 @@ class ActualSlots extends React.PureComponent {
   };
 
   onMouseOver = () => {
-    this.setState({isHovered: true})
+    this.setState({ isHovered: true });
   };
 
   onMouseLeave = () => {
-    this.setState({isHovered: false})
+    this.setState({ isHovered: false });
   };
 
   render() {
-    const {isHovered} = this.state;
-    const {fillPath, borderPath, rectX, rectY, rectWidth, rectHeight, setWrapperRef} = this.props;
+    const { isHovered } = this.state;
+    const {
+      fillPath,
+      borderPath,
+      rectX,
+      rectY,
+      rectWidth,
+      rectHeight,
+      setWrapperRef
+    } = this.props;
 
     return (
       <g>
-        <g filter={isHovered ? "url(#sofGlow)" : undefined}>
-          <path d={fillPath}
-                fill="#fff"
-          />
+        <g filter={isHovered ? 'url(#sofGlow)' : undefined}>
+          <path d={fillPath} fill="#fff" />
           <g clipPath="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
-            <path d={borderPath}/>
+            <path d={borderPath} />
           </g>
         </g>
         {this.props.children}

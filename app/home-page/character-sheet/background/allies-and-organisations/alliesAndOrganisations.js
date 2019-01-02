@@ -2,7 +2,7 @@ import React from 'react';
 import ScrollableTextElement from '../../ScrollableTextElement';
 import withSimpleForm from '../../../../form/withSimpleForm';
 
-const AlliesAndOrganisations = ({onClick, renderValue, setWrapperRef}) => (
+const AlliesAndOrganisations = ({ onClick, renderValue, setWrapperRef }) => (
   <g>
     <ScrollableTextElement
       fontSize={16}
@@ -25,10 +25,7 @@ const AlliesAndOrganisations = ({onClick, renderValue, setWrapperRef}) => (
         fontFamily="Scala Sans Offc"
         fill="black"
       >
-        <tspan
-          y="160"
-          x="147"
-        >
+        <tspan y="160" x="147">
           Allies & Organisations
         </tspan>
       </text>
@@ -36,4 +33,9 @@ const AlliesAndOrganisations = ({onClick, renderValue, setWrapperRef}) => (
   </g>
 );
 
-export default withSimpleForm({formName:"allies", label:"Allies", type:"textarea", allowLineBreak: true})(AlliesAndOrganisations);
+export default withSimpleForm({
+  formName: 'allies',
+  label: 'Allies',
+  type: 'textarea',
+  allowLineBreak: true
+})(AlliesAndOrganisations);

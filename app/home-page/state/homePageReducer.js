@@ -1,4 +1,4 @@
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 import menuDrawerReducer from '../menu-drawer/state/menuDrawerReducer';
 import classesReducer from '../character-sheet/page-one/elements/character-info/classes/state/classesReducer';
 import inspirationReducer from '../character-sheet/page-one/elements/inspiration/state/inspirationReducer';
@@ -7,7 +7,7 @@ import characterInfoReducer from '../character-sheet/page-one/elements/character
 import deathSavesReducer from '../character-sheet/page-one/elements/death-saves/state/deathSavesReducer';
 import attacksReducer from '../character-sheet/page-one/elements/attacks/state/attacksReducer';
 import backgroundReducer from '../character-sheet/background/state/backgroundReducer';
-import hitDiceReducer from "../character-sheet/page-one/elements/hit-dice/state/hitDiceReducer";
+import hitDiceReducer from '../character-sheet/page-one/elements/hit-dice/state/hitDiceReducer';
 
 const reducer = combineReducers({
   menuDrawerReducer,

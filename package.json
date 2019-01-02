@@ -1,6 +1,6 @@
 {
   "name": "dnd-character-sheet",
-  "productName": "D&D Character Sheet",
+  "productName": "dnd-character-sheet",
   "version": "0.1.8",
   "description": "5e Dungeons and dragons character sheet aiming to look like the paper version.",
   "scripts": {
@@ -41,8 +41,8 @@
     ]
   },
   "build": {
-    "productName": "CharacterSheet",
-    "appId": "net.devtales.CharacterSheet",
+    "productName": "dnd-character-sheet",
+    "appId": "net.devtales.dnd-character-sheet",
     "files": [
       "dist/",
       "node_modules/",
@@ -85,7 +85,7 @@
   "repository": "https://github.com/d-baranowski/dnd-character-sheet.git",
   "author": {
     "name": "Daniel Baranowski",
-    "email": "daniel.m.baranowski@gmail.com",
+    "email": "dan@devtales.net",
     "url": "https://github.com/d-baranowski/dnd-character-sheet"
   },
   "license": "MIT",
@@ -100,7 +100,7 @@
     "hot",
     "reload"
   ],
-  "homepage": "https://github.com/chentsulin/electron-react-boilerplate#readme",
+  "homepage": "https://devtales.net",
   "jest": {
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/internals/mocks/fileMock.js",

@@ -2,7 +2,7 @@ import React from 'react';
 import withSimpleForm from '../../../../form/withSimpleForm';
 import ScrollableTextElement from '../../ScrollableTextElement';
 
-const Journal = ({onClick, renderValue, setWrapperRef}) => (
+const Journal = ({ onClick, renderValue, setWrapperRef }) => (
   <ScrollableTextElement
     value={renderValue}
     onClick={onClick}
@@ -22,14 +22,16 @@ const Journal = ({onClick, renderValue, setWrapperRef}) => (
       fontFamily="Scala Sans Offc"
       fill="black"
     >
-      <tspan
-        y="570"
-        x="70"
-      >
+      <tspan y="570" x="70">
         Journal
       </tspan>
     </text>
   </ScrollableTextElement>
 );
 
-export default withSimpleForm({formName:"journal", label:"Back Story", type:"textarea", allowLineBreak: true})(Journal);
+export default withSimpleForm({
+  formName: 'journal',
+  label: 'Back Story',
+  type: 'textarea',
+  allowLineBreak: true
+})(Journal);

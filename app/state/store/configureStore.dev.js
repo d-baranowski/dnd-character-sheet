@@ -4,7 +4,7 @@ import { createHashHistory } from 'history';
 import { routerMiddleware, routerActions } from 'react-router-redux';
 import { createLogger } from 'redux-logger';
 import rootReducer from '../RootReducer';
-import sideEffectsMiddleware from "../middleware/sideEffectsMiddleware";
+import sideEffectsMiddleware from '../middleware/sideEffectsMiddleware';
 
 const history = createHashHistory();
 

@@ -1,8 +1,8 @@
-import {openDrawer, closeDrawer, setDrawerRoute} from './menuDrawerActions';
+import { openDrawer, closeDrawer, setDrawerRoute } from './menuDrawerActions';
 
 const initialState = {
   open: false,
-  route: "",
+  route: ''
 };
 
 const reducer = (state = initialState, action) => {
@@ -10,23 +10,19 @@ const reducer = (state = initialState, action) => {
     return {
       ...state,
       open: true
-    }
-  }
-
-  else if (action.type === closeDrawer.type) {
+    };
+  } else if (action.type === closeDrawer.type) {
     return {
       ...state,
       open: false
-    }
-  }
-
-  else if (action.type === setDrawerRoute.type) {
+    };
+  } else if (action.type === setDrawerRoute.type) {
     return {
       ...state,
       route: action.route,
       props: action.props,
       open: true
-    }
+    };
   }
 
   return state;

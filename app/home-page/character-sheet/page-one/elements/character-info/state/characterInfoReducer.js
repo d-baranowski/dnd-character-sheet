@@ -1,7 +1,7 @@
-import {selectAlignment, setModalVisibility} from './characterInfoActions';
+import { selectAlignment, setModalVisibility } from './characterInfoActions';
 
 const initialState = {
-  alignment: "",
+  alignment: '',
   alignmentModalVisible: false
 };
 
@@ -11,15 +11,15 @@ export default (state = initialState, action) => {
       ...state,
       alignment: action.alignment,
       alignmentModalVisible: false
-    }
+    };
   }
 
   if (action.type === setModalVisibility.type) {
     return {
       ...state,
       alignmentModalVisible: action.visible
-    }
+    };
   }
 
   return state;
-}
+};

@@ -1,5 +1,4 @@
 export default (fileManager, process) => {
-    const path = process.argv;
-    fileManager.openFile(path);
-}
-
+  const path = process.argv;
+  fileManager.openFile(path);
+};

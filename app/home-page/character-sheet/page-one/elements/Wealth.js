@@ -2,7 +2,7 @@ import React from 'react';
 import ScrollableTextElement from '../../ScrollableTextElement';
 import withSimpleForm from '../../../../form/withSimpleForm';
 
-const Wealth = ({onClick, renderValue, setWrapperRef}) => (
+const Wealth = ({ onClick, renderValue, setWrapperRef }) => (
   <g transform="translate(250, 42)">
     <ScrollableTextElement
       fillPath="m 298.82502,977.9752 c -0.88603,-0.49 -2.42652,-1.6296 -3.42331,-2.5323 l -1.81234,-1.6414 v -70.08431 -112.0843 l 1.81234,-1.65072 c 0.99679,-0.90789 2.60407,-2.05848 3.57173,-2.55686 2.50919,-1.29231 215.48033,-1.29231 217.98952,0 0.96766,0.49838 2.57494,1.64897 3.57172,2.55686 l 1.81234,1.65072 v 112.0843 70.08431 l -1.81234,1.6507 c -0.99678,0.9079 -2.60406,2.0585 -3.57172,2.5569 -2.48248,1.2785 -215.8249,1.2454 -218.13794,-0.034 z"
@@ -21,10 +21,7 @@ const Wealth = ({onClick, renderValue, setWrapperRef}) => (
         fontSize={6.5}
         fontFamily="Scala Sans Offc"
       >
-        <tspan
-          y={-31}
-          x="5"
-        >
+        <tspan y={-31} x="5">
           WEALTH
         </tspan>
       </text>
@@ -32,4 +29,9 @@ const Wealth = ({onClick, renderValue, setWrapperRef}) => (
   </g>
 );
 
-export default withSimpleForm({formName:"wealth", label:"Wealth", type:"textarea", allowLineBreak: true})(Wealth);
+export default withSimpleForm({
+  formName: 'wealth',
+  label: 'Wealth',
+  type: 'textarea',
+  allowLineBreak: true
+})(Wealth);

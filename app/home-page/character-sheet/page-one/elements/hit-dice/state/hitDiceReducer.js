@@ -1,4 +1,8 @@
-import {setModalVisibility, decrementDie, incrementDie} from './hitDiceActions';
+import {
+  setModalVisibility,
+  decrementDie,
+  incrementDie
+} from './hitDiceActions';
 
 const initialState = {
   modalVisible: false,
@@ -15,23 +19,22 @@ export default (state = initialState, action) => {
     return {
       ...state,
       modalVisible: action.visible
-    }
+    };
   }
 
   if (action.type === decrementDie.type) {
     return {
       ...state,
       [action.die]: state[action.die] - 1
-    }
+    };
   }
 
   if (action.type === incrementDie.type) {
     return {
       ...state,
       [action.die]: state[action.die] + 1
-    }
+    };
   }
 
-
   return state;
-}
+};

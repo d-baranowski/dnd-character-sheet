@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const CharacterSheet3PgsComplete03 = props => (
   <svg height={1056} width={816} {...props}>
@@ -2039,7 +2039,7 @@ const CharacterSheet3PgsComplete03 = props => (
     <path d="M48.913 410.091l15.676 13.598v16.91l-15.676 13.598-5.546-5.22v-33.668zm-.055-2.694l-1.315 1.237-5.546 5.217-.63.594V449.84l.63.593 5.545 5.219 1.316 1.24 1.364-1.186L65.9 442.11l.69-.599V422.777l-.69-.6-15.677-13.596zM48.913 714.85l15.676 13.597v16.911l-15.676 13.597-5.546-5.22v-33.668zm-.055-2.695l-1.315 1.238-5.546 5.217-.63.593V754.6l.63.594 5.545 5.218 1.316 1.24 1.364-1.185L65.9 746.869l.69-.599v-18.735l-.69-.598-15.677-13.598zM300.913 186.449l15.676 13.597v16.911l-15.676 13.597-5.546-5.22v-33.668zm-.055-2.695l-1.315 1.238-5.546 5.217-.63.593V226.198l.63.594 5.545 5.218 1.316 1.24 1.364-1.185 15.677-13.597.69-.599v-18.735l-.69-.598-15.677-13.598zM550.413 186.449l15.676 13.597v16.911l-15.676 13.597-5.546-5.22v-33.668zm-.055-2.695l-1.315 1.238-5.546 5.217-.63.593V226.198l.63.594 5.545 5.218 1.316 1.24 1.364-1.185 15.677-13.597.69-.599v-18.735l-.69-.598-15.677-13.598zM550.413 412.785l15.676 13.598v16.91l-15.676 13.598-5.546-5.22v-33.668zm-.055-2.694l-1.315 1.237-5.546 5.217-.63.594V452.535l.63.593 5.545 5.219 1.316 1.24 1.364-1.186 15.677-13.597.69-.599V425.471l-.69-.6-15.677-13.596zM550.413 639.191l15.676 13.597V669.7l-15.676 13.597-5.546-5.22v-33.668zm-.055-2.695l-1.315 1.238-5.546 5.217-.63.593V678.94l.63.594 5.545 5.218 1.316 1.24 1.364-1.185L567.4 671.21l.69-.599v-18.735l-.69-.598-15.677-13.598zM550.413 826.823l15.676 13.597v16.91l-15.676 13.598-5.546-5.22V832.04zm-.055-2.695l-1.315 1.237-5.546 5.218-.63.593V866.572l.63.593 5.545 5.219 1.316 1.24 1.364-1.185L567.4 858.84l.69-.598v-18.735l-.69-.599-15.677-13.597zM300.913 487.23l15.676 13.597v16.91l-15.676 13.598-5.546-5.22v-33.668zm-.055-2.695l-1.315 1.237-5.546 5.217-.63.594V526.979l.63.593 5.545 5.219 1.316 1.24 1.364-1.186 15.677-13.597.69-.599V499.915l-.69-.6-15.677-13.596zM300.913 789.314l15.676 13.597v16.911l-15.676 13.597-5.546-5.22v-33.668zm-.055-2.695l-1.315 1.238-5.546 5.217-.63.593V829.063l.63.594 5.545 5.218 1.316 1.24 1.364-1.185 15.677-13.597.69-.599V802l-.69-.598-15.677-13.598z" />
     <g clipPath="url(#bc)" transform="matrix(1.33333 0 0 -1.33333 0 1056)">
       <text
-        style={{ InkscapeFontSpecification: "Interstate-Light" }}
+        style={{ InkscapeFontSpecification: 'Interstate-Light' }}
         transform="matrix(1 0 0 -1 174.516 12.32)"
         fontWeight={300}
         fontSize={5.5}
@@ -2056,7 +2056,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </text>
     </g>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc' }}
       transform="matrix(1.33333 0 0 1.33333 93.493 132.184)"
       fontWeight={400}
       fontSize={7}
@@ -2070,7 +2070,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc' }}
       transform="matrix(1.33333 0 0 1.33333 93.493 141.517)"
       fontWeight={400}
       fontSize={7}
@@ -2081,7 +2081,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc' }}
       transform="matrix(0 -1.33333 1.33333 0 27.737 610.86)"
       fontWeight={400}
       fontSize={5.75}
@@ -2096,7 +2096,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc-Bold" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc-Bold' }}
       transform="matrix(1.33333 0 0 1.33333 139.746 471.086)"
       fontWeight={700}
       fontSize={6.5}
@@ -2111,7 +2111,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc-Bold" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc-Bold' }}
       transform="scale(-1.33333) rotate(87.72 168.816 -192.677)"
       fontWeight={700}
       fontSize={4.5}
@@ -2123,7 +2123,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc-Bold" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc-Bold' }}
       transform="scale(1.33333) rotate(-63.89 297.04 151.467)"
       fontWeight={700}
       fontSize={4.5}
@@ -2135,7 +2135,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc-Bold" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc-Bold' }}
       transform="matrix(1.00784 -.87294 .87294 1.00784 41.71 465.977)"
       fontWeight={700}
       fontSize={4.5}
@@ -2147,7 +2147,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc-Bold" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc-Bold' }}
       transform="matrix(1.2627 -.42824 .42824 1.2627 43.791 464.185)"
       fontWeight={700}
       fontSize={4.5}
@@ -2159,7 +2159,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc-Bold" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc-Bold' }}
       transform="matrix(1.31729 .20622 -.20622 1.31729 46.353 463.222)"
       fontWeight={700}
       fontSize={4.5}
@@ -2171,7 +2171,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc-Bold" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc-Bold' }}
       transform="matrix(1.13207 .7044 -.7044 1.13207 49.392 463.66)"
       fontWeight={700}
       fontSize={4.5}
@@ -2183,7 +2183,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc-Bold" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc-Bold' }}
       transform="matrix(.77007 1.08847 -1.08847 .77007 51.895 465.326)"
       fontWeight={700}
       fontSize={4.5}
@@ -2195,7 +2195,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc-Bold" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc-Bold' }}
       transform="matrix(.05304 1.33228 -1.33228 .05304 53.65 467.605)"
       fontWeight={700}
       fontSize={4.5}
@@ -2207,7 +2207,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc' }}
       transform="matrix(1.33333 0 0 1.33333 41.808 398.184)"
       fontWeight={400}
       fontSize={5.75}
@@ -2219,7 +2219,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc' }}
       transform="matrix(1.33333 0 0 1.33333 41.685 405.517)"
       fontWeight={400}
       fontSize={5.75}
@@ -2231,7 +2231,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc' }}
       transform="matrix(1.33333 0 0 1.33333 170.282 411.767)"
       fontWeight={400}
       fontSize={5.75}
@@ -2246,7 +2246,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc' }}
       transform="matrix(1.33333 0 0 1.33333 67.767 411.767)"
       fontWeight={400}
       fontSize={5.75}
@@ -2261,7 +2261,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc-Bold" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc-Bold' }}
       transform="matrix(1.33333 0 0 1.33333 49.963 437.35)"
       fontWeight={700}
       fontSize={12}
@@ -2272,7 +2272,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc-Bold" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc-Bold' }}
       transform="matrix(1.33333 0 0 1.33333 49.963 213.707)"
       fontWeight={700}
       fontSize={12}
@@ -2283,7 +2283,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc-Bold" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc-Bold' }}
       transform="matrix(1.33333 0 0 1.33333 49.963 742.109)"
       fontWeight={700}
       fontSize={12}
@@ -2294,7 +2294,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc-Bold" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc-Bold' }}
       transform="matrix(1.33333 0 0 1.33333 301.963 213.707)"
       fontWeight={700}
       fontSize={12}
@@ -2305,7 +2305,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc-Bold" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc-Bold' }}
       transform="matrix(1.33333 0 0 1.33333 551.462 213.707)"
       fontWeight={700}
       fontSize={12}
@@ -2316,7 +2316,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc-Bold" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc-Bold' }}
       transform="matrix(1.33333 0 0 1.33333 551.462 440.044)"
       fontWeight={700}
       fontSize={12}
@@ -2327,7 +2327,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc-Bold" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc-Bold' }}
       transform="matrix(1.33333 0 0 1.33333 551.462 666.45)"
       fontWeight={700}
       fontSize={12}
@@ -2338,7 +2338,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc-Bold" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc-Bold' }}
       transform="matrix(1.33333 0 0 1.33333 551.462 854.081)"
       fontWeight={700}
       fontSize={12}
@@ -2349,7 +2349,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc-Bold" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc-Bold' }}
       transform="matrix(1.33333 0 0 1.33333 301.963 514.488)"
       fontWeight={700}
       fontSize={12}
@@ -2360,7 +2360,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc-Bold" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc-Bold' }}
       transform="matrix(1.33333 0 0 1.33333 301.963 816.573)"
       fontWeight={700}
       fontSize={12}
@@ -2371,7 +2371,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc' }}
       transform="matrix(1.33333 0 0 1.33333 390.533 123.853)"
       fontWeight={400}
       fontSize={7}
@@ -2385,7 +2385,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc' }}
       transform="matrix(1.33333 0 0 1.33333 405.881 132.387)"
       fontWeight={400}
       fontSize={7}
@@ -2396,7 +2396,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc' }}
       transform="matrix(1.33333 0 0 1.33333 526.887 123.853)"
       fontWeight={400}
       fontSize={7}
@@ -2410,7 +2410,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc' }}
       transform="matrix(1.33333 0 0 1.33333 665.41 123.853)"
       fontWeight={400}
       fontSize={7}
@@ -2424,7 +2424,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc' }}
       transform="matrix(1.33333 0 0 1.33333 678.668 132.387)"
       fontWeight={400}
       fontSize={7}
@@ -2435,7 +2435,7 @@ const CharacterSheet3PgsComplete03 = props => (
       </tspan>
     </text>
     <text
-      style={{ InkscapeFontSpecification: "ScalaSansOffc-Bold" }}
+      style={{ InkscapeFontSpecification: 'ScalaSansOffc-Bold' }}
       transform="matrix(1.33333 0 0 1.33333 149.325 211.927)"
       fontWeight={700}
       fontSize={7}
@@ -2456,4 +2456,3 @@ const CharacterSheet3PgsComplete03 = props => (
 );
 
 export default CharacterSheet3PgsComplete03;
-

@@ -1,7 +1,7 @@
 import React from 'react';
-import SpellsBucket from "./SpellsBucket";
+import SpellsBucket from './SpellsBucket';
 
-const SpellsLevelSeven = ({spellCastingClass, prepared}) => (
+const SpellsLevelSeven = ({ spellCastingClass, prepared }) => (
   <SpellsBucket
     spellLevel={8}
     bucketSize={5}
